@@ -8,9 +8,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ABB403B0-2E2F-4E72-B11E-0C3F8BE9672F}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
-		LICENSE.md = LICENSE.md
-		README.md = README.md
-		UnknownOffsets.txt = UnknownOffsets.txt
 	EndProjectSection
 EndProject
 Global
@@ -19,10 +16,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1B76AC4E-92E9-4795-B688-5F346E9D133F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1B76AC4E-92E9-4795-B688-5F346E9D133F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1B76AC4E-92E9-4795-B688-5F346E9D133F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1B76AC4E-92E9-4795-B688-5F346E9D133F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{48B69B25-F217-4872-913C-401447356326}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{48B69B25-F217-4872-913C-401447356326}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48B69B25-F217-4872-913C-401447356326}.Release|Any CPU.ActiveCfg = Release|Any CPU
