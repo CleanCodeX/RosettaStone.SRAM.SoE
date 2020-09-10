@@ -7,8 +7,7 @@
     <Version>0.2.0-beta5</Version>
     <PackageTags>SoE, Secret of Evermore</PackageTags>
     <Authors>Sram-Tools</Authors>
-    <Description>Collection of SoE's SRAM models, load (&amp; experimental save) functionality</Description>
-    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <Description>Collection of SoE's SRAM models, load (&amp; experimental save) functionality</Description>    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <Company></Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
@@ -27,17 +26,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="UnknownOffsets.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="..\LICENSE.txt">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
+    <PackageReference Include="SramCommons" Version="0.1.2-beta4" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="SramCommons" Version="0.1.2-beta3" />
+    <None Include="LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
