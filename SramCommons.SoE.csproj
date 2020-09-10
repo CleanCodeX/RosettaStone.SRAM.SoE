@@ -4,7 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>
     <LangVersion>preview</LangVersion>
-    <Version>0.2.0-beta</Version>
+    <Version>0.2.0-beta5</Version>
     <PackageTags>SoE, Secret of Evermore</PackageTags>
     <Authors>Sram-Tools</Authors>
     <Description>Collection of SoE's SRAM models, load (&amp; experimental save) functionality</Description>
@@ -37,7 +37,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="SramCommons" Version="0.1.1" />
+    <PackageReference Include="SramCommons" Version="0.1.2-beta3" />
   </ItemGroup>
 
 </Project>

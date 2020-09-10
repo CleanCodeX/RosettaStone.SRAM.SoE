@@ -2,13 +2,11 @@ using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using SramCommons.SoE.Models.Enums;
-using SramCommons.Attributes;
 
 namespace SramCommons.SoE.Models.Structs
 {
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     [DebuggerDisplay("{ToString(),nq}")]
-    [NoByteReordering]
     public struct Alchemies
     {
         public byte Byte1;

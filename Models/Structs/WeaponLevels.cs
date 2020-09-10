@@ -1,6 +1,6 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using SramCommons.Extensions;
+using SramCommons.SoE.Extensions;
 
 namespace SramCommons.SoE.Models.Structs
 {
@@ -41,6 +41,6 @@ namespace SramCommons.SoE.Models.Structs
 {nameof(LaserLance)}: {LaserLance.Major}.{LaserLance.Minor}
 
 {nameof(Bazooka)}: {Bazooka.Major}.{Bazooka.Minor}
-".FormatStruct();
+".ReplaceLineBreaks();
     }
 }

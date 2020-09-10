@@ -1,49 +1,49 @@
 using System;
 using System.Diagnostics;
+using SramCommons.Exceptions;
+using SramCommons.Models;
 using SramCommons.SoE.Helpers;
 using SramCommons.SoE.Models.Enums;
 using SramCommons.SoE.Models.Structs;
-using SramCommons.Exceptions;
-using SramCommons.Extensions;
-using SramCommons.Models;
 
 namespace SramCommons.SoE.Models
 {
-    /// model of a Secret of Evermore SRAM file
-    public class SramFile : SramFileBase<Sram, SramGame, FileRegion, GameId>
+	public class SramFile : SramFileBase<Sram, SramGame>
     {
-		private readonly bool[] _validGames = new bool[4];
-		
-		public SramFile(string filename, FileRegion region) :base(filename, region, Sizes.Sram, Sizes.Game.All, Offsets.FirstGame)
+	    private readonly bool[] _validGames = new bool[4];
+
+        public FileRegion Region { get; }
+
+        public SramFile(string filename, FileRegion region) :base(filename, Sizes.Sram, Sizes.Game.All, Offsets.FirstGame, 3)
         {
             Debug.Assert(Sizes.Game.All == Sizes.Game.AllKnown + Sizes.Game.AllUnknown);
 
-            var anyGameIsValid = false;
-			for (var game = 0; game < 4; ++game)
-			{
-				var gameId = (GameId)game + 1;
-				var fileGameChecksum = GetChecksum(gameId);
+            Region = region;
 
-                var calculatedChecksum = ChecksumHelper.CalcChecksum(SramBuffer, gameId, region);
+            var anyGameIsValid = false;
+			for (var gameIndex = 0; gameIndex < 4; ++gameIndex)
+			{
+				var fileGameChecksum = GetChecksum(gameIndex);
+
+                var calculatedChecksum = ChecksumHelper.CalcChecksum(SramBuffer, gameIndex, region);
 				if (fileGameChecksum != calculatedChecksum) continue;
 
                 anyGameIsValid = true;
-                _validGames[game] = true;
+                _validGames[gameIndex] = true;
             }
 
             if (!anyGameIsValid)
                 throw new InvalidSramFileException(FileError.NoValidGames);
         }
 
-        public override SramGame GetGame(GameId gameId)
+        public override SramGame GetGame(int gameIndex)
         {
-            CurrentGameId = gameId;
-            CurrentGame = Sram.Game[gameId.ToIndex()];
+	        CurrentGame = Sram.Game[gameIndex];
 
-            #region For debugging
-
+#if DEBUG
 #pragma warning disable IDE0059 // Unnötige Zuweisung eines Werts.
             // ReSharper disable UnusedVariable
+
             var boyLevel = CurrentGame.BoyLevel;
             var boyExperience = CurrentGame.BoyExperience;
             var boyCurrentHp = CurrentGame.BoyCurrentHp;
@@ -91,37 +91,36 @@ namespace SramCommons.SoE.Models
             var unknown16C = CurrentGame.Unknown16C.FormatAsString();
             var unknown17 = CurrentGame.Unknown17.FormatAsString();
             var unknown18 = CurrentGame.Unknown18.FormatAsString();
+
             // ReSharper restore UnusedVariable
 #pragma warning restore IDE0059 // Unnötige Zuweisung eines Werts.
-
-            #endregion For debugging
+#endif
 
             return CurrentGame;
         }
 
-        public override bool IsValid(GameId gameId) => IsValid() && _validGames[gameId.ToIndex()];
+        public override bool IsValid(int gameIndex) => base.IsValid(gameIndex) && _validGames[gameIndex];
 
         public override bool Save(string filename)
         {
-            for (var game = 1; game <= 4; ++game)
+            for (var gameIndex = 0; gameIndex <= 3; ++gameIndex)
             {
-                var gameId = (GameId)game;
-                if (IsValid(gameId))
-                    SetChecksum(gameId, ChecksumHelper.CalcChecksum(SramBuffer, gameId, GameRegion));
+	            if (IsValid(gameIndex))
+                    SetChecksum(gameIndex, ChecksumHelper.CalcChecksum(SramBuffer, gameIndex, Region));
             }
 
             return base.Save(filename);
         }
 
-        public ushort GetChecksum(GameId game)
+        public ushort GetChecksum(int gameIndex)
 		{
-			var offset = Offsets.FirstGame + game.ToIndex() * GameSize + Offsets.Game.Checksum;
+			var offset = Offsets.FirstGame + gameIndex * GameSize + Offsets.Game.Checksum;
 			return BitConverter.ToUInt16(SramBuffer, offset);
 		}
 
-		public void SetChecksum(GameId game, ushort checksum)
+		public void SetChecksum(int gameIndex, ushort checksum)
 		{
-			var offset = Offsets.FirstGame + game.ToIndex() * GameSize + Offsets.Game.Checksum;
+			var offset = Offsets.FirstGame + gameIndex * GameSize + Offsets.Game.Checksum;
 			var bytes = BitConverter.GetBytes(checksum);
 			Array.Reverse(bytes);
 			checksum = BitConverter.ToUInt16(bytes);

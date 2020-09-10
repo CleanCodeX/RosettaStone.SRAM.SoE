@@ -1,6 +1,6 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using SramCommons.Extensions;
+using SramCommons.SoE.Extensions;
 
 namespace SramCommons.SoE.Models.Structs
 {
@@ -100,6 +100,6 @@ namespace SramCommons.SoE.Models.Structs
 {nameof(SpikyCollar)}: {SpikyCollar}
 {nameof(DefenderCollar)}: {DefenderCollar}
 {nameof(SpotsCollar)}: {SpotsCollar}
-".FormatStruct();
+".ReplaceLineBreaks();
     }
 }

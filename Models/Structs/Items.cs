@@ -1,6 +1,6 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using SramCommons.Extensions;
+using SramCommons.SoE.Extensions;
 
 namespace SramCommons.SoE.Models.Structs
 {
@@ -26,6 +26,6 @@ namespace SramCommons.SoE.Models.Structs
 {nameof(Essence)}: {Essence}
 {nameof(PixieDust)}: {PixieDust}
 {nameof(CallBead)}: {CallBead}
-".FormatStruct();
+".ReplaceLineBreaks();
     }
 }

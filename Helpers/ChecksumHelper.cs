@@ -1,23 +1,20 @@
 using System;
-using System.Diagnostics;
 using SramCommons.SoE.Models;
 using SramCommons.SoE.Models.Enums;
-using SramCommons.Extensions;
 
 namespace SramCommons.SoE.Helpers
 {
     public static class ChecksumHelper
     {
-        [DebuggerStepThrough]
-        public static ushort CalcChecksum(byte[] sramBuffer, GameId gameId, FileRegion region) =>
-            CalcChecksum(sramBuffer, gameId, region == FileRegion.UnitedStates);
+        public static ushort CalcChecksum(byte[] sramBuffer, int gameIndex, FileRegion region) =>
+            CalcChecksum(sramBuffer, gameIndex, region == FileRegion.UnitedStates);
 
-        public static ushort CalcChecksum(byte[] sramBuffer, GameId gameId, bool isUsVersion)
+        public static ushort CalcChecksum(byte[] sramBuffer, int gameIndex, bool isUsVersion)
         {
             const int gameSize = Sizes.Game.All;
             const int sizeChecksum = 2;
             var checksum = isUsVersion ? ChecksumStartValues.US : ChecksumStartValues.Europe;
-            var offset = Offsets.FirstGame + gameId.ToIndex() * gameSize;
+            var offset = Offsets.FirstGame + gameIndex * gameSize;
             var temp = (byte)(checksum + sramBuffer[offset + sizeChecksum]);
 
             for (var i = 3; i < gameSize; ++i)

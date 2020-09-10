@@ -1,6 +1,6 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using SramCommons.Extensions;
+using SramCommons.SoE.Extensions;
 
 namespace SramCommons.SoE.Models.Structs
 {
@@ -15,6 +15,6 @@ namespace SramCommons.SoE.Models.Structs
         public override string ToString() => $@"{nameof(ThunderBall)}: {ThunderBall}
 {nameof(ParticleBomb)}: {ParticleBomb}
 {nameof(CryoBlast)}: {CryoBlast}
-".FormatStruct();
+".ReplaceLineBreaks();
     }
 }
