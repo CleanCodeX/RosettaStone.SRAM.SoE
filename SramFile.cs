@@ -2,11 +2,12 @@ using System;
 using System.Diagnostics;
 using SramCommons.Exceptions;
 using SramCommons.Models;
+using SramCommons.SoE.Constants;
 using SramCommons.SoE.Helpers;
 using SramCommons.SoE.Models.Enums;
 using SramCommons.SoE.Models.Structs;
 
-namespace SramCommons.SoE.Models
+namespace SramCommons.SoE
 {
 	public class SramFile : SramFileBase<Sram, SramGame>
     {

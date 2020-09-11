@@ -1,6 +1,7 @@
 //#define EXPLICIT
 
 using System.Runtime.InteropServices;
+using SramCommons.SoE.Constants;
 
 namespace SramCommons.SoE.Models.Structs
 {

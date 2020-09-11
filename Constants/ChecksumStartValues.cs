@@ -1,4 +1,4 @@
-namespace SramCommons.SoE.Models
+namespace SramCommons.SoE.Constants
 {
     public class ChecksumStartValues
     {

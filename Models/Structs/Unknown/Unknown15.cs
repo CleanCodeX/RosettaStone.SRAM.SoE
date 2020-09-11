@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using SramCommons.SoE.Models.Enums;
 using SramCommons.Extensions;
+using SramCommons.SoE.Constants;
 
 namespace SramCommons.SoE.Models.Structs
 {

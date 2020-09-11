@@ -3,7 +3,7 @@
 using System.Linq;
 using SramCommons.Extensions;
 
-namespace SramCommons.SoE.Models
+namespace SramCommons.SoE.Constants
 {
     public class Offsets
     {

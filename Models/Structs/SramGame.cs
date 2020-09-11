@@ -3,6 +3,7 @@
 using System.Runtime.InteropServices;
 using SramCommons.SoE.Models.Enums;
 using SramCommons.Models.Structs;
+using SramCommons.SoE.Constants;
 
 // ReSharper disable InconsistentNaming
 
