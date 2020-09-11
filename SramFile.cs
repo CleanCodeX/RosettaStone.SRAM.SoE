@@ -22,7 +22,7 @@ namespace SramCommons.SoE
             Region = region;
 
             var anyGameIsValid = false;
-			for (var gameIndex = 0; gameIndex < 4; ++gameIndex)
+			for (var gameIndex = 0; gameIndex <= 3; ++gameIndex)
 			{
 				var fileGameChecksum = GetChecksum(gameIndex);
 
@@ -126,7 +126,10 @@ namespace SramCommons.SoE
 			Array.Reverse(bytes);
 			checksum = BitConverter.ToUInt16(bytes);
 
-			CurrentGame.Checksum = checksum;
+			Sram.Game[gameIndex].Checksum = checksum;
+
+			if (gameIndex == CurrentGameIndex)
+				CurrentGame.Checksum = checksum;
 
 			bytes.CopyTo(SramBuffer, offset);
 		}
