@@ -4,7 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>
     <LangVersion>preview</LangVersion>
-    <Version>0.2.0-c</Version>
+    <Version>0.2.0-d</Version>
     <PackageTags>SoE, Secret of Evermore</PackageTags>
     <Authors>XETH</Authors>
     <Description>Collection of SoE's SRAM models, load (&amp; experimental save) functionality</Description>    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
@@ -13,6 +13,7 @@
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <RepositoryUrl>https://github.com/CleanCodeX/SramCommons.SoE</RepositoryUrl>
     <PackageProjectUrl>https://github.com/CleanCodeX</PackageProjectUrl>
+    <PackageId>Snes.SramCommons.SoE</PackageId>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
