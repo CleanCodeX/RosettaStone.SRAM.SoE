@@ -8,10 +8,10 @@ namespace SramCommons.SoE.Models.Structs
     [DebuggerDisplay("{ToString(),nq}")]
     public struct Moneys
     {
-        public ThreeByteUint Talons;
-        public ThreeByteUint Jewels;
-        public ThreeByteUint GoldCoins;
-        public ThreeByteUint Credits;
+        public ThreeByteUInt Talons;
+        public ThreeByteUInt Jewels;
+        public ThreeByteUInt GoldCoins;
+        public ThreeByteUInt Credits;
 
         public override string ToString() => $"T: {Talons} | J: {Jewels} | GC: {GoldCoins} | C: {Credits}";
     }

@@ -79,7 +79,7 @@ namespace SramCommons.SoE.Models.Structs
 #if EXPLICIT
         [FieldOffset(Offsets.Game.BoyExperience)]
 #endif
-        public ThreeByteUint BoyExperience; // 154 (3 Byte)
+        public ThreeByteUInt BoyExperience; // 154 (3 Byte)
 #if EXPLICIT
         [FieldOffset(Offsets.Game.BoyLevel)]
 #endif
@@ -118,7 +118,7 @@ namespace SramCommons.SoE.Models.Structs
 #if EXPLICIT
         [FieldOffset(Offsets.Game.DogExperience)] 
 #endif
-        public ThreeByteUint DogExperience; // 219 (3 Byte)
+        public ThreeByteUInt DogExperience; // 219 (3 Byte)
 #if EXPLICIT
         [FieldOffset(Offsets.Game.DogLevel)]
 #endif
