@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace SramCommons.SoE.Models.Structs
+namespace SramFormat.SoE.Models.Structs
 {
 #if EXPLICIT
     [StructLayout(LayoutKind.Explicit, Pack = 1, CharSet = CharSet.Ansi, Size = Sizes.Game.BoyName)]

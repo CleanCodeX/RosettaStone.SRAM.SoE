@@ -1,6 +1,6 @@
 using System;
 
-namespace SramCommons.SoE.Models.Enums
+namespace SramFormat.SoE.Models.Enums
 {
     /// the boy's weapons
     [Flags]

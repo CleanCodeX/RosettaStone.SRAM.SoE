@@ -1,4 +1,4 @@
-namespace SramCommons.SoE.Models.Enums
+namespace SramFormat.SoE.Models.Enums
 {
     /// the alchemy ingredients
     public enum Ingredient // Max Value = 99

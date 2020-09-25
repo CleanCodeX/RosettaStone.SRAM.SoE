@@ -2,7 +2,7 @@ using System;
 
 // ReSharper disable InconsistentNaming
 
-namespace SramCommons.SoE.Models.Enums
+namespace SramFormat.SoE.Models.Enums
 {
     [Flags]
     public enum Unknown13_IvoryTowerFlags_Offset3

@@ -1,4 +1,4 @@
-namespace SramCommons.SoE.Models.Enums
+namespace SramFormat.SoE.Models.Enums
 {
     /// the heros
     public enum Character

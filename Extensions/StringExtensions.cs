@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SramCommons.SoE.Extensions
+namespace SramFormat.SoE.Extensions
 {
     public static class StringExtensions
     {

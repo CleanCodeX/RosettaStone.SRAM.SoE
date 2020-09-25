@@ -1,4 +1,4 @@
-namespace SramCommons.SoE.Models.Enums
+namespace SramFormat.SoE.Models.Enums
 {
     /// the armors
     public enum Armor // 0 - 99

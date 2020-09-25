@@ -1,6 +1,6 @@
 // ReSharper disable InconsistentNaming
 
-namespace SramCommons.SoE.Constants
+namespace SramFormat.SoE.Constants
 {
     public class Sizes
     {

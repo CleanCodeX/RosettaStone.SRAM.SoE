@@ -5,7 +5,7 @@ using SramCommons.Extensions;
 
 // ReSharper disable InconsistentNaming
 
-namespace SramCommons.SoE.Models.Structs
+namespace SramFormat.SoE.Models.Structs
 {
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public struct CharacterBuff

@@ -1,9 +1,9 @@
 //#define EXPLICIT
 
 using System.Runtime.InteropServices;
-using SramCommons.SoE.Constants;
+using SramFormat.SoE.Constants;
 
-namespace SramCommons.SoE.Models.Structs
+namespace SramFormat.SoE.Models.Structs
 {
 #if EXPLICIT
     [StructLayout(LayoutKind.Explicit, Pack = 1, Size = Sizes.Sram)]

@@ -4,17 +4,18 @@
     <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>
     <LangVersion>preview</LangVersion>
-    <Version>0.2.0-h</Version>
+    <Version>0.2.0-d</Version>
     <PackageTags>SoE, Secret of Evermore</PackageTags>
     <Authors>XETH</Authors>
     <Description>Collection of SoE's SRAM models, load (&amp; experimental save) functionality</Description>    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <Company>XETH</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <RepositoryUrl>https://github.com/CleanCodeX/SramCommons.SoE</RepositoryUrl>
+    <RepositoryUrl>https://github.com/CleanCodeX/SramFormat.SoE</RepositoryUrl>
     <PackageProjectUrl>https://github.com/CleanCodeX</PackageProjectUrl>
-    <PackageId>Snes.SramCommons.SoE</PackageId>
+    <PackageId>Snes.SramFormat.SoE</PackageId>
     <PackageIcon>Icon.png</PackageIcon>
+    <Product>SramFormat.SoE</Product>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -30,8 +31,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Snes.SramCommons" Version="1.0.0-d" />
+    <PackageReference Include="Snes.SramCommons" Version="1.0.0-j" />
   </ItemGroup>
+
+  <!--<ItemGroup>
+    <ProjectReference Include="..\SramCommons\SramCommons.csproj" />
+  </ItemGroup>-->
 
   <ItemGroup>
     <None Include="Icon.png">

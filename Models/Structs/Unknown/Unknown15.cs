@@ -2,11 +2,11 @@
 
 using System.Runtime.InteropServices;
 using System.Text;
-using SramCommons.SoE.Models.Enums;
+using SramFormat.SoE.Models.Enums;
 using SramCommons.Extensions;
-using SramCommons.SoE.Constants;
+using SramFormat.SoE.Constants;
 
-namespace SramCommons.SoE.Models.Structs
+namespace SramFormat.SoE.Models.Structs
 {
     [StructLayout(LayoutKind.Sequential, Pack = 1, Size = Sizes.Game.Unknown15)] // 118
     public struct Unknown15

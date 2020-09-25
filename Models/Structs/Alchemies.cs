@@ -1,9 +1,9 @@
 using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using SramCommons.SoE.Models.Enums;
+using SramFormat.SoE.Models.Enums;
 
-namespace SramCommons.SoE.Models.Structs
+namespace SramFormat.SoE.Models.Structs
 {
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     [DebuggerDisplay("{ToString(),nq}")]
