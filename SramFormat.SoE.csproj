@@ -4,7 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>
     <LangVersion>preview</LangVersion>
-    <Version>0.2.0-d</Version>
+    <Version>0.2.0-e</Version>
     <PackageTags>SoE, Secret of Evermore</PackageTags>
     <Authors>XETH</Authors>
     <Description>Collection of SoE's SRAM models, load (&amp; experimental save) functionality</Description>    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
@@ -31,12 +31,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Snes.SramCommons" Version="1.0.0-j" />
+    <PackageReference Include="Snes.SramCommons" Version="1.0.0-l" />
   </ItemGroup>
 
-  <!--<ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\SramCommons\SramCommons.csproj" />
-  </ItemGroup>-->
+  </ItemGroup>
 
   <ItemGroup>
     <None Include="Icon.png">
@@ -47,6 +47,10 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SramCommons\SramCommons.csproj" />
   </ItemGroup>
 
 </Project>
