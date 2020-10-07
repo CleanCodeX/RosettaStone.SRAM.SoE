@@ -32,7 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Snes.SramCommons" Version="1.0.0-m" />
+    <PackageReference Include="Snes.SramCommons" Version="1.0.0-n" />
   </ItemGroup>
 
   <ItemGroup>
