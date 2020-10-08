@@ -4,26 +4,26 @@ using SramFormat.SoE.Extensions;
 
 namespace SramFormat.SoE.Models.Structs
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    [DebuggerDisplay("{ToString(),nq}")]
-    public struct TradeGoods
-    {
-        //  (0 - 99)
-        public ushort AnnihilationAmulet; 
-        public ushort Beads;
-        public ushort CeramicPot; 
-        public ushort Chicken; 
-        public ushort GoldenJackal; 
-        public ushort JeweledScarab; 
-        public ushort LimestoneTablet; 
-        public ushort Perfume; 
-        public ushort Rice; 
-        public ushort Spice; 
-        public ushort SouvenirSpoon; 
-        public ushort Tapestry; 
-        public ushort TicketForExhibition; 
+	[StructLayout(LayoutKind.Sequential, Pack = 1)]
+	[DebuggerDisplay("{ToString(),nq}")]
+	public struct TradeGoods
+	{
+		//  (0 - 99)
+		public ushort AnnihilationAmulet; 
+		public ushort Beads;
+		public ushort CeramicPot; 
+		public ushort Chicken; 
+		public ushort GoldenJackal; 
+		public ushort JeweledScarab; 
+		public ushort LimestoneTablet; 
+		public ushort Perfume; 
+		public ushort Rice; 
+		public ushort Spice; 
+		public ushort SouvenirSpoon; 
+		public ushort Tapestry; 
+		public ushort TicketForExhibition; 
 
-        public override string ToString() => $@"{nameof(AnnihilationAmulet)}: {AnnihilationAmulet}
+		public override string ToString() => $@"{nameof(AnnihilationAmulet)}: {AnnihilationAmulet}
 {nameof(Beads)}: {Beads}
 {nameof(CeramicPot)}: {CeramicPot}
 {nameof(Chicken)}: {Chicken}
@@ -37,5 +37,5 @@ namespace SramFormat.SoE.Models.Structs
 {nameof(Tapestry)}: {Tapestry}
 {nameof(TicketForExhibition)}: {TicketForExhibition}
 ".ReplaceLineBreaks();
-    }
+	}
 }

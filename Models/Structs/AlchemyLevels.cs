@@ -4,51 +4,51 @@ using SramFormat.SoE.Extensions;
 
 namespace SramFormat.SoE.Models.Structs
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    [DebuggerDisplay("{ToString(),nq}")]
-    public struct AlchemyLevels
-    {
-        public ushort AcidRain;
-        public ushort Atlas;
-        public ushort Barrier;
-        public ushort CallUp;
-        public ushort Corrosion;
-        public ushort Crush;
-        public ushort Cure;
-        public ushort Defend;
+	[StructLayout(LayoutKind.Sequential, Pack = 1)]
+	[DebuggerDisplay("{ToString(),nq}")]
+	public struct AlchemyLevels
+	{
+		public ushort AcidRain;
+		public ushort Atlas;
+		public ushort Barrier;
+		public ushort CallUp;
+		public ushort Corrosion;
+		public ushort Crush;
+		public ushort Cure;
+		public ushort Defend;
 
-        public ushort DoubleDrain;
-        public ushort Drain;
-        public ushort Energize;
-        public ushort Escape;
-        public ushort Explosion;
-        public ushort FireBall;
-        public ushort FirePower;
-        public ushort Flash;
+		public ushort DoubleDrain;
+		public ushort Drain;
+		public ushort Energize;
+		public ushort Escape;
+		public ushort Explosion;
+		public ushort FireBall;
+		public ushort FirePower;
+		public ushort Flash;
 
-        public ushort ForceField;
-        public ushort HardBall;
-        public ushort Heal;
-        public ushort Lance;
-        public ushort Laser;
-        public ushort Levitate;
-        public ushort LightningStorm;
-        public ushort MiracleCure;
+		public ushort ForceField;
+		public ushort HardBall;
+		public ushort Heal;
+		public ushort Lance;
+		public ushort Laser;
+		public ushort Levitate;
+		public ushort LightningStorm;
+		public ushort MiracleCure;
 
-        public ushort Nitro;
-        public ushort OneUp;
-        public ushort Reflect;
-        public ushort Regrowth;
-        public ushort Revealer;
-        public ushort Revive;
-        public ushort SlowBurn;
-        public ushort Speed;
+		public ushort Nitro;
+		public ushort OneUp;
+		public ushort Reflect;
+		public ushort Regrowth;
+		public ushort Revealer;
+		public ushort Revive;
+		public ushort SlowBurn;
+		public ushort Speed;
 
-        public ushort Sting;
-        public ushort Stop;
-        public ushort SuperHeal;
+		public ushort Sting;
+		public ushort Stop;
+		public ushort SuperHeal;
 
-        public override string ToString() => $@"{nameof(AcidRain)}: {AcidRain}
+		public override string ToString() => $@"{nameof(AcidRain)}: {AcidRain}
 {nameof(Atlas)}: {Atlas}
 {nameof(Barrier)}: {Barrier}
 {nameof(CallUp)}: {CallUp}
@@ -88,5 +88,5 @@ namespace SramFormat.SoE.Models.Structs
 {nameof(Stop)}: {Stop}
 {nameof(SuperHeal)}: {SuperHeal}
 ".ReplaceLineBreaks();
-    }
+	}
 }

@@ -4,28 +4,28 @@ using SramFormat.SoE.Extensions;
 
 namespace SramFormat.SoE.Models.Structs
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    [DebuggerDisplay("{ToString(),nq}")]
-    public struct WeaponLevels
-    {
-        public WeaponLevel BoneCrusher;
-        public WeaponLevel GladiatorSword;
-        public WeaponLevel CrusaderSword;
-        public WeaponLevel NeutronBlade;
+	[StructLayout(LayoutKind.Sequential, Pack = 1)]
+	[DebuggerDisplay("{ToString(),nq}")]
+	public struct WeaponLevels
+	{
+		public WeaponLevel BoneCrusher;
+		public WeaponLevel GladiatorSword;
+		public WeaponLevel CrusaderSword;
+		public WeaponLevel NeutronBlade;
 
-        public WeaponLevel SpidersClaw;
-        public WeaponLevel BronzeAxe;
-        public WeaponLevel KnightBasher;
-        public WeaponLevel AtomSmasher;
+		public WeaponLevel SpidersClaw;
+		public WeaponLevel BronzeAxe;
+		public WeaponLevel KnightBasher;
+		public WeaponLevel AtomSmasher;
 
-        public WeaponLevel HornSpear;
-        public WeaponLevel BronzeSpear;
-        public WeaponLevel LanceWeapon;
-        public WeaponLevel LaserLance;
+		public WeaponLevel HornSpear;
+		public WeaponLevel BronzeSpear;
+		public WeaponLevel LanceWeapon;
+		public WeaponLevel LaserLance;
 
-        public WeaponLevel Bazooka;
+		public WeaponLevel Bazooka;
 
-        public override string ToString() => $@"{nameof(BoneCrusher)}: {BoneCrusher.Major}.{BoneCrusher.Minor}
+		public override string ToString() => $@"{nameof(BoneCrusher)}: {BoneCrusher.Major}.{BoneCrusher.Minor}
 {nameof(GladiatorSword)}: {GladiatorSword.Major}.{GladiatorSword.Minor}
 {nameof(CrusaderSword)}: {CrusaderSword.Major}.{CrusaderSword.Minor}
 {nameof(NeutronBlade)}: {NeutronBlade.Major}.{NeutronBlade.Minor}
@@ -42,5 +42,5 @@ namespace SramFormat.SoE.Models.Structs
 
 {nameof(Bazooka)}: {Bazooka.Major}.{Bazooka.Minor}
 ".ReplaceLineBreaks();
-    }
+	}
 }

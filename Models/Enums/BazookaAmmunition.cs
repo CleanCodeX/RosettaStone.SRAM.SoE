@@ -1,9 +1,9 @@
 namespace SramFormat.SoE.Models.Enums
 {
-    public enum BazookaAmmunition
-    {
-        ThunderBall,
-        ParticleBomb,
-        CryoBlast
-    }
+	public enum BazookaAmmunition
+	{
+		ThunderBall,
+		ParticleBomb,
+		CryoBlast
+	}
 }

@@ -4,60 +4,60 @@ using SramFormat.SoE.Extensions;
 
 namespace SramFormat.SoE.Models.Structs
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    [DebuggerDisplay("{ToString(),nq}")]
-    public struct Armors
-    {
-        // Vests (0 - 6)
-        public byte GrassVest;
-        public byte ShellPlate;
-        public byte DinoSkin;
-        public byte BronzeArmor;
-        public byte StoneVest;
-        public byte CenturionCape;
-        public byte SilverMail;
-        public byte GoldPlatedVest;
-        public byte ShiningArmor;
-        public byte MagnaMail;
-        public byte TitaniumVest;
-        public byte VirtualVest;
+	[StructLayout(LayoutKind.Sequential, Pack = 1)]
+	[DebuggerDisplay("{ToString(),nq}")]
+	public struct Armors
+	{
+		// Vests (0 - 6)
+		public byte GrassVest;
+		public byte ShellPlate;
+		public byte DinoSkin;
+		public byte BronzeArmor;
+		public byte StoneVest;
+		public byte CenturionCape;
+		public byte SilverMail;
+		public byte GoldPlatedVest;
+		public byte ShiningArmor;
+		public byte MagnaMail;
+		public byte TitaniumVest;
+		public byte VirtualVest;
 
-        // Hats (0 - 6)
-        public byte GrassHat;
-        public byte ShellHat;
-        public byte DinoHelmet;
-        public byte BronzeHelmet;
-        public byte ObsidianHelmet;
-        public byte CenturionHelmet;
-        public byte TitansCrown;
-        public byte DragonHelmet;
-        public byte KnightsHelmet;
-        public byte LightningHelmet;
-        public byte OldReliable;
-        public byte BrainStorm;
+		// Hats (0 - 6)
+		public byte GrassHat;
+		public byte ShellHat;
+		public byte DinoHelmet;
+		public byte BronzeHelmet;
+		public byte ObsidianHelmet;
+		public byte CenturionHelmet;
+		public byte TitansCrown;
+		public byte DragonHelmet;
+		public byte KnightsHelmet;
+		public byte LightningHelmet;
+		public byte OldReliable;
+		public byte BrainStorm;
 
-        // Bracelets (0 - 6)
-        public byte VineBracelet;
-        public byte MammothGuard;
-        public byte ClawGuard;
-        public byte SerpentBracer;
-        public byte BronzeGauntlet;
-        public byte GlovesOfRa;
-        public byte IronBracer;
-        public byte MagiciansRing;
-        public byte DragonsClaw;
-        public byte CyberGlove;
-        public byte ProtectorRing;
-        public byte VirtualGlove;
+		// Bracelets (0 - 6)
+		public byte VineBracelet;
+		public byte MammothGuard;
+		public byte ClawGuard;
+		public byte SerpentBracer;
+		public byte BronzeGauntlet;
+		public byte GlovesOfRa;
+		public byte IronBracer;
+		public byte MagiciansRing;
+		public byte DragonsClaw;
+		public byte CyberGlove;
+		public byte ProtectorRing;
+		public byte VirtualGlove;
 
-        // Collars (0 - 6)
-        public byte LeatherCollar;
-        public byte SpikyCollar;
-        public byte DefenderCollar;
-        public byte SpotsCollar;
+		// Collars (0 - 6)
+		public byte LeatherCollar;
+		public byte SpikyCollar;
+		public byte DefenderCollar;
+		public byte SpotsCollar;
 
-        public override string ToString() => 
-            $@"{nameof(GrassVest)}: {GrassVest}
+		public override string ToString() => 
+			$@"{nameof(GrassVest)}: {GrassVest}
 {nameof(ShellPlate)}: {ShellPlate}
 {nameof(DinoSkin)}: {DinoSkin}
 {nameof(BronzeArmor)}: {BronzeArmor}
@@ -101,5 +101,5 @@ namespace SramFormat.SoE.Models.Structs
 {nameof(DefenderCollar)}: {DefenderCollar}
 {nameof(SpotsCollar)}: {SpotsCollar}
 ".ReplaceLineBreaks();
-    }
+	}
 }

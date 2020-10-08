@@ -10,7 +10,7 @@
     <Description>Collection of SoE's SRAM models, load (&amp; experimental save) functionality</Description>    
     <Company>XETH</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-	  <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+      <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <RepositoryUrl>https://github.com/CleanCodeX/SramFormat.SoE</RepositoryUrl>
     <PackageProjectUrl>https://github.com/CleanCodeX</PackageProjectUrl>

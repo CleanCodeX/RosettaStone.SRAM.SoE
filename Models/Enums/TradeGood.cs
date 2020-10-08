@@ -1,20 +1,20 @@
 namespace SramFormat.SoE.Models.Enums
 {
-    /// the market trading goods
-    public enum TradeGood
-    {
-        AnnihilationAmulet,
-        Beads,
-        CeramicPot,
-        Chicken,
-        GoldenJackal,
-        JeweledScarab,
-        LimestoneTablet,
-        Perfume,
-        Rice,
-        Spice,
-        SouvenirSpoon,
-        Tapestry,
-        TicketForExhibition
-    }
+	/// the market trading goods
+	public enum TradeGood
+	{
+		AnnihilationAmulet,
+		Beads,
+		CeramicPot,
+		Chicken,
+		GoldenJackal,
+		JeweledScarab,
+		LimestoneTablet,
+		Perfume,
+		Rice,
+		Spice,
+		SouvenirSpoon,
+		Tapestry,
+		TicketForExhibition
+	}
 }
