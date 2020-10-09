@@ -2,7 +2,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
-using App.Commons.Helpers;
+using Common.Shared.Min.Helpers;
 using SramCommons.Exceptions;
 using SramCommons.Extensions;
 using SramCommons.Models;
@@ -13,12 +13,26 @@ using SramFormat.SoE.Models.Structs;
 
 namespace SramFormat.SoE
 {
+	/// <summary>
+	/// SramFile implementation for <see cref="Sram"/> and <see cref="SramGame"/>
+	/// </summary>
 	public class SramFileSoE : SramFile<Sram, SramGame>
 	{
+		/// <summary>
+		/// Checksum validation status of every game
+		/// </summary>
 		private readonly bool[] _validGames = new bool[4];
 
+		/// <summary>
+		/// The SRAM's file region 
+		/// </summary>
 		public FileRegion Region { get; }
 
+		/// <summary>
+		/// Creates an instance of SramFileSoE
+		/// </summary>
+		/// <param name="stream">The (opened) stream from which the Sram buffer and Sram structure will be loaded</param>
+		/// <param name="region">The SRAM's file region</param>
 		public SramFileSoE(Stream stream, FileRegion region) : base(stream, Offsets.FirstGame, 3)
 		{
 			Requires.Equal(Marshal.SizeOf<Sram>(), Sizes.Sram, nameof(SramSize));
@@ -29,8 +43,17 @@ namespace SramFormat.SoE
 			Region = region;
 		}
 
+		/// <summary>
+		/// Returns if a game index itself is valid and the game's checksum is correct
+		/// </summary>
+		/// <param name="gameIndex">The index which game's checksum should be checked</param>
+		/// <returns>Returns true if the game index itself is valid and the checksum for that game is</returns>
 		public override bool IsValid(int gameIndex) => base.IsValid(gameIndex) && _validGames[gameIndex];
 
+		/// <summary>
+		/// Loads the entire Sram buffer and structure from a stream
+		/// </summary>
+		/// <param name="stream">The (openned) stream which holds the sram buffer</param>
 		public override void Load(Stream stream)
 		{
 			base.Load(stream);
@@ -51,13 +74,17 @@ namespace SramFormat.SoE
 				throw new InvalidSramFileException(SramError.NoValidGames);
 		}
 
+		/// <summary>
+		/// Gets the game from Sram structure for the given game index
+		/// </summary>
+		/// <param name="gameIndex"></param>
+		/// <returns></returns>
 		public override SramGame GetGame(int gameIndex)
 		{
+			ref var game = ref Sram.Game[gameIndex];
 #if DEBUG
 			if (Debugger.IsAttached)
 			{
-				ref var game = ref Sram.Game[gameIndex];
-
 #pragma warning disable IDE0059 // Unnötige Zuweisung eines Werts.
 				// ReSharper disable UnusedVariable
 
@@ -113,25 +140,49 @@ namespace SramFormat.SoE
 #pragma warning restore IDE0059 // Unnötige Zuweisung eines Werts.
 			}
 #endif
-			return base.GetGame(gameIndex);
+			return game;
 		}
 
+		/// <summary>
+		/// Saves game to SramGame structure, not not to Sram buffer. To save to sram buffer call Save method.
+		/// </summary>
+		/// <param name="gameIndex">The target game index the game is saved to</param>
+		/// <param name="game">The game to be saved</param>
+		public override void SetGame(int gameIndex, SramGame game) => Sram.Game[gameIndex] = game;
+
+		/// <summary>
+		/// Saves the data of Sram structure to Sram buffer.
+		/// </summary>
+		/// <param name="stream"></param>
 		public override void Save(Stream stream)
 		{
 			for (var gameIndex = 0; gameIndex <= 3; ++gameIndex)
 				if (IsValid(gameIndex))
+				{
+					base.SetGame(gameIndex, Sram.Game[gameIndex]);
 					SetChecksum(gameIndex, ChecksumHelper.CalcChecksum(SramBuffer, gameIndex, Region));
+				}
 
 			base.Save(stream);
 		}
 
-		public ushort GetChecksum(int gameIndex)
+		/// <summary>
+		/// Gets the checksum for a game index
+		/// </summary>
+		/// <param name="gameIndex">the game index which game's checksum should be returned</param>
+		/// <returns>The checksum for the given game index</returns>
+		public virtual ushort GetChecksum(int gameIndex)
 		{
 			var offset = FirstGameOffset + gameIndex * GameSize + Offsets.Game.Checksum;
 			return BitConverter.ToUInt16(SramBuffer, offset);
 		}
 
-		public void SetChecksum(int gameIndex, ushort checksum)
+		/// <summary>
+		/// Sets the checksum for the given game index
+		/// </summary>
+		/// <param name="gameIndex">The game index which game's checksum should be set</param>
+		/// <param name="checksum">The checksum to be set</param>
+		public virtual void SetChecksum(int gameIndex, ushort checksum)
 		{
 			var offset = FirstGameOffset + gameIndex * GameSize + Offsets.Game.Checksum;
 			var bytes = BitConverter.GetBytes(checksum);

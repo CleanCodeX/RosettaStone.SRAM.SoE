@@ -4,11 +4,28 @@ using SramFormat.SoE.Models.Enums;
 
 namespace SramFormat.SoE.Helpers
 {
+	/// <summary>
+	/// Calculates the checksum of given game index from buffer
+	/// </summary>
 	public static class ChecksumHelper
 	{
+		/// <summary>
+		/// Calculates the checksum of given game index from buffer
+		/// </summary>
+		/// <param name="sram">The sram buffer containing the given game</param>
+		/// <param name="gameIndex">The game's index which checksum to be calculated</param>
+		/// <param name="region">the game's region of sram</param>
+		/// <returns>The calculated checksum for the given game index</returns>
 		public static ushort CalcChecksum(byte[] sram, int gameIndex, FileRegion region) =>
 			CalcChecksum(sram, gameIndex, region == FileRegion.UnitedStates);
 
+		/// <summary>
+		/// Calculates the checksum of given game index from buffer
+		/// </summary>
+		/// <param name="sram">The sram buffer containing the given game</param>
+		/// <param name="gameIndex">The game's index which checksum to be calculated</param>
+		/// <param name="isUsVersion">sets if this sram is the US region</param>
+		/// <returns>The calculated checksum for the given game index</returns>
 		public static ushort CalcChecksum(byte[] sram, int gameIndex, bool isUsVersion)
 		{
 			const int gameSize = Sizes.Game.All;

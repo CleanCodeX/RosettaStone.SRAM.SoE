@@ -4,17 +4,17 @@
     <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>
     <LangVersion>preview</LangVersion>
-    <Version>0.2.0-f</Version>
+    <Version>0.2.0</Version>
     <PackageTags>SoE, Secret of Evermore</PackageTags>
-    <Authors>XETH</Authors>
+    <Authors>CleanCodeX</Authors>
     <Description>Collection of SoE's SRAM models, load (&amp; experimental save) functionality</Description>    
-    <Company>XETH</Company>
+    <Company>CleanCodeX</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-      <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+      <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <RepositoryUrl>https://github.com/CleanCodeX/SramFormat.SoE</RepositoryUrl>
     <PackageProjectUrl>https://github.com/CleanCodeX</PackageProjectUrl>
-    <PackageId>Snes.SramFormat.SoE</PackageId>
+    <PackageId>CCX.SramFormat.SoE</PackageId>
     <PackageIcon>Icon.png</PackageIcon>
     <Product>SramFormat.SoE</Product>
   </PropertyGroup>
@@ -32,14 +32,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Snes.SramCommons" Version="1.0.0-n" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="Icon.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CCX.SramCommons" Version="1.0.0" />
   </ItemGroup>
 
 </Project>
