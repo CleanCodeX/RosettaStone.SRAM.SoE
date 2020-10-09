@@ -39,9 +39,7 @@ namespace SramFormat.SoE.Constants
 			///  of the boy's current HP
 			public const int BoyCurrentHp = 110; // (2 bytes)
 
-			public const int Unknown4 = 112; // (30 bytes)
-
-			public const int Unknown4_BoyBuff__BuffFlags = Unknown4; // Offset 112
+			public const int Unknown4_BoyBuff__BuffFlags = 112; // Offset 112
 			public const int Unknown4_BoyBuff__Unknown1 = Unknown4_BoyBuff__BuffFlags + 2; // Offset 114
 			public const int Unknown4_BoyBuff__Unknown2 = Unknown4_BoyBuff__Unknown1 + 2; // Offset 116
 			public const int Unknown4_BoyBuff__Unknown3 = Unknown4_BoyBuff__Unknown2 + 22; // Offset 138
@@ -63,13 +61,11 @@ namespace SramFormat.SoE.Constants
 			///  of the dog's current HP
 			public const int DogCurrentHp = 175; // (2 bytes)
 
-			public const int Unknown7 = 177; // (30 bytes)
-
-			public const int Unknown7_BoyBuff__BuffFlags = Unknown7; // Offset 177
-			public const int Unknown7_BoyBuff__Unknown1 = Unknown7_BoyBuff__BuffFlags + 2; // Offset 179
-			public const int Unknown7_BoyBuff__Unknown2 = Unknown7_BoyBuff__Unknown1 + 2; // Offset 181
-			public const int Unknown7_BoyBuff__Unknown3 = Unknown7_BoyBuff__Unknown2 + 22; // Offset 203
-			public const int Unknown7_BoyBuff__Unknown7 = Unknown7_BoyBuff__Unknown3 + 2; // Offset 205
+			public const int Unknown7_DogBuff__BuffFlags = 177; // Offset 177
+			public const int Unknown7_DogBuff__Unknown1 = Unknown7_DogBuff__BuffFlags + 2; // Offset 179
+			public const int Unknown7_DogBuff__Unknown2 = Unknown7_DogBuff__Unknown1 + 2; // Offset 181
+			public const int Unknown7_DogBuff__Unknown3 = Unknown7_DogBuff__Unknown2 + 22; // Offset 203
+			public const int Unknown7_DogBuff__Unknown7 = Unknown7_DogBuff__Unknown3 + 2; // Offset 205
 
 			///  of the dog's max HP
 			public const int DogMaxHp = 207; // (2 bytes)
