@@ -5,7 +5,7 @@ using System;
 namespace SramFormat.SoE.Models.Enums
 {
 	[Flags]
-	public enum Unknown15_IvoryTowerFlags_Offset18 : byte
+	public enum Unknown15_IvorTowerFlags_Offset18 : byte
 	{
 		Level2_House1_Floor1_RearChest__4xClay = 0b0000_1000, // bit 4 (no U12C flag)
 
