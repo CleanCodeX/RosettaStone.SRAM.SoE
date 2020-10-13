@@ -2,11 +2,15 @@
 
 namespace SramFormat.SoE.Constants
 {
+	/// <summary>
+	/// Known sizes of SoE's SRAM buffers
+	/// </summary>
 	public class Sizes
 	{
-		/// size of the SRAM file
+		/// Size of the SRAM file
 		public const int Sram = 8_192;
 		
+		/// <summary>Sites of game buffers</summary>
 		public class Game
 		{
 			public const int Checksum = 2; // Offset 0
@@ -76,7 +80,7 @@ namespace SramFormat.SoE.Constants
 			public const int All = 817;
 		}
 
-		/// size of the SRAM Unknown buffer
+		/// Size of the SRAM Unknown buffer
 		public const int SramUnknown1 = 4_922;
 	}
 }

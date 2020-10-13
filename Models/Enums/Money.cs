@@ -1,6 +1,6 @@
 namespace SramFormat.SoE.Models.Enums
 {
-	/// the money types
+	/// The money types
 	public enum Money
 	{
 		Talons,

@@ -1,6 +1,6 @@
 namespace SramFormat.SoE.Models.Enums
 {
-	/// the market trading goods
+	/// The market trading goods
 	public enum TradeGood
 	{
 		AnnihilationAmulet,

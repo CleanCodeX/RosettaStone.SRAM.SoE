@@ -2,7 +2,7 @@ using System;
 
 namespace SramFormat.SoE.Models.Enums
 {
-	/// the boy's weapons
+	/// The boy's weapons
 	[Flags]
 	public enum Weapon : ushort
 	{

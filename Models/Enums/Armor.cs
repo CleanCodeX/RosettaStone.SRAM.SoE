@@ -1,6 +1,6 @@
 namespace SramFormat.SoE.Models.Enums
 {
-	/// the armors
+	/// The armors
 	public enum Armor // 0 - 99
 	{
 		GrassVest,

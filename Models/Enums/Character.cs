@@ -1,6 +1,6 @@
 namespace SramFormat.SoE.Models.Enums
 {
-	/// the heros
+	/// The heros
 	public enum Character
 	{
 		Boy,

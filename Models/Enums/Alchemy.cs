@@ -2,7 +2,7 @@ using System;
 
 namespace SramFormat.SoE.Models.Enums
 {
-	/// the alchemies
+	/// The alchemies
 	[Flags]
 	public enum Alchemy: ulong
 	{

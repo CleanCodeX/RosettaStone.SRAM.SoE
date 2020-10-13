@@ -1,6 +1,6 @@
 namespace SramFormat.SoE.Models.Enums
 {
-	/// the items 
+	/// The items 
 	public enum Item
 	{
 		Petal, // 0 - 6

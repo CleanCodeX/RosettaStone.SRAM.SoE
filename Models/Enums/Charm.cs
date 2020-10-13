@@ -2,7 +2,7 @@ using System;
 
 namespace SramFormat.SoE.Models.Enums
 {
-	/// the charms
+	/// The charms
 	[Flags]
 	public enum Charm : uint
 	{

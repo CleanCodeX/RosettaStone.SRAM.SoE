@@ -5,6 +5,9 @@ using SramCommons.Extensions;
 
 namespace SramFormat.SoE.Constants
 {
+	/// <summary>
+	/// Known offsets of SoE's sram format
+	/// </summary>
 	public class Offsets
 	{
 		/// base offset of the game data in the SRAM
