@@ -12,7 +12,7 @@ namespace SramFormat.SoE.ScriptCodes
 		private protected abstract void Dialog(params string[] texts);
 		private protected abstract void PlaySound(int code);
 
-		private ushort _v2262_charms = 0;
+		private ushort _v2262_Charms = 0;
 		private ushort _v228b_TalkedToPersons = 0;
 		private ushort _v2527_OwnedRice = 0; // Amount of owned Rice
 		private ushort _v243d_UnknownStatusMaybe = 0;
@@ -129,9 +129,9 @@ namespace SramFormat.SoE.ScriptCodes
 				const uint flagMagicGourd = 0x4;
 				const uint flagChocoboEgg = 0x40;
 
-				if ((_v2262_charms & flagMagicGourd) == 0)
+				if ((_v2262_Charms & flagMagicGourd) == 0)
 				{
-					if ((_v2262_charms & flagChocoboEgg) == 0)
+					if ((_v2262_Charms & flagChocoboEgg) == 0)
 					{
 						var tmp = rand.Next(0, 15);
 						if (tmp == 7)
