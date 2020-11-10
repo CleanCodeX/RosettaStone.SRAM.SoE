@@ -1,39 +1,48 @@
 ﻿using System;
 using System.Diagnostics;
+// ReSharper disable InconsistentNaming
 
 namespace SramFormat.SoE.ScriptCodes
 {
 	/// <summary>
 	/// Code routines of Nobilia market merchants
 	/// </summary>
-	internal abstract class NobiliaMarket
+	internal class NobiliaMarket
 	{
-		private protected abstract ushort SelectionDialog(params string[] texts);
-		private protected abstract void Dialog(params string[] texts);
-		private protected abstract void PlaySound(int code);
+		protected virtual void Dialog(string text) => Debug.Print($"DIALOG: {text}");
+		protected virtual void PlaySound(int id) => Debug.Print($"PLAY SOUND: {id}");
+		protected virtual ushort SelectionDialog(params string[] texts)
+		{
+			Debug.Print("DIALOG: ");
 
-		private ushort _v2262_Charms = 0;
-		private ushort _v228b_TalkedToPersons = 0;
-		private ushort _v2527_OwnedRice = 0; // Amount of owned Rice
-		private ushort _v243d_UnknownStatusMaybe = 0;
-		private ushort _v251b_OwnedPots = 0; // Previously owned pots
-		private ushort _v285d_Unknown = 0; // What does it do? 
-		private ushort _jewels = 0; // What does it do? 
+			foreach (var text in texts)
+				Debug.Print(Environment.NewLine + text);
+
+			return default;
+		}
+
+		internal ushort _2262_Charms;
+		internal ushort _228b_TalkedToPersons;
+		internal ushort _2527_OwnedRice; // Amount of owned Rice
+		internal ushort _243d_UnknownStatusMaybe;
+		internal ushort _251b_OwnedPots; // Previously owned pots
+		internal ushort _285d_Unknown; // What does it do? 
+		internal ushort _Jewels;
 
 		/// <summary>
 		/// Most relevant code for talking to Ceramic Pot merchant
 		/// </summary>
-		private void TalkToCeramicPotsMerchant()
+		public void TalkToCeramicPotsMerchant()
 		{
 			var rand = new Random();
 			const byte flagCeramicPotMerchant = 0x10;
 
-			if ((_v228b_TalkedToPersons & flagCeramicPotMerchant) > 0)
+			if ((_228b_TalkedToPersons & flagCeramicPotMerchant) > 0)
 				Dialog("Would you like some ceramic pots? They're only 2 bags of rice each.");
 			else
 			{
 				Dialog("What you need, my friend, is ceramic pots. They're a classic design, very durable and priced to move only 2 bags of rice per pot.");
-				_v228b_TalkedToPersons |= flagCeramicPotMerchant;
+				_228b_TalkedToPersons |= flagCeramicPotMerchant;
 			}
 
 			var v289f_WannaBuyPots = SelectionDialog("What do you say?", "I'm sold!", "I'll pass.");
@@ -56,14 +65,14 @@ namespace SramFormat.SoE.ScriptCodes
 
 			if (v285b_PotsToBuy != 0)
 			{
-				if (_v2527_OwnedRice < (v285b_PotsToBuy * 2))
+				if (_2527_OwnedRice < (v285b_PotsToBuy * 2))
 				{
-					_v243d_UnknownStatusMaybe = 0x0000;
+					_243d_UnknownStatusMaybe = 0x0000;
 					Dialog(" Can't buy (not enough rice)");
 				}
-				else if ((_v251b_OwnedPots + v285b_PotsToBuy) > 0x63) // Max 99 items check
+				else if ((_251b_OwnedPots + v285b_PotsToBuy) > 0x63) // Max 99 items check
 				{
-					_v243d_UnknownStatusMaybe = 0x0002;
+					_243d_UnknownStatusMaybe = 0x0002;
 					Dialog("Can't buy (inventory full)");
 				}
 				else
@@ -71,8 +80,8 @@ namespace SramFormat.SoE.ScriptCodes
 					PlaySound(0x40);
 					Dialog("It's a deal. Thank you very much.");
 
-					_v2527_OwnedRice = (ushort)(_v2527_OwnedRice - (v285b_PotsToBuy * 2));
-					_v251b_OwnedPots = (ushort)(_v251b_OwnedPots + v285b_PotsToBuy);
+					_2527_OwnedRice = (ushort)(_2527_OwnedRice - (v285b_PotsToBuy * 2));
+					_251b_OwnedPots = (ushort)(_251b_OwnedPots + v285b_PotsToBuy);
 
 					goto BuySuccess;
 				}
@@ -107,10 +116,10 @@ namespace SramFormat.SoE.ScriptCodes
 					Dialog("Now please make room for paying customers.");
 			}
 
-			if (_v251b_OwnedPots > (_v285d_Unknown + 6)) // more than 6 (not 5 [!]) pots buyed (option 10)
+			if (_251b_OwnedPots > (_285d_Unknown + 6)) // more than 6 (not 5 [!]) pots buyed (option 10 pots)
 				// Reusage of dialog response variable!
 				v289d_HowManyPots = (ushort)rand.Next(0, 15); // 1/16 chance (0-15)
-			else if (_v251b_OwnedPots > (_v285d_Unknown + 1)) // more than 1 pot buyed (option 5)
+			else if (_251b_OwnedPots > (_285d_Unknown + 1)) // more than 1 pot buyed (option 5 pots)
 				// Reusage of dialog response variable!
 				v289d_HowManyPots = (ushort)rand.Next(0, 7); // 1/8 chance (0-7)
 			else
@@ -129,31 +138,31 @@ namespace SramFormat.SoE.ScriptCodes
 				const uint flagMagicGourd = 0x4;
 				const uint flagChocoboEgg = 0x40;
 
-				if ((_v2262_Charms & flagMagicGourd) == 0)
+				if ((_2262_Charms & flagMagicGourd) == 0)
 				{
-					if ((_v2262_Charms & flagChocoboEgg) == 0)
+					if ((_2262_Charms & flagChocoboEgg) == 0)
 					{
 						var tmp = rand.Next(0, 15);
 						if (tmp == 7)
 						{
-							_v243d_UnknownStatusMaybe = 2;
+							_243d_UnknownStatusMaybe = 2;
 							Dialog("Found the Chocobo Egg.");
 						}
 						else
 						{
-							_jewels += 10;
+							_Jewels += 10;
 							Dialog("Found 10 Jewels.");
 						}
 					}
 					else // 2 branches with same content
 					{
-						_jewels += 50;
+						_Jewels += 50;
 						Dialog("Found 50 Jewels.");
 					}
 				}
 				else // 2 branches with same content
 				{
-					_jewels += 50;
+					_Jewels += 50;
 					Dialog("Found 50 Jewels.");
 				}
 			}
