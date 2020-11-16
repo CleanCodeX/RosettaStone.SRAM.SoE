@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Diagnostics;
+using SramFormat.SoE.Extensions;
 // ReSharper disable InconsistentNaming
 
 namespace SramFormat.SoE.ScriptCodes
 {
 	/// <summary>
-	/// Code routines of Nobilia market merchants
+	/// Relevant code routines of Nobilia market merchants starting at script address offset around [0x968736]
+	/// 
 	/// </summary>
 	internal class NobiliaMarket
 	{
@@ -98,7 +100,7 @@ namespace SramFormat.SoE.ScriptCodes
 			// Subroutine
 			void CancelDialog()
 			{
-				var arg0 = rand.Next(0, 15);
+				var arg0 = rand.NextInclusive(0, 15);
 				if (arg0 == 4)
 					Dialog("Kids... Always looking, never buying.");
 				else if (arg0 == 8)
@@ -110,7 +112,7 @@ namespace SramFormat.SoE.ScriptCodes
 				else
 					Dialog("OK. Maybe some other time.");
 
-				arg0 = rand.Next(0, 8);
+				arg0 = rand.NextInclusive(0, 7);
 
 				if (arg0 == 5)
 					Dialog("Now please make room for paying customers.");
@@ -118,10 +120,10 @@ namespace SramFormat.SoE.ScriptCodes
 
 			if (_251b_OwnedPots > (_285d_Unknown + 6)) // more than 6 (not 5 [!]) pots buyed (option 10 pots)
 				// Reusage of dialog response variable!
-				v289d_HowManyPots = (ushort)rand.Next(0, 15); // 1/16 chance (0-15)
+				v289d_HowManyPots = (ushort)rand.NextInclusive(0, 15); // 1/16 chance (0-15)
 			else if (_251b_OwnedPots > (_285d_Unknown + 1)) // more than 1 pot buyed (option 5 pots)
 				// Reusage of dialog response variable!
-				v289d_HowManyPots = (ushort)rand.Next(0, 7); // 1/8 chance (0-7)
+				v289d_HowManyPots = (ushort)rand.NextInclusive(0, 7); // 1/8 chance (0-7)
 			else
 				// Reusage of dialog response variable!
 				v289d_HowManyPots = 15; // Means there is never a chance to find something
@@ -142,7 +144,7 @@ namespace SramFormat.SoE.ScriptCodes
 				{
 					if ((_2262_Charms & flagChocoboEgg) == 0)
 					{
-						var tmp = rand.Next(0, 15);
+						var tmp = rand.NextInclusive(0, 15);
 						if (tmp == 7)
 						{
 							_243d_UnknownStatusMaybe = 2;
@@ -154,13 +156,13 @@ namespace SramFormat.SoE.ScriptCodes
 							Dialog("Found 10 Jewels.");
 						}
 					}
-					else // 2 branches with same content
+					else // *) 2 branches with same content
 					{
 						_Jewels += 50;
 						Dialog("Found 50 Jewels.");
 					}
 				}
-				else // 2 branches with same content
+				else // *) 2 branches with same content
 				{
 					_Jewels += 50;
 					Dialog("Found 50 Jewels.");
