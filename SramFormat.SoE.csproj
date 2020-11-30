@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>
-    <Version>0.2.3-a6</Version>
+    <Version>0.2.3-a7</Version>
     <PackageTags>SoE, Secret of Evermore</PackageTags>
     <Authors>CleanCodeX</Authors>
     <Description>Collection of SoE's SRAM models, load (&amp; experimental save) functionality</Description>    
@@ -43,7 +43,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="CCX.SramCommons" Version="1.0.1-a3" />
+    <PackageReference Include="CCX.SramCommons" Version="1.0.1-a4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SramCommons\SramCommons.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 using SramFormat.SoE.Models.Enums;
 using SramCommons.Models.Structs;
 using SramFormat.SoE.Constants;
+using SramFormat.SoE.Models.Structs.Unknown;
 
 // ReSharper disable InconsistentNaming
 
@@ -246,8 +247,7 @@ namespace SramFormat.SoE.Models.Structs
 #if EXPLICIT
 		[FieldOffset(Offsets.Game.Unknown16A)]
 #endif
-		[MarshalAs(UnmanagedType.ByValArray, SizeConst = Sizes.Game.Unknown16C)]
-		public byte[] Unknown16C; // 643 (6 bytes) 
+		public Unknown16C Unknown16C; // 643 (6 bytes) 
 
 		// Ingredients
 #if EXPLICIT

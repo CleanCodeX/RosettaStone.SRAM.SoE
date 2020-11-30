@@ -158,12 +158,15 @@ namespace SramFormat.SoE
 		{
 			for (var gameIndex = 0; gameIndex <= 3; ++gameIndex)
 				if (IsValid(gameIndex))
-				{
 					base.SetGame(gameIndex, Sram.Game[gameIndex]);
-					SetChecksum(gameIndex, ChecksumHelper.CalcChecksum(SramBuffer, gameIndex, Region));
-				}
 
 			base.Save(stream);
+		}
+
+		protected override void OnRawSave()
+		{
+			for (var gameIndex = 0; gameIndex <= 3; ++gameIndex)
+				SetChecksum(gameIndex, ChecksumHelper.CalcChecksum(SramBuffer, gameIndex, Region));
 		}
 
 		/// <summary>
@@ -186,8 +189,6 @@ namespace SramFormat.SoE
 		{
 			var offset = FirstGameOffset + gameIndex * GameSize + Offsets.Game.Checksum;
 			var bytes = BitConverter.GetBytes(checksum);
-			Array.Reverse(bytes);
-			checksum = BitConverter.ToUInt16(bytes);
 
 			Sram.Game[gameIndex].Checksum = checksum;
 
