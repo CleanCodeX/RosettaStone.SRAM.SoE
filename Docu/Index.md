@@ -1,6 +1,6 @@
-﻿# SRAM Format
+﻿# SRAM - Secret Of Evermore
 
-* [SRAM](Items/Sram.md)
-* [Offsets](Offsets.md)
-* [Sizes](Sizes.md)
+## [SRAM](Items/Sram.md)
+## [Offsets](Offsets.md)
+## [Sizes](Sizes.md)
 
