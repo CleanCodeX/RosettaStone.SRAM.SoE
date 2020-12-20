@@ -1,6 +1,6 @@
-﻿# SRAM - Secret Of Evermore
+﻿# Secret Of Evermore
 
-## [SRAM](Items/Sram.md)
-## [Offsets](Offsets.md)
-## [Sizes](Sizes.md)
+## [SRAM Map](Items/Sram.md)
+## [Structure/Value Offsets](Offsets.md)
+## [Structure Sizes](Sizes.md)
 
