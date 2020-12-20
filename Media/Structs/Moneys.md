@@ -1,8 +1,8 @@
 # Moneys (12 bytes)
 
-Amount: 2 ^ 24 (16.7M)
+Max: 2 ^ 24 (16.7M)
 
-* ThreeByte Talons
-* ThreeByte Jewels
-* ThreeByte GoldCoins
-* ThreeByte Credits
+* UInt24 Talons
+* UInt24 Jewels
+* UInt24 GoldCoins
+* UInt24 Credits
