@@ -22,7 +22,7 @@
 * UInt16 BoyCurrentHp # offset 110 (2 bytes)
 
 ## Unknown 4
-* [Unknown4_BoyBuff](CharacterBuff.md) 
+* [Unknown4_BoyBuff](CharacterBuff.md) # offset 112 (30 bytes)
 
 ## The boy's max HP
 * UInt16 BoyMaxHp # offset 142 (2 bytes)
@@ -43,7 +43,7 @@
 * UInt16 DogCurrentHp # offset 175 (2 bytes)
 
 ## Unknown 7
-* [Unknown7_DogBuff](CharacterBuff.md)  
+* [Unknown7_DogBuff](CharacterBuff.md) # offset 177 (30 bytes)
 
 ## The dog's max HP
 * UInt16 DogMaxHp # offset 207 (2 bytes)
@@ -98,13 +98,13 @@
 * [Unknown14](Enums/Unknown14_AntiquaFlags.md) # offset 508 (4 bytes) 
 
 ## Charms
-* [Charms](Charms.md) Charms # offset 512 (3 bytes)
+* [Charms](Charms.md) # offset 512 (3 bytes)
 
 ## Unknown 15
-* [Unknown15](Unknown15.md) Unknown15 # offset 515 (118 bytes)
+* [Unknown15](Unknown15.md) # offset 515 (118 bytes)
 
 ## Weapons
-* [Weapons](Weapons.md) Weapons # offset 633 (2 bytes)
+* [Weapons](Weapons.md) # offset 633 (2 bytes)
 
 ## Unknown 16
 * byte[] Unknown16A # offset 635 (4 bytes) 
