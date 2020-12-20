@@ -28,7 +28,7 @@
 * Unknown4_BoyBuff.Unknown3 = Unknown4_BoyBuff.Unknown2 + 22 (Offset 138)
 * Unknown4_BoyBuff.Unknown4 = Unknown4_BoyBuff.Unknown3 + 2 (Offset 140)
 
-### The boy's max HP
+### Known
 * BoyMaxHp = 142 (2 bytes)
 
 ### Unknown 5
@@ -41,7 +41,7 @@
 ### Unknown 6
 * Unknown6 = 159 (16 bytes)
 
-### The dog's current HP
+### Known
 * DogCurrentHp = 175 (2 bytes)
 
 ### Unknown 7
