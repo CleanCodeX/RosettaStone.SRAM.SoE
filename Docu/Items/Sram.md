@@ -1,6 +1,6 @@
-﻿# SRAM - Format
+﻿# SRAM - MAp
 
-SoE uses a SRAM of size 8192 bytes. (8 KiB)
+Size: 8192 bytes (8 KiB)
 
 ## Sections
 * UInt16 Checksum (2 bytes)
