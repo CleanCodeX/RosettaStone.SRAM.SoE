@@ -1,4 +1,4 @@
-﻿# SRAM - MAp
+﻿# SRAM - Map
 
 Size: 8192 bytes (8 KiB)
 
