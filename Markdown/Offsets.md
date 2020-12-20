@@ -1,4 +1,6 @@
-﻿## Offsets
+﻿# Offsets
+
+(in order)
 
 * Checksum = 0 (2 bytes)
 

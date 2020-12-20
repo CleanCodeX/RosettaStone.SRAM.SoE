@@ -3,16 +3,16 @@
 #### Unknown game file bytes: 462 of 817
 * UInt16 Checksum # offset (2 bytes)
 
-#### Unknown 1
+*Unknown 1*
 * byte[] Unknown1 # offset (36 bytes)
 
-#### Boy & Dog character
+**Boy & Dog character**
 * [BoyName](CharacterName.md) # offset 38 (34 bytes) 
 
-#### Unknown 2
+***Unknown 2***
 * byte[] Unknown2 # offset 72 (2 bytes)
 
-#### The dog's name
+****The dog's name****
 * [DogName](CharacterName.md) # offset 74 (34 bytes) 
 
 #### Unknown 3
