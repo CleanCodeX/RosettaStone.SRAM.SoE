@@ -23,7 +23,7 @@
 * DogExperience = 3; // Offset 219
 * DogLevel = 2; // Offset 222
 * Unknown9 = 28; // Offset 224
-* [Money](Items/Money.md) = 12; // Offset 252
+* [Moneys](Items/Moneys.md) = 12; // Offset 252
 * Unknown10 = 13; // Offset 264
 * [WeaponLevels](Items/WeaponLevels.md) = 26; // Offset 277
 * Unknown11 = 14; // Offset 303
