@@ -108,7 +108,7 @@
 
 ## Unknown 16
 * byte[] Unknown16A # offset 635 (4 bytes) 
-* [Unknown16](Enums/Unknown16_GothicaFlags.md) # offset 639 (4 bytes)
+* [Unknown16B_GothicaFlags](Enums/Unknown16_GothicaFlags.md) # offset 639 (4 bytes)
 * [Unknown16C](Unknown16C.md) # offset 643 (6 bytes) 
 
 ## Ingredients
