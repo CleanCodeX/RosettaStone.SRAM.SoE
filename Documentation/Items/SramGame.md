@@ -11,38 +11,56 @@
 
 ## Unknown 2
 * byte[] Unknown2 # offset 72 (2 bytes)
+
+## The dog's name
 * [DogName](CharacterName.md) # offset 74 (34 bytes) 
 
 ## Unknown 3
 * byte[] Unknown3 # offset 108 (2 bytes)
 
+## The boy's current HP'
 * UInt16 BoyCurrentHp # offset 110 (2 bytes)
+
 ## Unknown 4
 * [Unknown4_BoyBuff](CharacterBuff.md) 
+
+## The boy's max HP
 * UInt16 BoyMaxHp # offset 142 (2 bytes)
 
 ## Unknown 5
 * byte[] Unknown5 # offset 144 (10 bytes)
+
+## The boy's experience
 * UInt24 BoyExperience # offset 154 (3 bytes)
+
+## The boy's level
 * UInt16 BoyLevel # offset 157 (2 bytes)
 
 ## Unknown 6
 * byte[] Unknown6 # offset 159 (16 bytes)
+
+## The dog's current HP
 * UInt16 DogCurrentHp # offset 175 (2 bytes)
 
 ## Unknown 7
 * [Unknown7_DogBuff](CharacterBuff.md)  
+
+## The dog's max HP
 * UInt16 DogMaxHp # offset 207 (2 bytes)
 
 ## Unknown 8
 * byte[] Unknown8 # offset 209 (10 bytes)
+
+## The dog's experience
 * UInt24 DogExperience # offset 219 (3 bytes)
+
+## The dog's level
 * UInt16 DogLevel # offset 222 (2 bytes)
 
 ## Unknown 9
 * byte[] Unknown9 # offset 224 (28 bytes)
 
-## Money
+## Moneys
 * [Moneys](Moneys.md) # offset 252 (12 bytes)
 
 ## Unknown 10
@@ -54,6 +72,7 @@
 ## Unknown 11
 * byte[] Unknown11 # offset 303 (14 bytes)
 
+## The dogs's attack level
 * [DogAttackLevel](WeaponLevel.md) # offset 317 (2 bytes)
 
 ## Unknown 12 A
@@ -97,7 +116,11 @@
 
 ## Items
 * [Items](Items.md) # offset 671 (8 bytes)
+
+## Armors
 * [Armors](Armors.md) # offset 679 (40 bytes)
+
+## Bazooka Ammunitions
 * [BazookaAmmunitions](BazookaAmmunitions.md) # offset 719 (3 bytes)
 
 ## Unknown 17
