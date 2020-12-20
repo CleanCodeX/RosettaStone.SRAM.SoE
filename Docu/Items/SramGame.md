@@ -26,7 +26,7 @@
 // Unknown 5
 * byte[] Unknown5 // 144 (10 bytes)
 
-* UInt24 BoyExperience // 154 (3 Byte)
+* UInt24 BoyExperience // 154 (3 bytes)
 
 * UInt16 BoyLevel // 157 (2 bytes)
 
@@ -43,7 +43,7 @@
 // Unknown 8
 * byte[] Unknown8 // 209 (10 bytes)
 
-* UInt24 DogExperience // 219 (3 Byte)
+* UInt24 DogExperience // 219 (3 bytes)
 
 * UInt16 DogLevel // 222 (2 bytes)
 
