@@ -76,9 +76,9 @@
 * Unknown12C = 337 (4 bytes)
 
 // minor alchemy Levels offset
-* [AlchemyMinorLevels](Items/AlchemyMinorLevels.md) = 341 (70 bytes)
+* [AlchemyMinorLevels](Items/AlchemyLevels.md) = 341 (70 bytes)
 
-* [AlchemyMajorLevels](Items/AlchemyMajorLevels.md) = 411 (70 bytes)
+* [AlchemyMajorLevels](Items/AlchemyLevels.md) = 411 (70 bytes)
 
 * [Unknown13](Items/Unknown13.md) = 481 (23 bytes)
 
@@ -96,7 +96,7 @@
 * [Weapons](Items/Weapons.md) = 633 (2 bytes)
 
 * Unknown16A = 635 (4 bytes)
-* [Unknown16B_GoticaFlags](Items/Enums/Unknown16B_GoticaFlags.md) = 639 (4 bytes)
+* [Unknown16B_GoticaFlags](Items/Enums/Unknown16_GoticaFlags.md) = 639 (4 bytes)
 * [Unknown16C](Items/Unknown16C.md) = 643 (6 bytes)
 
 // alchemy ingredient offset

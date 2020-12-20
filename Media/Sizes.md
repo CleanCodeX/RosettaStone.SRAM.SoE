@@ -33,17 +33,17 @@
 * Unknown12B = 2; // (2 bytes)
 * Unknown12C = 4; // (4 bytes)
 
-* [AlchemyMinorLevels](Items/AlchemyMinorLevels.md) = 70; // Offset 341
-* [AlchemyMajorLevels](Items/AlchemyMajorLevels.md) = 70; // Offset 411
+* [AlchemyMinorLevels](Items/AlchemyLevels.md) = 70; // Offset 341
+* [AlchemyMajorLevels](Items/AlchemyLevels.md) = 70; // Offset 411
 * [Unknown13](Items/Unknown13.md) = 22; // Offset 481
 * [Alchemies](Items/Alchemies.md) = 5; // Offset 503
-* [Unknown14](Items/Enums/Unknown14_AntiquaFlags.md) = 4; // Offset 508
+* [Unknown14_AntiquaFlags](Items/Enums/Unknown14_AntiquaFlags.md) = 4; // Offset 508
 * [Charms](Items/Charms.md) = 3; // Offset 512
 * [Unknown15](Items/Unknown15.md) = 118; // Offset 515
 * [Weapons](Items/Weapons.md) = 2; // Offset 633
 
 * Unknown16A = 4; // Offset 635
-* [Unknown16B](Items/Enums/Unknown16_GoticaFlags.md) = 4; // Offset 639
+* [Unknown16B_GoticaFlags](Items/Enums/Unknown16_GoticaFlags.md) = 4; // Offset 639
 * [Unknown16C](Items/Unknown16C.md) = 6; // Offset 643
 
 * [Ingredients](Items/Ingredients.md) = 22; // Offset 649
