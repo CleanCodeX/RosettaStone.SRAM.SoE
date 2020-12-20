@@ -59,7 +59,7 @@
 * Unknown9 = 224 (28 bytes)
 
 // money offset
-* [Money](Items/Money.md) = 252 (12 bytes)
+* [Moneys](Items/Moneys.md) = 252 (12 bytes)
 
 * Unknown10 = 264 (13 bytes)
 
