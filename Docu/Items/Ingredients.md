@@ -1,4 +1,4 @@
-# Ingredients (22 bytes)
+## Ingredients (22 bytes)
 
 Amount: 0 - 99, 0 - 255
 

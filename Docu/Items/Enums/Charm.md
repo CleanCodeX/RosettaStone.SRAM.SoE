@@ -1,6 +1,6 @@
-# Charm (3 bytes)
+## Charm (3 bytes)
 
-## Byte #1
+### Byte #1
 * DogAvailable = 0x1, // $2261&0x01
 * BoyAvailable = 0x2, // $2261&0x02
 * StoneVestOnceOwned = 0x4, // $2261&0x04 (indicates previously owned the Stone Vest, see [0x968b54] and [0x968b7d]) (Used to be able to trade Centurion Cape)
@@ -12,7 +12,7 @@
 * ChocoboEgg = 0x40, // $2261&0x40
 * InsectIncense = 0x80, // $2261&0x80
 
-## Byte #2
+### Byte #2
 * JadeDisk = 0x100, // $2262&0x01
 * JaguarRing = 0x200, // $2262&0x02
 * MagicGourd = 0x400, // $2262&0x04
@@ -23,7 +23,7 @@
 * SilverSheath = 0x4_000, // $2262&0x40
 * StaffOfLife = 0x8_000, // $2262&0x80
 
-## Byte #3
+### Byte #3
 * SunStone = 0x10_000, // $2263&0x01
 * ThugsCloak = 0x20_000, // $2263&0x02
 * WizardsCoin = 0x40_000, // $2263&0x04

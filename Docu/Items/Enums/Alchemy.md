@@ -1,6 +1,6 @@
-# Alchemy (5 bytes)
+## Alchemy (5 bytes)
 	
-## Byte #1
+### Byte #1
 * AcidRain = 0x1,
 * Atlas = 0x2,
 * Barrier = 0x4,
@@ -10,7 +10,7 @@
 * Cure = 0x40,
 * Defend = 0x80,
 
-## Byte #2
+### Byte #2
 * DoubleDrain = 0x100,
 * Drain = 0x200,
 * Energize = 0x400,
@@ -20,7 +20,7 @@
 * FirePower = 0x4_000,
 * Flash = 0x8_000,
 
-## Byte #3
+### Byte #3
 * ForceField = 0x10_000,
 * HardBall = 0x20_000,
 * Heal = 0x40_000,
@@ -30,7 +30,7 @@
 * LightningStorm = 0x400_000,
 * MiracleCure = 0x800_000,
 
-## Byte #4
+### Byte #4
 * Nitro = 0x1_000_000,
 * OneUp = 0x2_000_000,
 * Reflect = 0x4_000_000,
@@ -40,7 +40,7 @@
 * SlowBurn = 0x40_000_000,
 * Speed = 0x80_000_000,
 
-## Byte #5
+### Byte #5
 * Sting = 0x100_000_000,
 * Stop = 0x200_000_000,
 * SuperHeal = 0x400_000_000

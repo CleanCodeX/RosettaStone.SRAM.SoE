@@ -1,4 +1,4 @@
-# BazookaAmmunitions (3 bytes)
+## BazookaAmmunitions (3 bytes)
 
 Amount: 0 - 99
 

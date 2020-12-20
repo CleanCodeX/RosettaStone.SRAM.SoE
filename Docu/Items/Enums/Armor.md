@@ -1,7 +1,8 @@
-# Armor (32 bytes)
+## Armor (32 bytes)
 
 Amount: 0 - 99
 
+### Vests
 * GrassVest,
 * ShellPlate,
 * DinoSkin,
@@ -15,6 +16,7 @@ Amount: 0 - 99
 * TitaniumVest,
 * VirtualVest,
 
+### Hats
 * GrassHat,
 * ShellHat,
 * DinoHelmet,
@@ -28,6 +30,7 @@ Amount: 0 - 99
 * OldReliable,
 * BrainStorm,
 
+### Bracelets
 * VineBracelet,
 * MammothGuard,
 * ClawGuard,
@@ -41,6 +44,7 @@ Amount: 0 - 99
 * ProtectorRing,
 * VirtualGlove,
 
+### Collars
 * LeatherCollar,
 * SpikyCollar,
 * DefenderCollar,

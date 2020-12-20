@@ -1,4 +1,4 @@
-# CharacterBuff (30 bytes)
+## CharacterBuff (30 bytes)
 
 * [BuffFlags](Enums/BuffFlags_Offset0To1.md)
 * UInt16 Unknown1 // Duration?

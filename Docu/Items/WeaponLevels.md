@@ -1,22 +1,22 @@
-# WeaponLevels (26 bytes)
+## WeaponLevels (26 bytes)
 
-## Swords
+### Swords
 * [WeaponLevel](WeaponLevel.md) BoneCrusher
 * WeaponLevel GladiatorSword
 * WeaponLevel CrusaderSword
 * WeaponLevel NeutronBlade
 
-## Axes
+### Axes
 * WeaponLevel SpidersClaw
 * WeaponLevel BronzeAxe
 * WeaponLevel KnightBasher
 * WeaponLevel AtomSmasher
 
-## Spears
+### Spears
 * WeaponLevel HornSpear
 * WeaponLevel BronzeSpear
 * WeaponLevel LanceWeapon
 * WeaponLevel LaserLance
 
-## Bazooka
+### Bazooka
 * WeaponLevel Bazooka

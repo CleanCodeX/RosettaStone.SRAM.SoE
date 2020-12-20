@@ -1,8 +1,10 @@
 ## Unknown15_IvorTowerFlags_Offset18
 
+### Level 2
 * Level2_House1_Floor1_RearChest__4xClay = 0b0000_1000, // bit 4
-
 * Level2_House1_Floor1_FrontChest__1xMushroom = 0b0001_0000, // bit 5
+
+### Level 3
 * Level3_House1_Inn_Floor0__3xBrimstones = 0b0010_0000, // bit 6
 * Level3_House2_Floor1_LeftChest__6xWater = 0b0100_0000, // bit 7
 * Level3_House2_Floor1_RightChest__4xVinegar = 0b1000_0000, // bit 8

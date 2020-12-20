@@ -1,125 +1,111 @@
 ﻿# SRAM Game
 
-// Unknown game file bytes: 462 of 817
+## Unknown game file bytes: 462 of 817
 * UInt16 Checksum # offset (2 bytes)
 
-// Unknown 1
+## Unknown 1
 * byte[] Unknown1 # offset (36 bytes)
 
-// Boy & Dog character
+## Boy & Dog character
 * [BoyName](CharacterName.md) # offset 38 (34 bytes) 
 
-// Unknown 2
+## Unknown 2
 * byte[] Unknown2 # offset 72 (2 bytes)
-
 * [DogName](CharacterName.md) # offset 74 (34 bytes) 
 
-// Unknown 3
+## Unknown 3
 * byte[] Unknown3 # offset 108 (2 bytes)
 
 * UInt16 BoyCurrentHp # offset 110 (2 bytes)
-// Unknown 4
+## Unknown 4
 * [Unknown4_BoyBuff](CharacterBuff.md) 
-
 * UInt16 BoyMaxHp # offset 142 (2 bytes)
 
-// Unknown 5
+## Unknown 5
 * byte[] Unknown5 # offset 144 (10 bytes)
-
 * UInt24 BoyExperience # offset 154 (3 bytes)
-
 * UInt16 BoyLevel # offset 157 (2 bytes)
 
-// Unknown 6
+## Unknown 6
 * byte[] Unknown6 # offset 159 (16 bytes)
-
 * UInt16 DogCurrentHp # offset 175 (2 bytes)
 
-// Unknown 7
+## Unknown 7
 * [Unknown7_DogBuff](CharacterBuff.md)  
-
 * UInt16 DogMaxHp # offset 207 (2 bytes)
 
-// Unknown 8
+## Unknown 8
 * byte[] Unknown8 # offset 209 (10 bytes)
-
 * UInt24 DogExperience # offset 219 (3 bytes)
-
 * UInt16 DogLevel # offset 222 (2 bytes)
 
-// Unknown 9
+## Unknown 9
 * byte[] Unknown9 # offset 224 (28 bytes)
 
-// Money
+## Money
 * [Moneys](Moneys.md) # offset 252 (12 bytes)
 
-// Unknown 10
+## Unknown 10
 * byte[] Unknown10 # offset 264 (13 bytes)
 
-// Weapon Levels
+## Weapon Levels
 * [WeaponLevels](WeaponLevels.md) # offset 277 (26 bytes)
 
-// Unknown 11
+## Unknown 11
 * byte[] Unknown11 # offset 303 (14 bytes)
 
 * [DogAttackLevel](WeaponLevel.md) # offset 317 (2 bytes)
 
-// Unknown 12 A
+## Unknown 12 A
 * byte[] Unknown12A # offset 319 (16 bytes)
 
-// Unknown 12 B
-* UInt16 Unknown12B// 335 (2 bytes) Maybe frame-counter, changes at every in-game save
+## Unknown 12 B
+* UInt16 Unknown12B## 335 (2 bytes) Maybe frame-counter, changes at every in-game save
 
-// Unknown 12 C
+## Unknown 12 C
 * byte[] Unknown12C # offset 337 (4 bytes)
 
-// Alchemy Levels
+## Alchemy Levels
 * [AlchemyMinorLevels](AlchemyLevels.md) # offset 341 (70 bytes)
-
 * [AlchemyMajorLevels](AlchemyLevels.md) # offset 411 (70 bytes)
 
-// Unknown 13
+## Unknown 13
 * byte[] Unknown13 # offset 481 (22 bytes)
 
-// Weapons
+## Weapons
 * Alchemies Alchemies # offset 503 (5 bytes)
 
-// Unknown 14
+## Unknown 14
 * [Unknown14](Enums/Unknown14_AntiquaFlags.md) # offset 508 (4 bytes) 
 
-// Charms
+## Charms
 * [Charms](Charms.md) Charms # offset 512 (3 bytes)
 
-// Unknown 15
+## Unknown 15
 * [Unknown15](Unknown15.md) Unknown15 # offset 515 (118 bytes)
 
-// Weapons
+## Weapons
 * [Weapons](Weapons.md) Weapons # offset 633 (2 bytes)
 
-// Unknown 16
-
+## Unknown 16
 * byte[] Unknown16A # offset 635 (4 bytes) 
-
 * [Unknown16](Enums/Unknown16_GothicaFlags.md) # offset 639 (4 bytes)
-
 * [Unknown16C](Unknown16C.md) # offset 643 (6 bytes) 
 
-// Ingredients
+## Ingredients
 * [Ingredients](Ingredients.md) # offset 649 (22 bytes)
 
-// Items
+## Items
 * [Items](Items.md) # offset 671 (8 bytes)
-
 * [Armors](Armors.md) # offset 679 (40 bytes)
-
 * [BazookaAmmunitions](BazookaAmmunitions.md) # offset 719 (3 bytes)
 
-// Unknown 17
+## Unknown 17
 * byte[] Unknown17 # offset 722 (67 bytes)
 
-// Trade Goods
+## Trade Goods
 * [TradeGoods](TradeGoods.md) # offset 789 (26 bytes)
 
-// Unknown 18
+## Unknown 18
 * byte[] Unknown18 # offset 816 (2 bytes)
 
