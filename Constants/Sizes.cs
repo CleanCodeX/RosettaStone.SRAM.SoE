@@ -39,9 +39,9 @@ namespace SramFormat.SoE.Constants
 			public const int Unknown11 = 14; // Offset 303
 			public const int DogAttackLevel = 2; // Offset 317
 
-			public const int Unknown12A = 16; // (16 bytes)
-			public const int Unknown12B = 2; // (2 bytes)
-			public const int Unknown12C = 4; // (4 bytes)
+			public const int Unknown12A = 16; // Offset 319
+			public const int Unknown12B = 2; // Offset 335
+			public const int Unknown12C = 4; // Offset 337
 
 			public const int AlchemyMinorLevels = 70; // Offset 341
 			public const int AlchemyMajorLevels = 70; // Offset 411
