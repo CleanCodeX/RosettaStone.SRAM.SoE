@@ -1,5 +1,5 @@
 ﻿# Secret Of Evermore
 
-## [SRAM Map](Documentation/Items/Sram.md)
-## [Known Offsets](Documentation/Offsets.md)
-## [Structure Sizes](Documentation/Sizes.md)
+## [SRAM Map](Markdown/Items/Sram.md)
+## [Known Offsets](Markdown/Offsets.md)
+## [Structure Sizes](Markdown/Sizes.md)
