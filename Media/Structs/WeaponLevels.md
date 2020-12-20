@@ -1,7 +1,7 @@
 # WeaponLevels (26 bytes)
 
 ## Swords
-* WeaponLevel BoneCrusher
+* [WeaponLevel](WeaponLevel.md) BoneCrusher
 * WeaponLevel GladiatorSword
 * WeaponLevel CrusaderSword
 * WeaponLevel NeutronBlade
