@@ -131,7 +131,7 @@ namespace SramFormat.SoE
 				var unknown14 = game.Unknown14_AntiquaFlags.ToString();
 				var unknown15 = game.Unknown15.FormatAsString();
 				var unknown16A = game.Unknown16A.FormatAsString();
-				var unknown16B = game.Unknown16B_GoticaFlags.ToString();
+				var unknown16B = game.Unknown16B_GothicaFlags.ToString();
 				var unknown16C = game.Unknown16C.FormatAsString();
 				var unknown17 = game.Unknown17.FormatAsString();
 				var unknown18 = game.Unknown18.FormatAsString();

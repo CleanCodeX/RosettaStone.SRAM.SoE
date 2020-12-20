@@ -53,7 +53,7 @@ namespace SramFormat.SoE.Constants
 			public const int Weapons = 2; // Offset 633
 
 			public const int Unknown16A = 4; // Offset 635
-			public const int Unknown16B_GoticaFlags = 4; // Offset 639
+			public const int Unknown16B_GothicaFlags = 4; // Offset 639
 			public const int Unknown16C = 6; // Offset 643
 
 			public const int Ingredients = 22; // Offset 649
@@ -67,7 +67,7 @@ namespace SramFormat.SoE.Constants
 			public const int AllUnknown = Unknown1 + Unknown2 + Unknown3 + Unknown4 + Unknown5 +
 										  Unknown6 + Unknown7 + Unknown8 + Unknown9 + Unknown10 +
 										  Unknown11 + Unknown12A + Unknown12B + Unknown12C + Unknown13 + Unknown14_AntiquaFlags + Unknown15 +
-										  Unknown16A + Unknown16B_GoticaFlags + Unknown16C + Unknown17 + Unknown18;
+										  Unknown16A + Unknown16B_GothicaFlags + Unknown16C + Unknown17 + Unknown18;
 
 			public const int AllKnown = Checksum + BoyName + DogName + BoyCurrentHp + BoyMaxHp + BoyExperience + BoyLevel +
 										DogCurrentHp + DogMaxHp + DogExperience + DogLevel +

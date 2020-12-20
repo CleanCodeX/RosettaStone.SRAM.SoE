@@ -96,7 +96,7 @@
 * [Weapons](Items/Weapons.md) = 633 (2 bytes)
 
 * Unknown16A = 635 (4 bytes)
-* [Unknown16B_GoticaFlags](Items/Enums/Unknown16_GoticaFlags.md) = 639 (4 bytes)
+* [Unknown16B_GothicaFlags](Items/Enums/Unknown16_GothicaFlags.md) = 639 (4 bytes)
 * [Unknown16C](Items/Unknown16C.md) = 643 (6 bytes)
 
 // alchemy ingredient offset

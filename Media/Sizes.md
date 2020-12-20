@@ -43,7 +43,7 @@
 * [Weapons](Items/Weapons.md) = 2; // Offset 633
 
 * Unknown16A = 4; // Offset 635
-* [Unknown16B_GoticaFlags](Items/Enums/Unknown16_GoticaFlags.md) = 4; // Offset 639
+* [Unknown16B_GothicaFlags](Items/Enums/Unknown16_GothicaFlags.md) = 4; // Offset 639
 * [Unknown16C](Items/Unknown16C.md) = 6; // Offset 643
 
 * [Ingredients](Items/Ingredients.md) = 22; // Offset 649

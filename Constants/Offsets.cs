@@ -121,7 +121,7 @@ namespace SramFormat.SoE.Constants
 			public const int Weapons = 633; // (2 bytes)
 
 			public const int Unknown16A = 635; // (4 bytes)
-			public const int Unknown16B_GoticaFlags = 639; // (4 bytes)
+			public const int Unknown16B_GothicaFlags = 639; // (4 bytes)
 			public const int Unknown16C = 643; // (6 bytes)
 
 			/// base alchemy ingredient offset

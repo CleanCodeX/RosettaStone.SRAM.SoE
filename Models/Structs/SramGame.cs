@@ -240,9 +240,9 @@ namespace SramFormat.SoE.Models.Structs
 		public byte[] Unknown16A; // 635 (4 bytes) 
 
 #if EXPLICIT
-		[FieldOffset(Offsets.Game.Unknown16B_GoticaFlags)]
+		[FieldOffset(Offsets.Game.Unknown16B_GothicaFlags)]
 #endif
-		public Unknown16_GothicaFlags Unknown16B_GoticaFlags; // 639 (4 bytes)
+		public Unknown16_GothicaFlags Unknown16B_GothicaFlags; // 639 (4 bytes)
 
 #if EXPLICIT
 		[FieldOffset(Offsets.Game.Unknown16A)]
