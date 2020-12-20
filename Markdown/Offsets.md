@@ -1,6 +1,5 @@
 ﻿## Offsets
 
-
 * Checksum = 0 (2 bytes)
 
 * Unknown1 = 2 (36 bytes)

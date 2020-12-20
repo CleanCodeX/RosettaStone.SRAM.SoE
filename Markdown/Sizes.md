@@ -1,9 +1,9 @@
 ﻿## Sizes
 
-### Sram (whole)
+#### Sram (whole)
 * Sram = 8192;
 
-### Sram Game
+#### Sram Game
 * Checksum = 2 (offset 0)
 
 * Unknown1 = 36 (offset 2)
