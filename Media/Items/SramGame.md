@@ -7,19 +7,19 @@
 * byte[] Unknown1 // 36 bytes
 
 // Boy & Dog character
-* [CharacterName](CharacterName.md) BoyName // 38 (34 bytes) Null terminated
+* [BoyName](CharacterName.md) // 38 (34 bytes) 
 
 // Unknown 2
 * byte[] Unknown2 // 72 (2 bytes)
 
-* [CharacterName](CharacterName.md) DogName // 74 (34 bytes) Null terminated
+* [DogName](CharacterName.md) // 74 (34 bytes) 
 
 // Unknown 3
 * byte[] Unknown3 // 108 (2 bytes)
 
 * UInt16 BoyCurrentHp // 110 (2 bytes)
 // Unknown 4
-* [CharacterBuff](CharacterBuff.md) Unknown4_BoyBuff
+* [Unknown4_BoyBuff](CharacterBuff.md) 
 
 * UInt16 BoyMaxHp // 142 (2 bytes)
 
@@ -36,7 +36,7 @@
 * UInt16 DogCurrentHp // 175 (2 bytes)
 
 // Unknown 7
-* [CharacterBuff](CharacterBuff.md) Unknown7_DogBuff 
+* [Unknown7_DogBuff](CharacterBuff.md)  
 
 * UInt16 DogMaxHp // 207 (2 bytes)
 
@@ -51,18 +51,18 @@
 * byte[] Unknown9 // 224 (28 bytes)
 
 // Money
-* [Moneys](Moneys.md) Moneys // 252 (12 bytes)
+* [Moneys](Moneys.md) // 252 (12 bytes)
 
 // Unknown 10
 * byte[] Unknown10 // 264 (13 bytes)
 
 // Weapon Levels
-* [WeaponLevels](WeaponLevels.md) WeaponLevels // 277 (26 bytes)
+* [WeaponLevels](WeaponLevels.md) // 277 (26 bytes)
 
 // Unknown 11
 * byte[] Unknown11 // 303 (14 bytes)
 
-* [WeaponLevel](WeaponLevel.md) DogAttackLevel // 317 (2 bytes)
+* [DogAttackLevel](WeaponLevel.md) // 317 (2 bytes)
 
 // Unknown 12 A
 * byte[] Unknown12A // 319 (16 bytes)
@@ -74,9 +74,9 @@
 * byte[] Unknown12C // 337 (4 bytes)
 
 // Alchemy Levels
-* [AlchemyLevels](AlchemyLevels.md) AlchemyMinorLevels // 341 (70 bytes)
+* [AlchemyMinorLevels](AlchemyLevels.md) // 341 (70 bytes)
 
-* [AlchemyLevels](AlchemyLevels.md) AlchemyMajorLevels // 411 (70 bytes)
+* [AlchemyMajorLevels](AlchemyLevels.md) // 411 (70 bytes)
 
 // Unknown 13
 * byte[] Unknown13 // 481 (22 bytes)
@@ -85,7 +85,7 @@
 * Alchemies Alchemies // 503 (5 bytes)
 
 // Unknown 14
-* [Unknown14_AntiquaFlags](Enums/Unknown14_AntiquaFlags.md) Unknown14_AntiquaFlags // 508 (4 bytes) 
+* [Unknown14](Enums/Unknown14_AntiquaFlags.md) // 508 (4 bytes) 
 
 // Charms
 * [Charms](Charms.md) Charms // 512 (3 bytes)
@@ -100,25 +100,25 @@
 
 * byte[] Unknown16A // 635 (4 bytes) 
 
-* [Unknown16_GothicaFlags](Enums/Unknown16_GothicaFlags.md) Unknown16B_GoticaFlags // 639 (4 bytes)
+* [Unknown16](Enums/Unknown16_GothicaFlags.md) // 639 (4 bytes)
 
-* [Unknown16C](Unknown16C.md) Unknown16C // 643 (6 bytes) 
+* [Unknown16C](Unknown16C.md) // 643 (6 bytes) 
 
 // Ingredients
-* [Ingredients](Ingredients.md) Ingredients // 649 (22 bytes)
+* [Ingredients](Ingredients.md) // 649 (22 bytes)
 
 // Items
-* [Items](Items.md) Items // 671 (8 bytes)
+* [Items](Items.md) // 671 (8 bytes)
 
-* [Armors](Armors.md) Armors // 679 (40 bytes)
+* [Armors](Armors.md) // 679 (40 bytes)
 
-* [BazookaAmmunitions](BazookaAmmunitions.md) BazookaAmmunitions // 719 (3 bytes)
+* [BazookaAmmunitions](BazookaAmmunitions.md) // 719 (3 bytes)
 
 // Unknown 17
 * byte[] Unknown17 // 722 (67 bytes)
 
 // Trade Goods
-* [TradeGoods](TradeGoods.md) TradeGoods // 789 (26 bytes)
+* [TradeGoods](TradeGoods.md) // 789 (26 bytes)
 
 // Unknown 18
 * byte[] Unknown18 // 816 (2 bytes)

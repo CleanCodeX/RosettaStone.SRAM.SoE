@@ -1,4 +1,4 @@
 ﻿# Unknown16C (6 bytes)
 
-* [Unknown16C_Offset1](Enums/Unknown16C_Offset1.md) Offset0
+* [Offset0](Enums/Unknown16C_Offset1.md)
 * byte[] Offset1To5 (5 bytes)

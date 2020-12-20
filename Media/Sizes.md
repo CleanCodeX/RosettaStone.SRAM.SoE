@@ -4,52 +4,52 @@
 
 ## Game
 * Checksum = 2; // Offset 0
-* [Unknown1](Items/Unknown1.md) = 36; // Offset 2
+* Unknown1 = 36; // Offset 2
 * [BoyName](Items/CharacterName.md) = 34; // Offset 38
-* [Unknown2](Items/Unknown2.md) = 2; // Offset 72
+* Unknown2 = 2; // Offset 72
 * [DogName](Items/CharacterName.md) = 34; // Offset 74
-* [Unknown3](Items/Unknown3.md) = 2; // Offset 108
+* Unknown3 = 2; // Offset 108
 * BoyCurrentHp = 2; // Offset 110
-* [Unknown4](Items/Unknown4.md) = 30; // Offset 112
+* Unknown4 = 30; // Offset 112
 * BoyMaxHp = 2; // Offset 142
-* [Unknown5](Items/Unknown5.md) = 10; // Offset 144 
+* Unknown5 = 10; // Offset 144 
 * BoyExperience = 3; // Offset 154
 * BoyLevel = 2; // Offset 157
-* [Unknown6](Items/Unknown6.md) = 16; // Offset 159
+* Unknown6 = 16; // Offset 159
 * DogCurrentHp = 2; // Offset 175
-* [Unknown7](Items/Unknown7.md) = 30; // Offset 177
+* Unknown7 = 30; // Offset 177
 * DogMaxHp = 2; // Offset 207
-* [Unknown8](Items/Unknown8.md) = 10; // Offset 209
+* Unknown8 = 10; // Offset 209
 * DogExperience = 3; // Offset 219
 * DogLevel = 2; // Offset 222
-* [Unknown9](Items/Unknown9.md) = 28; // Offset 224
+* Unknown9 = 28; // Offset 224
 * [Money](Items/Money.md) = 12; // Offset 252
-* [Unknown10](Items/Unknown10.md) = 13; // Offset 264
+* Unknown10 = 13; // Offset 264
 * [WeaponLevels](Items/WeaponLevels.md) = 26; // Offset 277
-* [Unknown11](Items/Unknown11.md) = 14; // Offset 303
+* Unknown11 = 14; // Offset 303
 * DogAttackLevel = 2; // Offset 317
 
-* [Unknown12A](Items/Unknown12A.md) = 16; // (16 bytes)
-* [Unknown12B](Items/Unknown12B.md) = 2; // (2 bytes)
-* [Unknown12C](Items/Unknown12C.md) = 4; // (4 bytes)
+* Unknown12A = 16; // (16 bytes)
+* Unknown12B = 2; // (2 bytes)
+* Unknown12C = 4; // (4 bytes)
 
 * [AlchemyMinorLevels](Items/AlchemyMinorLevels.md) = 70; // Offset 341
 * [AlchemyMajorLevels](Items/AlchemyMajorLevels.md) = 70; // Offset 411
 * [Unknown13](Items/Unknown13.md) = 22; // Offset 481
 * [Alchemies](Items/Alchemies.md) = 5; // Offset 503
-* [Unknown14_AntiquaFlags](Items/Enums/Unknown14_AntiquaFlags.md) = 4; // Offset 508
+* [Unknown14](Items/Enums/Unknown14_AntiquaFlags.md) = 4; // Offset 508
 * [Charms](Items/Charms.md) = 3; // Offset 512
 * [Unknown15](Items/Unknown15.md) = 118; // Offset 515
 * [Weapons](Items/Weapons.md) = 2; // Offset 633
 
-* [Unknown16A](Items/Unknown16A.md) = 4; // Offset 635
-* [Unknown16B_GoticaFlags](Items/Enums/Unknown16B_GoticaFlags.md) = 4; // Offset 639
+* Unknown16A = 4; // Offset 635
+* [Unknown16B](Items/Enums/Unknown16_GoticaFlags.md) = 4; // Offset 639
 * [Unknown16C](Items/Unknown16C.md) = 6; // Offset 643
 
 * [Ingredients](Items/Ingredients.md) = 22; // Offset 649
 * [Items](Items/Items.md) = 8; // Offset 671
 * [Armors](Items/Armors.md) = 40; // Offset 679
 * [BazookaAmmunitions](Items/BazookaAmmunitions.md) = 3; // Offset 719 
-* [Unknown17](Items/Unknown17.md) = 67; // Offset 722
+* Unknown17 = 67; // Offset 722
 * [TradeGoods](Items/TradeGoods.md) = 26; // Offset 789
-* [Unknown18](Items/Unknown18.md) = 2; // Offset 815
+* Unknown18 = 2; // Offset 815
