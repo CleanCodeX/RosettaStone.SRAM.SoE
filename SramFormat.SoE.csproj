@@ -28,7 +28,72 @@
 
   <ItemGroup>
     <None Remove=".gitignore" />
+    <None Remove="Media\Enums\Alchemy.md" />
+    <None Remove="Media\Enums\Armor.md" />
+    <None Remove="Media\Enums\Charm.md" />
+    <None Remove="Media\Enums\Ingredient.md" />
+    <None Remove="Media\Enums\Unknown\Unknown13_IvorTowerFlags_Offset1.md" />
+    <None Remove="Media\Enums\Unknown\Unknown13_IvorTowerFlags_Offset3.md" />
+    <None Remove="Media\Enums\Unknown\Unknown14_AntiquaFlags.md" />
+    <None Remove="Media\Enums\Unknown\Unknown15_IvorTowerFlags_Offset17.md" />
+    <None Remove="Media\Enums\Unknown\Unknown15_IvorTowerFlags_Offset18.md" />
+    <None Remove="Media\Enums\Unknown\Unknown15_IvorTowerFlags_Offset19.md" />
+    <None Remove="Media\Enums\Unknown\Unknown15_IvorTowerFlags_Offset20.md" />
+    <None Remove="Media\Enums\Unknown\Unknown15_IvorTowerFlags_Offset24.md" />
+    <None Remove="Media\Enums\Unknown\Unknown16C_Offset1.md" />
+    <None Remove="Media\Enums\Unknown\Unknown16_GothicaFlags.md" />
+    <None Remove="Media\Enums\Weapon.md" />
+    <None Remove="Media\Structs\Alchemies.md" />
+    <None Remove="Media\Structs\AlchemyLevels.md" />
+    <None Remove="Media\Structs\Armors.md" />
+    <None Remove="Media\Structs\BazookaAmmunitions.md" />
+    <None Remove="Media\Structs\CharacterName.md" />
+    <None Remove="Media\Structs\Charms.md" />
+    <None Remove="Media\Structs\Ingredients.md" />
+    <None Remove="Media\Structs\Items.md" />
+    <None Remove="Media\Structs\Moneys.md" />
+    <None Remove="Media\Structs\TradeGoods.md" />
+    <None Remove="Media\Structs\Unknown\CharacterBuff.md" />
+    <None Remove="Media\Structs\Unknown\Unknown15.md" />
+    <None Remove="Media\Structs\Unknown\Unknown16C.md" />
+    <None Remove="Media\Structs\WeaponLevel.md" />
+    <None Remove="Media\Structs\WeaponLevels.md" />
+    <None Remove="Media\Structs\Weapons.md" />
     <None Remove="SramFormat.SoE.csproj.DotSettings" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Media\Enums\Alchemy.md" />
+    <Compile Include="Media\Enums\Armor.md" />
+    <Compile Include="Media\Enums\Charm.md" />
+    <Compile Include="Media\Enums\Ingredient.md" />
+    <Compile Include="Media\Enums\Unknown\Unknown13_IvorTowerFlags_Offset1.md" />
+    <Compile Include="Media\Enums\Unknown\Unknown13_IvorTowerFlags_Offset3.md" />
+    <Compile Include="Media\Enums\Unknown\Unknown14_AntiquaFlags.md" />
+    <Compile Include="Media\Enums\Unknown\Unknown15_IvorTowerFlags_Offset17.md" />
+    <Compile Include="Media\Enums\Unknown\Unknown15_IvorTowerFlags_Offset18.md" />
+    <Compile Include="Media\Enums\Unknown\Unknown15_IvorTowerFlags_Offset19.md" />
+    <Compile Include="Media\Enums\Unknown\Unknown15_IvorTowerFlags_Offset20.md" />
+    <Compile Include="Media\Enums\Unknown\Unknown15_IvorTowerFlags_Offset24.md" />
+    <Compile Include="Media\Enums\Unknown\Unknown16C_Offset1.md" />
+    <Compile Include="Media\Enums\Unknown\Unknown16_GothicaFlags.md" />
+    <Compile Include="Media\Enums\Weapon.md" />
+    <Compile Include="Media\Structs\Alchemies.md" />
+    <Compile Include="Media\Structs\AlchemyLevels.md" />
+    <Compile Include="Media\Structs\Armors.md" />
+    <Compile Include="Media\Structs\BazookaAmmunitions.md" />
+    <Compile Include="Media\Structs\CharacterName.md" />
+    <Compile Include="Media\Structs\Charms.md" />
+    <Compile Include="Media\Structs\Ingredients.md" />
+    <Compile Include="Media\Structs\Items.md" />
+    <Compile Include="Media\Structs\Moneys.md" />
+    <Compile Include="Media\Structs\TradeGoods.md" />
+    <Compile Include="Media\Structs\Unknown\CharacterBuff.md" />
+    <Compile Include="Media\Structs\Unknown\Unknown15.md" />
+    <Compile Include="Media\Structs\Unknown\Unknown16C.md" />
+    <Compile Include="Media\Structs\WeaponLevel.md" />
+    <Compile Include="Media\Structs\WeaponLevels.md" />
+    <Compile Include="Media\Structs\Weapons.md" />
   </ItemGroup>
 
   <ItemGroup>
