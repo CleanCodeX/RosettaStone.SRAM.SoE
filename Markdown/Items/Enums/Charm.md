@@ -1,6 +1,6 @@
 ## Charm (3 bytes)
 
-Explanation *$XXXX&0xYY*: *$XXXX* = SoE (script) variable name, *0xYY* = bit flag t ocheck
+Explanation for *$XXXX&0xYY* => *$XXXX* = SoE (script) variable name, *0xYY* = bit flag to check
 
 ### Byte #1
 * DogAvailable = 0x1, *$2261&0x01* (Script variable)
