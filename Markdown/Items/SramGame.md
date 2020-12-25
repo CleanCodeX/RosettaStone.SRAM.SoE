@@ -98,7 +98,7 @@
 * [Unknown14](Enums/Unknown14_AntiquaFlags.md) # offset 508 (4 bytes) 
 
 ###### Charms
-* [Charms](Charms.md) # offset 512 (3 bytes)
+* [Charms](Enums/Charm.md) # offset 512 (3 bytes)
 
 ###### Unknown 15
 * [Unknown15](Unknown15.md) # offset 515 (118 bytes)
