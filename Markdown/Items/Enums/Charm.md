@@ -1,6 +1,6 @@
 ## Charm (3 bytes)
 
-Legend *$XXXX&0xYY* => $XXXX = variable name, *0xYY* = bit flag
+Legend *$XXXX&0xYY* => *$XXXX* = variable name, *0xYY* = bit flag
 
 ### Byte #1
 * DogAvailable = 0x1, *$2261&0x01* (Script variable)
