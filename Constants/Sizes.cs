@@ -11,7 +11,7 @@ namespace SramFormat.SoE.Constants
 		public const int Sram = 8_192;
 		
 		/// <summary>Sites of game buffers</summary>
-		public class Game
+		public class SaveSlot
 		{
 			public const int Checksum = 2; // Offset 0
 			public const int Unknown1 = 36; // Offset 2

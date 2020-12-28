@@ -3,11 +3,12 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Text;
+using SramFormat.SoE.Constants;
 
 namespace SramFormat.SoE.Models.Structs
 {
 #if EXPLICIT
-	[StructLayout(LayoutKind.Explicit, Pack = 1, CharSet = CharSet.Ansi, Size = Sizes.Game.BoyName)]
+	[StructLayout(LayoutKind.Explicit, Pack = 1, CharSet = CharSet.Ansi, Size = Sizes.SaveSlot.BoyName)]
 #else
 	[StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Ansi)]
 #endif

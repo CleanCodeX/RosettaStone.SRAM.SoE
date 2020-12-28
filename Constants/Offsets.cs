@@ -11,14 +11,14 @@ namespace SramFormat.SoE.Constants
 	public class Offsets
 	{
 		/// base offset of the game data in the SRAM
-		public const int FirstGame = 2;
+		public const int FirstSaveSlot = 2;
 		public const int SramChecksum = 0;
 
-		public class Game
+		public class SaveSlot
 		{
 			public static string? GetNameFromOffset(int offset)
 			{
-				var constants = typeof(Game).GetPublicConstants<int>().OrderBy(e => e.Value);
+				var constants = typeof(SaveSlot).GetPublicConstants<int>().OrderBy(e => e.Value);
 
 				return (from kvp in constants 
 					where offset >= kvp.Value

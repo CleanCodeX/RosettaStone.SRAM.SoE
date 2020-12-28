@@ -8,7 +8,7 @@ using SramFormat.SoE.Constants;
 
 namespace SramFormat.SoE.Models.Structs
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 1, Size = Sizes.Game.Unknown15)] // 118
+	[StructLayout(LayoutKind.Sequential, Pack = 1, Size = Sizes.SaveSlot.Unknown15)] // 118
 	public struct Unknown15
 	{
 		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 17)] 

@@ -21,10 +21,10 @@ namespace SramFormat.SoE.Models.Structs
 		[FieldOffset(2)] 
 #endif
 		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
-		public SramGame[] Game; // Offset 2 (3268 = 4* 817 Bytes)
+		public SaveSlot[] SaveSlots; // Offset 2 (3268 = 4* 817 Bytes)
 
 #if EXPLICIT
-		[FieldOffset(Offsets.FirstGame + Sizes.Game.All * 4)]
+		[FieldOffset(Offsets.FirstSaveSlot + Sizes.SaveSlot.All * 4)]
 #endif
 		[MarshalAs(UnmanagedType.ByValArray, SizeConst = Sizes.SramUnknown1)]
 		public byte[] Unknown1; // Offset 3270 (4922 Bytes)

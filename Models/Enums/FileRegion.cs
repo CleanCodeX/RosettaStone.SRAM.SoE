@@ -4,21 +4,21 @@ using Res = SramFormat.SoE.Properties.Resources;
 namespace SramFormat.SoE.Models.Enums
 {
 	/// The game's regions
-	public enum FileRegion
+	public enum GameRegion
 	{
-		[DisplayNameLocalized(nameof(Res.UnitedStates), typeof(Res))]
-		UnitedStates,
+		[DisplayNameLocalized(nameof(Res.EnglishNtsc), typeof(Res))]
+		EnlishNtsc,
 
-		[DisplayNameLocalized(nameof(Res.England), typeof(Res))]
-		England,
+		[DisplayNameLocalized(nameof(Res.EnglishPal), typeof(Res))]
+		EnglishPal,
 
-		[DisplayNameLocalized(nameof(Res.France), typeof(Res))]
-		France,
+		[DisplayNameLocalized(nameof(Res.French), typeof(Res))]
+		French,
 
-		[DisplayNameLocalized(nameof(Res.Germany), typeof(Res))]
-		Germany,
+		[DisplayNameLocalized(nameof(Res.German), typeof(Res))]
+		German,
 
-		[DisplayNameLocalized(nameof(Res.Spain), typeof(Res))]
-		Spain
+		[DisplayNameLocalized(nameof(Res.Spanish), typeof(Res))]
+		Spanish
 	}
 }

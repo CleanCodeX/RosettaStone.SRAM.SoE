@@ -11,19 +11,19 @@
 	<resheader name="writer">
 		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
 	</resheader>
-	<data name="England" xml:space="preserve">
-		<value>England</value>
+	<data name="EnglishPal" xml:space="preserve">
+		<value>Englisch (PAL)</value>
 	</data>
-	<data name="France" xml:space="preserve">
-		<value>Frankreich</value>
+	<data name="French" xml:space="preserve">
+		<value>Franzözisch</value>
 	</data>
-	<data name="Germany" xml:space="preserve">
-		<value>Deutschland</value>
+	<data name="German" xml:space="preserve">
+		<value>Deutsch</value>
 	</data>
-	<data name="Spain" xml:space="preserve">
-		<value>Spanien</value>
+	<data name="Spanish" xml:space="preserve">
+		<value>Spanish</value>
 	</data>
-	<data name="UnitedStates" xml:space="preserve">
-		<value>Vereinigte Staaten</value>
+	<data name="EnglishNtsc" xml:space="preserve">
+		<value>Englisch (NTSC)</value>
 	</data>
 </root>

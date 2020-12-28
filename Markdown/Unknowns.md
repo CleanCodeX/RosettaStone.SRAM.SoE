@@ -47,5 +47,5 @@
 * Superheal "guess" wait timer
 * (✓) Buffs ### FOUND but most bytes still unknown (boy: Unknown4, dog: Unknown7)
 
-## Game-unrelated SRAM
-* last used Game slot
+## Save slot-unrelated SRAM (?)
+* last used Save slot

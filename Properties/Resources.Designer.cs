@@ -61,47 +61,47 @@ namespace SramFormat.SoE.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die England ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die English (NTSC) ähnelt.
         /// </summary>
-        public static string England {
+        public static string EnglishNtsc {
             get {
-                return ResourceManager.GetString("England", resourceCulture);
+                return ResourceManager.GetString("EnglishNtsc", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die France ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die English (PAL) ähnelt.
         /// </summary>
-        public static string France {
+        public static string EnglishPal {
             get {
-                return ResourceManager.GetString("France", resourceCulture);
+                return ResourceManager.GetString("EnglishPal", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Germany ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die French ähnelt.
         /// </summary>
-        public static string Germany {
+        public static string French {
             get {
-                return ResourceManager.GetString("Germany", resourceCulture);
+                return ResourceManager.GetString("French", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Spain ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die German ähnelt.
         /// </summary>
-        public static string Spain {
+        public static string German {
             get {
-                return ResourceManager.GetString("Spain", resourceCulture);
+                return ResourceManager.GetString("German", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die United States ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Spanish ähnelt.
         /// </summary>
-        public static string UnitedStates {
+        public static string Spanish {
             get {
-                return ResourceManager.GetString("UnitedStates", resourceCulture);
+                return ResourceManager.GetString("Spanish", resourceCulture);
             }
         }
     }

@@ -1,4 +1,4 @@
-﻿# SRAM Game
+﻿# SRAM Save Slot
 
 ###### Unknown game file bytes: 462 of 817
 * UInt16 Checksum # offset (2 bytes)

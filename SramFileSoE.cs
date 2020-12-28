@@ -14,41 +14,41 @@ using SramFormat.SoE.Models.Structs;
 namespace SramFormat.SoE
 {
 	/// <summary>
-	/// SramFile implementation for <see cref="Sram"/> and <see cref="SramGame"/>
+	/// SramFile implementation for <see cref="Sram"/> and <see cref="SaveSlot"/>
 	/// </summary>
-	public class SramFileSoE : SramFile<Sram, SramGame>
+	public class SramFileSoE : SramFile<Sram, SaveSlot>
 	{
 		/// <summary>
 		/// Checksum validation status of every game
 		/// </summary>
-		private readonly bool[] _validGames = new bool[4];
+		private readonly bool[] _validSaveSlots = new bool[4];
 
 		/// <summary>
-		/// The SRAM's file region 
+		/// The SRAM's file gameRegion 
 		/// </summary>
-		public FileRegion Region { get; }
+		public GameRegion GameRegion { get; }
 
 		/// <summary>
 		/// Creates an instance of SramFileSoE
 		/// </summary>
 		/// <param name="stream">The (opened) stream from which the Sram buffer and Sram structure will be loaded</param>
-		/// <param name="region">The SRAM's file region</param>
-		public SramFileSoE(Stream stream, FileRegion region) : base(stream, Offsets.FirstGame, 3)
+		/// <param name="gameRegion">The SRAM's file gameRegion</param>
+		public SramFileSoE(Stream stream, GameRegion gameRegion) : base(stream, Offsets.FirstSaveSlot, 3)
 		{
 			Requires.Equal(Marshal.SizeOf<Sram>(), Sizes.Sram, nameof(SramSize));
-			Requires.Equal(Marshal.SizeOf<SramGame>(), Sizes.Game.All, nameof(GameSize));
+			Requires.Equal(Marshal.SizeOf<SaveSlot>(), Sizes.SaveSlot.All, nameof(SaveSlotSize));
 
-			Debug.Assert(Sizes.Game.All == Sizes.Game.AllKnown + Sizes.Game.AllUnknown);
+			Debug.Assert(Sizes.SaveSlot.All == Sizes.SaveSlot.AllKnown + Sizes.SaveSlot.AllUnknown);
 
-			Region = region;
+			GameRegion = gameRegion;
 		}
 
 		/// <summary>
-		/// Returns if a game index itself is valid and the game's checksum is correct
+		/// Returns if a save slot index itself is valid and the game's checksum is correct
 		/// </summary>
-		/// <param name="gameIndex">The index which game's checksum should be checked</param>
-		/// <returns>Returns true if the game index itself is valid and the checksum for that game is</returns>
-		public override bool IsValid(int gameIndex) => base.IsValid(gameIndex) && _validGames[gameIndex];
+		/// <param name="slotIndex">The index which game's checksum should be checked</param>
+		/// <returns>Returns true if the save slot index itself is valid and the checksum for that game is</returns>
+		public override bool IsValid(int slotIndex) => base.IsValid(slotIndex) && _validSaveSlots[slotIndex];
 
 		/// <summary>
 		/// Loads the entire Sram buffer and structure from a stream
@@ -58,30 +58,30 @@ namespace SramFormat.SoE
 		{
 			base.Load(stream);
 
-			var anyGameIsValid = false;
-			for (var gameIndex = 0; gameIndex <= 3; ++gameIndex)
+			var anyIsValid = false;
+			for (var slotIndex = 0; slotIndex <= 3; ++slotIndex)
 			{
-				var fileGameChecksum = GetChecksum(gameIndex);
+				var fileGameChecksum = GetChecksum(slotIndex);
 
-				var calculatedChecksum = ChecksumHelper.CalcChecksum(SramBuffer, gameIndex, Region);
+				var calculatedChecksum = ChecksumHelper.CalcChecksum(SramBuffer, slotIndex, GameRegion);
 				if (fileGameChecksum != calculatedChecksum) continue;
 
-				anyGameIsValid = true;
-				_validGames[gameIndex] = true;
+				anyIsValid = true;
+				_validSaveSlots[slotIndex] = true;
 			}
 
-			if (!anyGameIsValid)
-				throw new InvalidSramFileException(SramError.NoValidGames);
+			if (!anyIsValid)
+				throw new InvalidSramFileException(SramError.NoValidSaveSlots);
 		}
 
 		/// <summary>
-		/// Gets the game from Sram structure for the given game index
+		/// Gets the game from Sram structure for the given save slot index
 		/// </summary>
-		/// <param name="gameIndex"></param>
+		/// <param name="slotIndex"></param>
 		/// <returns></returns>
-		public override SramGame GetGame(int gameIndex)
+		public override SaveSlot GetSaveSlot(int slotIndex)
 		{
-			ref var game = ref Sram.Game[gameIndex];
+			ref var game = ref Sram.SaveSlots[slotIndex];
 #if DEBUG
 			if (Debugger.IsAttached)
 			{
@@ -144,11 +144,11 @@ namespace SramFormat.SoE
 		}
 
 		/// <summary>
-		/// Saves game to SramGame structure, not not to Sram buffer. To save to sram buffer call Save method.
+		/// Saves game to SaveSlot structure, not not to Sram buffer. To save to sram buffer call Save method.
 		/// </summary>
-		/// <param name="gameIndex">The target game index the game is saved to</param>
-		/// <param name="game">The game to be saved</param>
-		public override void SetGame(int gameIndex, SramGame game) => Sram.Game[gameIndex] = game;
+		/// <param name="slotIndex">The target save slot index the game is saved to</param>
+		/// <param name="slot">The game to be saved</param>
+		public override void SetSaveSlot(int slotIndex, SaveSlot slot) => Sram.SaveSlots[slotIndex] = slot;
 
 		/// <summary>
 		/// Saves the data of Sram structure to Sram buffer.
@@ -156,41 +156,41 @@ namespace SramFormat.SoE
 		/// <param name="stream"></param>
 		public override void Save(Stream stream)
 		{
-			for (var gameIndex = 0; gameIndex <= 3; ++gameIndex)
-				if (IsValid(gameIndex))
-					base.SetGame(gameIndex, Sram.Game[gameIndex]);
+			for (var slotIndex = 0; slotIndex <= 3; ++slotIndex)
+				if (IsValid(slotIndex))
+					base.SetSaveSlot(slotIndex, Sram.SaveSlots[slotIndex]);
 
 			base.Save(stream);
 		}
 
 		protected override void OnRawSave()
 		{
-			for (var gameIndex = 0; gameIndex <= 3; ++gameIndex)
-				SetChecksum(gameIndex, ChecksumHelper.CalcChecksum(SramBuffer, gameIndex, Region));
+			for (var slotIndex = 0; slotIndex <= 3; ++slotIndex)
+				SetChecksum(slotIndex, ChecksumHelper.CalcChecksum(SramBuffer, slotIndex, GameRegion));
 		}
 
 		/// <summary>
-		/// Gets the checksum for a game index
+		/// Gets the checksum for a save slot index
 		/// </summary>
-		/// <param name="gameIndex">the game index which game's checksum should be returned</param>
-		/// <returns>The checksum for the given game index</returns>
-		public virtual ushort GetChecksum(int gameIndex)
+		/// <param name="slotIndex">the save slot index which game's checksum should be returned</param>
+		/// <returns>The checksum for the given save slot index</returns>
+		public virtual ushort GetChecksum(int slotIndex)
 		{
-			var offset = FirstGameOffset + gameIndex * GameSize + Offsets.Game.Checksum;
+			var offset = FirstSaveSlotOffset + slotIndex * SaveSlotSize + Offsets.SaveSlot.Checksum;
 			return BitConverter.ToUInt16(SramBuffer, offset);
 		}
 
 		/// <summary>
-		/// Sets the checksum for the given game index
+		/// Sets the checksum for the given save slot index
 		/// </summary>
-		/// <param name="gameIndex">The game index which game's checksum should be set</param>
+		/// <param name="slotIndex">The save slot index which game's checksum should be set</param>
 		/// <param name="checksum">The checksum to be set</param>
-		public virtual void SetChecksum(int gameIndex, ushort checksum)
+		public virtual void SetChecksum(int slotIndex, ushort checksum)
 		{
-			var offset = FirstGameOffset + gameIndex * GameSize + Offsets.Game.Checksum;
+			var offset = FirstSaveSlotOffset + slotIndex * SaveSlotSize + Offsets.SaveSlot.Checksum;
 			var bytes = BitConverter.GetBytes(checksum);
 
-			Sram.Game[gameIndex].Checksum = checksum;
+			Sram.SaveSlots[slotIndex].Checksum = checksum;
 
 			bytes.CopyTo(SramBuffer, offset);
 		}

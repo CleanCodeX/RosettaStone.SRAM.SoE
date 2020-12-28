@@ -3,7 +3,7 @@
 ### SRAM (whole)
 * Sram = 8192;
 
-### SRAM Game
+### SRAM Save Slot
 
 (in order))
 
