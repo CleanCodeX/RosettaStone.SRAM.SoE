@@ -4,8 +4,8 @@ using SramCommons.Models.Structs;
 
 namespace SramFormat.SoE.Models.Structs
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 1, Size = 12)]
 	[DebuggerDisplay("{ToString(),nq}")]
+	[StructLayout(LayoutKind.Sequential, Pack = 1, Size = 12)]
 	public struct Moneys
 	{
 		public ThreeByteUInt Talons;

@@ -69,7 +69,7 @@
 
 * [Alchemies](Items/Alchemies.md) = 503 (5 bytes)
 
-* [Unknown14_AntiquaFlags](Items/Enums/Unknown14_AntiquaFlags.md) = 508 (4 bytes) 
+* [Unknown14](Items/Enums/Unknown14.md) = 508 (4 bytes) 
 
 * [Charms](Items/Charms.md) = 512 (3 bytes)
 

@@ -110,7 +110,7 @@ namespace SramFormat.SoE.Constants
 			///  of boy's alchemy offset
 			public const int Alchemies = 503; // (5 bytes)
 
-			public const int Unknown14_AntiquaFlags = 508; // (4 bytes) 
+			public const int Unknown14 = 508; // (4 bytes) 
 
 			///  of charms offset
 			public const int Charms = 512; // (3 bytes)

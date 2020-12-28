@@ -4,8 +4,8 @@ using SramFormat.SoE.Extensions;
 
 namespace SramFormat.SoE.Models.Structs
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	[DebuggerDisplay("{ToString(),nq}")]
+	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	public struct Items
 	{
 		// Items

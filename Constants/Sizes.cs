@@ -47,7 +47,7 @@ namespace SramFormat.SoE.Constants
 			public const int AlchemyMajorLevels = 70; // Offset 411
 			public const int Unknown13 = 22; // Offset 481
 			public const int Alchemies = 5; // Offset 503
-			public const int Unknown14_AntiquaFlags = 4; // Offset 508
+			public const int Unknown14 = 4; // Offset 508
 			public const int Charms = 3; // Offset 512
 			public const int Unknown15 = 118; // Offset 515
 			public const int Weapons = 2; // Offset 633
@@ -66,7 +66,7 @@ namespace SramFormat.SoE.Constants
 
 			public const int AllUnknown = Unknown1 + Unknown2 + Unknown3 + Unknown4 + Unknown5 +
 										  Unknown6 + Unknown7 + Unknown8 + Unknown9 + Unknown10 +
-										  Unknown11 + Unknown12A + Unknown12B + Unknown12C + Unknown13 + Unknown14_AntiquaFlags + Unknown15 +
+										  Unknown11 + Unknown12A + Unknown12B + Unknown12C + Unknown13 + Unknown14 + Unknown15 +
 										  Unknown16A + Unknown16B_GothicaFlags + Unknown16C + Unknown17 + Unknown18;
 
 			public const int AllKnown = Checksum + BoyName + DogName + BoyCurrentHp + BoyMaxHp + BoyExperience + BoyLevel +

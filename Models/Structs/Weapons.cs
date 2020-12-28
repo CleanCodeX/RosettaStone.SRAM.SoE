@@ -4,8 +4,8 @@ using SramFormat.SoE.Models.Enums;
 
 namespace SramFormat.SoE.Models.Structs
 {
-	[StructLayout(LayoutKind.Explicit, Pack = 1)]
 	[DebuggerDisplay("{ToString(),nq}")]
+	[StructLayout(LayoutKind.Explicit, Pack = 1)]
 	public struct Weapons
 	{
 		[FieldOffset(0)] public ushort Value;

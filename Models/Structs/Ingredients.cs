@@ -3,8 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace SramFormat.SoE.Models.Structs
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	[DebuggerDisplay("{ToString(),nq}")]
+	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	public struct Ingredients
 	{
 		public byte Wax;

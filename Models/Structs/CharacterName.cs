@@ -1,32 +1,15 @@
-//#define EXPLICIT
-
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Text;
-using SramFormat.SoE.Constants;
 
 namespace SramFormat.SoE.Models.Structs
 {
-#if EXPLICIT
-	[StructLayout(LayoutKind.Explicit, Pack = 1, CharSet = CharSet.Ansi, Size = Sizes.SaveSlot.BoyName)]
-#else
-	[StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Ansi)]
-#endif
-
 	[DebuggerDisplay("{ToString(),nq}")]
+	[StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Ansi)]
 	public unsafe struct CharacterName
 	{
-#if EXPLICIT
-		[FieldOffset(0)]
-#endif
 		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 34)]
 		public byte[] BytesValue; // (34 Bytes) Null terminated
-
-#if EXPLICIT
-		[FieldOffset(0)]
-		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 17, ArraySubType = UnmanagedType.ByValTStr)]
-		public char[] NameCharacters; // (34 Bytes) Null terminated
-#endif
 
 		public string StringValue
 		{

@@ -5,8 +5,8 @@ using SramFormat.SoE.Models.Enums;
 
 namespace SramFormat.SoE.Models.Structs
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	[DebuggerDisplay("{ToString(),nq}")]
+	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	public struct Charms
 	{
 		public byte Byte1;

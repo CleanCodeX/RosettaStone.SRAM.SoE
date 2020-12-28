@@ -67,7 +67,7 @@
 
 * [Alchemies](Items/Alchemies.md) = 5 (offset 503)
 
-* [Unknown14_AntiquaFlags](Items/Enums/Unknown14_AntiquaFlags.md) = 4 (offset 508)
+* [Unknown14](Items/Enums/Unknown14.md) = 4 (offset 508)
 
 * [Charms](Items/Charms.md) = 3 (offset 512)
 
