@@ -46,9 +46,9 @@
     </None>
   </ItemGroup>
 
-  <!--<ItemGroup>
+  <ItemGroup>
     <PackageReference Include="CCX.SramCommons" Version="1.0.2-a1" />
-  </ItemGroup>-->
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\SramCommons\SramCommons.csproj" />
