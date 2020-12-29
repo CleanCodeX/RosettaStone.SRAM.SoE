@@ -1,5 +1,6 @@
 using System;
 using SramFormat.SoE.Constants;
+using SramFormat.SoE.Enums;
 using SramFormat.SoE.Models.Enums;
 
 namespace SramFormat.SoE.Helpers
@@ -17,7 +18,7 @@ namespace SramFormat.SoE.Helpers
 		/// <param name="region">the game's region of sram</param>
 		/// <returns>The calculated checksum for the given save slot index</returns>
 		public static ushort CalcChecksum(byte[] sram, int slotIndex, GameRegion region) =>
-			CalcChecksum(sram, slotIndex, region == GameRegion.EnlishNtsc);
+			CalcChecksum(sram, slotIndex, region == GameRegion.EnglishNtsc);
 
 		/// <summary>
 		/// Calculates the checksum of given save slot index from buffer

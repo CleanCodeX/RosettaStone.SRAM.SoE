@@ -1,13 +1,13 @@
 using Common.Shared.Min.Attributes;
 using Res = SramFormat.SoE.Properties.Resources;
 
-namespace SramFormat.SoE.Models.Enums
+namespace SramFormat.SoE.Enums
 {
 	/// The game's regions
 	public enum GameRegion
 	{
 		[DisplayNameLocalized(nameof(Res.EnglishNtsc), typeof(Res))]
-		EnlishNtsc,
+		EnglishNtsc,
 
 		[DisplayNameLocalized(nameof(Res.EnglishPal), typeof(Res))]
 		EnglishPal,
