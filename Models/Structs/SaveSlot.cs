@@ -8,6 +8,7 @@ using SramFormat.SoE.Models.Structs.Unknown;
 
 namespace SramFormat.SoE.Models.Structs
 {
+	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	public struct SaveSlot
 	{
 		// Unknown game file bytes: 462 of 817
