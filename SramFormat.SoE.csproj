@@ -16,7 +16,7 @@
     <PackageId>CCX.SramFormat.SoE</PackageId>
     <PackageIcon>Icon.png</PackageIcon>
     <Product>SramFormat.SoE</Product>
-    <Platforms>AnyCPU;x86</Platforms>
+    <Platforms>AnyCPU</Platforms>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
