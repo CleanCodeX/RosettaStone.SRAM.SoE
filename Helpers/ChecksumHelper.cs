@@ -1,7 +1,6 @@
 using System;
 using SramFormat.SoE.Constants;
 using SramFormat.SoE.Enums;
-using SramFormat.SoE.Models.Enums;
 
 namespace SramFormat.SoE.Helpers
 {

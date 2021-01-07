@@ -9,7 +9,6 @@ using SramCommons.Models;
 using SramFormat.SoE.Constants;
 using SramFormat.SoE.Enums;
 using SramFormat.SoE.Helpers;
-using SramFormat.SoE.Models.Enums;
 using SramFormat.SoE.Models.Structs;
 
 namespace SramFormat.SoE

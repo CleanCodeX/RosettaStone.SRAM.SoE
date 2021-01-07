@@ -1,6 +1,5 @@
 using System.IO;
 using SramFormat.SoE.Enums;
-using SramFormat.SoE.Models.Enums;
 using SramFormat.SoE.Models.Structs;
 
 namespace SramFormat.SoE
