@@ -3,11 +3,11 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>
-    <Version>0.2.6-a3</Version>
-    <PackageTags>SoE, Secret of Evermore</PackageTags>
+    <Version>0.2.6-a4</Version>
+    <PackageTags>SoE, Secret of Evermore, SRAM, SNES</PackageTags>
     <Authors>CleanCodeX</Authors>
     <Description>Collection of SoE's SRAM models, load (&amp; experimental save) functionality</Description>    
-    <Company>CleanCodeX</Company>
+    <Company>KST</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
       <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
