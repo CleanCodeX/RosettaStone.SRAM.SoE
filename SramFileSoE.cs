@@ -126,7 +126,7 @@ namespace SramFormat.SoE
 				var unknown11 = game.Unknown11.FormatAsString();
 				var unknown12A = game.Unknown12A.FormatAsString();
 				var unknown12B = game.Unknown12B.ToString();
-				var unknown12C = game.Unknown12C.FormatAsString();
+				var unknown12C = game.Unknown12C.ToString();
 				var unknown13 = game.Unknown13.FormatAsString();
 				var unknown14 = game.Unknown14.ToString();
 				var unknown15 = game.Unknown15.FormatAsString();
