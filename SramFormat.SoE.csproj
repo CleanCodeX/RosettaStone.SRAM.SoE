@@ -5,7 +5,7 @@
     <Nullable>enable</Nullable>
     <Version>0.2.6-a5</Version>
     <PackageTags>SoE, Secret of Evermore, SRAM, SNES</PackageTags>
-    <Authors>CleanCodeX</Authors>
+    <Authors>CleanCoderX</Authors>
     <Description>Collection of SoE's SRAM models, load (&amp; experimental save) functionality</Description>    
     <Company>KST</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
