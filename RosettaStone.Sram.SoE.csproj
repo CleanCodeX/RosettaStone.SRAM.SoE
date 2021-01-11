@@ -40,7 +40,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="CCX.SramCommons" Version="1.0.3-a3" />
+    <PackageReference Include="CCX.SramCommons" Version="1.0.3-a4" />
   </ItemGroup>
 
   <ItemGroup>
