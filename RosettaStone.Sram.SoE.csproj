@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>
-    <Version>0.2.6-a5</Version>
+    <Version>0.3.0-a1</Version>
     <PackageTags>SoE, Secret of Evermore, SRAM, SNES</PackageTags>
     <Authors>CleanCoderX</Authors>
     <Description>Collection of SoE's SRAM models, load (&amp; experimental save) functionality</Description>    
@@ -11,11 +11,11 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
       <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <RepositoryUrl>https://github.com/CleanCodeX/SramFormat.SoE</RepositoryUrl>
+    <RepositoryUrl>https://github.com/CleanCodeX/RosettaStone.Sram.SoE</RepositoryUrl>
     <PackageProjectUrl>http://evermore.xeth.de</PackageProjectUrl>
-    <PackageId>CCX.SramFormat.SoE</PackageId>
+    <PackageId>CCX.RosettaStone.Sram.SoE</PackageId>
     <PackageIcon>Icon.png</PackageIcon>
-    <Product>SramFormat.SoE</Product>
+    <Product>RosettaStone.Sram.SoE</Product>
     <Platforms>AnyCPU</Platforms>
   </PropertyGroup>
 

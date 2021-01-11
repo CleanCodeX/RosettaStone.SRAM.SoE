@@ -3,7 +3,7 @@
 using System.Linq;
 using SramCommons.Extensions;
 
-namespace SramFormat.SoE.Constants
+namespace RosettaStone.Sram.SoE.Constants
 {
 	/// <summary>
 	/// Known offsets of SoE's sram format

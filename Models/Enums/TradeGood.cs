@@ -1,4 +1,4 @@
-namespace SramFormat.SoE.Models.Enums
+namespace RosettaStone.Sram.SoE.Models.Enums
 {
 	/// The market trading goods
 	public enum TradeGood

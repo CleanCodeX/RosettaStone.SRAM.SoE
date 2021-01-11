@@ -1,6 +1,6 @@
 // ReSharper disable InconsistentNaming
 
-namespace SramFormat.SoE.Constants
+namespace RosettaStone.Sram.SoE.Constants
 {
 	/// <summary>
 	/// Known sizes of SoE's SRAM buffers

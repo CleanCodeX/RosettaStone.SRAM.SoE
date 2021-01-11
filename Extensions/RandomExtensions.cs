@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SramFormat.SoE.Extensions
+namespace RosettaStone.Sram.SoE.Extensions
 {
 	public static class RandomExtensions
 	{

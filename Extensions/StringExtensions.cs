@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SramFormat.SoE.Extensions
+namespace RosettaStone.Sram.SoE.Extensions
 {
 	internal static class StringExtensions
 	{

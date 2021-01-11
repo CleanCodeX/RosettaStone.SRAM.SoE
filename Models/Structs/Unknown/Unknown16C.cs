@@ -1,10 +1,10 @@
 ﻿using System.Runtime.InteropServices;
 using System.Text;
+using RosettaStone.Sram.SoE.Constants;
+using RosettaStone.Sram.SoE.Models.Enums;
 using SramCommons.Extensions;
-using SramFormat.SoE.Constants;
-using SramFormat.SoE.Models.Enums;
 
-namespace SramFormat.SoE.Models.Structs.Unknown
+namespace RosettaStone.Sram.SoE.Models.Structs.Unknown
 {
 	[StructLayout(LayoutKind.Sequential, Pack = 1, Size = Sizes.SaveSlot.Unknown16C)] // 6
 	public struct Unknown16C

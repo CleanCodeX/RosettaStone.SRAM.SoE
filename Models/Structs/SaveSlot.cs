@@ -1,12 +1,12 @@
 using System.Runtime.InteropServices;
-using SramFormat.SoE.Models.Enums;
+using RosettaStone.Sram.SoE.Constants;
+using RosettaStone.Sram.SoE.Models.Enums;
+using RosettaStone.Sram.SoE.Models.Structs.Unknown;
 using SramCommons.Models.Structs;
-using SramFormat.SoE.Constants;
-using SramFormat.SoE.Models.Structs.Unknown;
 
 // ReSharper disable InconsistentNaming
 
-namespace SramFormat.SoE.Models.Structs
+namespace RosettaStone.Sram.SoE.Models.Structs
 {
 	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	public struct SaveSlot

@@ -2,11 +2,11 @@
 
 using System.Runtime.InteropServices;
 using System.Text;
-using SramFormat.SoE.Models.Enums;
+using RosettaStone.Sram.SoE.Constants;
+using RosettaStone.Sram.SoE.Models.Enums;
 using SramCommons.Extensions;
-using SramFormat.SoE.Constants;
 
-namespace SramFormat.SoE.Models.Structs
+namespace RosettaStone.Sram.SoE.Models.Structs
 {
 	[StructLayout(LayoutKind.Sequential, Pack = 1, Size = Sizes.SaveSlot.Unknown15)] // 118
 	public struct Unknown15

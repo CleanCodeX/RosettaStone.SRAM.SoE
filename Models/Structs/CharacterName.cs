@@ -2,7 +2,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace SramFormat.SoE.Models.Structs
+namespace RosettaStone.Sram.SoE.Models.Structs
 {
 	[DebuggerDisplay("{ToString(),nq}")]
 	[StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Ansi)]

@@ -3,20 +3,20 @@ using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
 using Common.Shared.Min.Helpers;
+using RosettaStone.Sram.SoE.Constants;
+using RosettaStone.Sram.SoE.Enums;
+using RosettaStone.Sram.SoE.Helpers;
+using RosettaStone.Sram.SoE.Models.Structs;
 using SramCommons.Exceptions;
 using SramCommons.Extensions;
 using SramCommons.Models;
-using SramFormat.SoE.Constants;
-using SramFormat.SoE.Enums;
-using SramFormat.SoE.Helpers;
-using SramFormat.SoE.Models.Structs;
 
-namespace SramFormat.SoE
+namespace RosettaStone.Sram.SoE
 {
 	/// <summary>
 	/// SramFile implementation for <see cref="Sram"/> and <see cref="SaveSlot"/>
 	/// </summary>
-	public class SramFileSoE : SramFile<Sram, SaveSlot>
+	public class SramFileSoE : SramFile<Models.Structs.Sram, SaveSlot>
 	{
 		/// <summary>
 		/// Checksum validation status of every game
@@ -35,7 +35,7 @@ namespace SramFormat.SoE
 		/// <param name="gameRegion">The SRAM's file gameRegion</param>
 		public SramFileSoE(Stream stream, GameRegion gameRegion) : base(stream, Offsets.FirstSaveSlot, 3)
 		{
-			Requires.Equal(Marshal.SizeOf<Sram>(), Sizes.Sram, nameof(SramSize));
+			Requires.Equal(Marshal.SizeOf<Models.Structs.Sram>(), Sizes.Sram, nameof(SramSize));
 			Requires.Equal(Marshal.SizeOf<SaveSlot>(), Sizes.SaveSlot.All, nameof(SaveSlotSize));
 
 			Debug.Assert(Sizes.SaveSlot.All == Sizes.SaveSlot.AllKnown + Sizes.SaveSlot.AllUnknown);

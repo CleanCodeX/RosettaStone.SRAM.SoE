@@ -1,7 +1,7 @@
 using System.Runtime.InteropServices;
-using SramFormat.SoE.Constants;
+using RosettaStone.Sram.SoE.Constants;
 
-namespace SramFormat.SoE.Models.Structs
+namespace RosettaStone.Sram.SoE.Models.Structs
 {
 	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	public struct Sram

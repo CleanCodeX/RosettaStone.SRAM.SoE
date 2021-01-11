@@ -1,8 +1,8 @@
 using System;
-using SramFormat.SoE.Constants;
-using SramFormat.SoE.Enums;
+using RosettaStone.Sram.SoE.Constants;
+using RosettaStone.Sram.SoE.Enums;
 
-namespace SramFormat.SoE.Helpers
+namespace RosettaStone.Sram.SoE.Helpers
 {
 	/// <summary>
 	/// Calculates the checksum of given save slot index from buffer

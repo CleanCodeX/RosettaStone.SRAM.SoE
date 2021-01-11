@@ -1,4 +1,4 @@
-namespace SramFormat.SoE.Constants
+namespace RosettaStone.Sram.SoE.Constants
 {
 	public class ChecksumStartValues
 	{

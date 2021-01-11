@@ -1,6 +1,6 @@
 using System;
 
-namespace SramFormat.SoE.Models.Enums
+namespace RosettaStone.Sram.SoE.Models.Enums
 {
 	/// The alchemies
 	[Flags]
