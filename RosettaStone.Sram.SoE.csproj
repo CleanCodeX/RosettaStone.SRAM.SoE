@@ -4,7 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>
     <Version>0.3.0-a1</Version>
-    <PackageTags>SoE, Secret of Evermore, SRAM, SNES</PackageTags>
+    <PackageTags>SoE, Secret of Evermore, SRAM, SNES, Rosetta, Stone, Rosetta-Stone, Format, Super Nintendo, Super Famicon</PackageTags>
     <Authors>CleanCoderX</Authors>
     <Description>Collection of SoE's SRAM models, load (&amp; experimental save) functionality</Description>    
     <Company>KST</Company>
@@ -17,6 +17,7 @@
     <PackageIcon>Icon.png</PackageIcon>
     <Product>RosettaStone.Sram.SoE</Product>
     <Platforms>AnyCPU</Platforms>
+    <RepositoryType>Rosetta Stone</RepositoryType>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
