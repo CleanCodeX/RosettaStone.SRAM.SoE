@@ -19,7 +19,7 @@ namespace RosettaStone.Sram.SoE.Models.Structs
 				var sb = new StringBuilder(length);
 				fixed (byte* pointer = BytesValue)
 				{
-					for (var i = 0; i < length; ++i)
+					for (var i = 0; i<length; ++i)
 					{
 						var value = (char)*(pointer + i);
 						if (value == 0 || value == 96) continue;
@@ -36,6 +36,9 @@ namespace RosettaStone.Sram.SoE.Models.Structs
 				BytesValue = Encoding.ASCII.GetBytes(value + (char)0);
 		}
 
-		public override string ToString() => StringValue;
+		public char[] AsChars => Encoding.ASCII.GetChars(BytesValue);
+		public string AsString => new(AsChars);
+
+		public override string ToString() => AsString;
 	}
 }

@@ -8,7 +8,7 @@ using SramCommons.Models.Structs;
 
 namespace RosettaStone.Sram.SoE.Models.Structs
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 1, Size = SramSizes.SaveSlot.All)]
+	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	public struct SaveSlotSoE
 	{
 		public ushort Checksum; // [0] ~ (2 bytes)
@@ -17,7 +17,7 @@ namespace RosettaStone.Sram.SoE.Models.Structs
 		public SaveSlotDataSoE Data; // [2|x02] ~ (815 bytes)
 	}
 
-	[StructLayout(LayoutKind.Sequential, Pack = 1, Size = SramSizes.SaveSlot.Data)]
+	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	public struct SaveSlotDataSoE
 	{
 		// Unknown 1
