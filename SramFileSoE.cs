@@ -14,9 +14,9 @@ using SramCommons.Models;
 namespace RosettaStone.Sram.SoE
 {
 	/// <summary>
-	/// SramFile implementation for <see cref="Sram"/> and <see cref="SaveSlot"/>
+	/// SramFile implementation for <see cref="SramSoE"/> and <see cref="SaveSlotSoE"/>
 	/// </summary>
-	public class SramFileSoE : SramFile<Models.Structs.Sram, SaveSlot>
+	public class SramFileSoE : SramFile<SramSoE, SaveSlotSoE>
 	{
 		/// <summary>
 		/// Checksum validation status of every game
@@ -31,16 +31,30 @@ namespace RosettaStone.Sram.SoE
 		/// <summary>
 		/// Creates an instance of SramFileSoE
 		/// </summary>
+		/// <param name="gameRegion">The SRAM's file gameRegion</param>
+		public SramFileSoE(byte[] buffer, GameRegion gameRegion) : base(buffer, Offsets.FirstSaveSlot, 3)
+		{
+			SizeChecks();
+			GameRegion = gameRegion;
+		}
+
+		/// <summary>
+		/// Creates an instance of SramFileSoE
+		/// </summary>
 		/// <param name="stream">The (opened) stream from which the Sram buffer and Sram structure will be loaded</param>
 		/// <param name="gameRegion">The SRAM's file gameRegion</param>
 		public SramFileSoE(Stream stream, GameRegion gameRegion) : base(stream, Offsets.FirstSaveSlot, 3)
 		{
-			Requires.Equal(Marshal.SizeOf<Models.Structs.Sram>(), Sizes.Sram, nameof(SramSize));
-			Requires.Equal(Marshal.SizeOf<SaveSlot>(), Sizes.SaveSlot.All, nameof(SaveSlotSize));
+			SizeChecks();
+			GameRegion = gameRegion;
+		}
+
+		private void SizeChecks()
+		{
+			Requires.Equal(Marshal.SizeOf<SramSoE>(), Sizes.Sram, nameof(SramSize));
+			Requires.Equal(Marshal.SizeOf<SaveSlotSoE>(), Sizes.SaveSlot.All, nameof(SaveSlotSize));
 
 			Debug.Assert(Sizes.SaveSlot.All == Sizes.SaveSlot.AllKnown + Sizes.SaveSlot.AllUnknown);
-
-			GameRegion = gameRegion;
 		}
 
 		/// <summary>
@@ -79,7 +93,7 @@ namespace RosettaStone.Sram.SoE
 		/// </summary>
 		/// <param name="slotIndex"></param>
 		/// <returns></returns>
-		public override SaveSlot GetSaveSlot(int slotIndex)
+		public override SaveSlotSoE GetSaveSlot(int slotIndex)
 		{
 			ref var game = ref Sram.SaveSlots[slotIndex];
 #if DEBUG
@@ -148,7 +162,7 @@ namespace RosettaStone.Sram.SoE
 		/// </summary>
 		/// <param name="slotIndex">The target save slot index the game is saved to</param>
 		/// <param name="slot">The game to be saved</param>
-		public override void SetSaveSlot(int slotIndex, SaveSlot slot) => Sram.SaveSlots[slotIndex] = slot;
+		public override void SetSaveSlot(int slotIndex, SaveSlotSoE slot) => Sram.SaveSlots[slotIndex] = slot;
 
 		/// <summary>
 		/// Saves the data of Sram structure to Sram buffer.

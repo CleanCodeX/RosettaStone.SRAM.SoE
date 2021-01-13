@@ -9,7 +9,7 @@ using SramCommons.Models.Structs;
 namespace RosettaStone.Sram.SoE.Models.Structs
 {
 	[StructLayout(LayoutKind.Sequential, Pack = 1)]
-	public struct SaveSlot
+	public struct SaveSlotSoE
 	{
 		// Unknown game file bytes: 462 of 817
 		public ushort Checksum; // [0] ~ (2 bytes)

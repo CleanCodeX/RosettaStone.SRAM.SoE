@@ -12,11 +12,11 @@ namespace RosettaStone.Sram.SoE
 		public CurrentSaveSlotSramFileSoE(Stream stream, GameRegion gameRegion) : base(stream, gameRegion)
 		{ }
 
-		private SaveSlot _currentSaveSlot;
+		private SaveSlotSoE _currentSaveSlot;
 		/// <summary>
 		/// The current game data
 		/// </summary>
-		public ref SaveSlot CurrentSaveSlot => ref _currentSaveSlot;
+		public ref SaveSlotSoE CurrentSaveSlot => ref _currentSaveSlot;
 
 		private int _currentSaveSlotIndex = -1;
 
