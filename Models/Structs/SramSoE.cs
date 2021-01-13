@@ -11,7 +11,7 @@ namespace RosettaStone.Sram.SoE.Models.Structs
 		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
 		public SaveSlotSoE[] SaveSlots; // Offset 2 (3268 = 4* 817 Bytes)
 
-		[MarshalAs(UnmanagedType.ByValArray, SizeConst = Sizes.SramUnknown1)]
+		[MarshalAs(UnmanagedType.ByValArray, SizeConst = SramSizes.SramUnknown1)]
 		public byte[] Unknown1; // Offset 3270 (4922 Bytes)
 	}
 }

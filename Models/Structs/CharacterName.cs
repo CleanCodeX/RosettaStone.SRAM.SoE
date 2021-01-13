@@ -31,11 +31,9 @@ namespace RosettaStone.Sram.SoE.Models.Structs
 				var result = sb.ToString();
 				return result;
 			}
-			set
-			{
+			set =>
 				// TODO Check for correctness
-				//BytesValue = Encoding.ASCII.GetBytes(value + (char) 0);
-			}
+				BytesValue = Encoding.ASCII.GetBytes(value + (char)0);
 		}
 
 		public override string ToString() => StringValue;

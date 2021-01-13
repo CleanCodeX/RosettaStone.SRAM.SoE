@@ -2,7 +2,7 @@ using System.IO;
 using RosettaStone.Sram.SoE.Enums;
 using RosettaStone.Sram.SoE.Models.Structs;
 
-namespace RosettaStone.Sram.SoE
+namespace RosettaStone.Sram.SoE.Models
 {
 	/// <summary>
 	/// Implementation of SramFileSoE with <see cref="CurrentSaveSlot"/> functionality

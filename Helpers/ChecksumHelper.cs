@@ -28,10 +28,10 @@ namespace RosettaStone.Sram.SoE.Helpers
 		/// <returns>The calculated checksum for the given save slot index</returns>
 		public static ushort CalcChecksum(byte[] sram, int slotIndex, bool isUsVersion)
 		{
-			const int gameSize = Sizes.SaveSlot.All;
+			const int gameSize = SramSizes.SaveSlot.All;
 			const int sizeChecksum = 2;
 			var checksum = isUsVersion ? ChecksumStartValues.US : ChecksumStartValues.Europe;
-			var offset = Offsets.FirstSaveSlot + slotIndex * gameSize;
+			var offset = SramOffsets.FirstSaveSlot + slotIndex * gameSize;
 			var temp = (byte)(checksum + sram[offset + sizeChecksum]);
 
 			for (var i = 3; i < gameSize; ++i)

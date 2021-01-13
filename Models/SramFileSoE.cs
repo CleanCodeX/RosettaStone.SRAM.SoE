@@ -11,7 +11,7 @@ using SramCommons.Exceptions;
 using SramCommons.Extensions;
 using SramCommons.Models;
 
-namespace RosettaStone.Sram.SoE
+namespace RosettaStone.Sram.SoE.Models
 {
 	/// <summary>
 	/// SramFile implementation for <see cref="SramSoE"/> and <see cref="SaveSlotSoE"/>
@@ -29,21 +29,22 @@ namespace RosettaStone.Sram.SoE
 		public GameRegion GameRegion { get; }
 
 		/// <summary>
-		/// Creates an instance of SramFileSoE
+		/// Creates an instance of <see cref="SramFileSoE" />
 		/// </summary>
+		/// <param name="buffer"></param>
 		/// <param name="gameRegion">The SRAM's file gameRegion</param>
-		public SramFileSoE(byte[] buffer, GameRegion gameRegion) : base(buffer, Offsets.FirstSaveSlot, 3)
+		public SramFileSoE(byte[] buffer, GameRegion gameRegion) : base(buffer, SramOffsets.FirstSaveSlot, 3)
 		{
 			SizeChecks();
 			GameRegion = gameRegion;
 		}
 
 		/// <summary>
-		/// Creates an instance of SramFileSoE
+		/// Creates an instance of <see cref="SramFileSoE" />
 		/// </summary>
-		/// <param name="stream">The (opened) stream from which the Sram buffer and Sram structure will be loaded</param>
+		/// <param name="stream">The (opened) stream from which the S-RAM buffer and S-RAM structure will be loaded</param>
 		/// <param name="gameRegion">The SRAM's file gameRegion</param>
-		public SramFileSoE(Stream stream, GameRegion gameRegion) : base(stream, Offsets.FirstSaveSlot, 3)
+		public SramFileSoE(Stream stream, GameRegion gameRegion) : base(stream, SramOffsets.FirstSaveSlot, 3)
 		{
 			SizeChecks();
 			GameRegion = gameRegion;
@@ -51,10 +52,10 @@ namespace RosettaStone.Sram.SoE
 
 		private void SizeChecks()
 		{
-			Requires.Equal(Marshal.SizeOf<SramSoE>(), Sizes.Sram, nameof(SramSize));
-			Requires.Equal(Marshal.SizeOf<SaveSlotSoE>(), Sizes.SaveSlot.All, nameof(SaveSlotSize));
+			Requires.Equal(Marshal.SizeOf<SramSoE>(), SramSizes.Sram, nameof(BufferSize));
+			Requires.Equal(Marshal.SizeOf<SaveSlotSoE>(), SramSizes.SaveSlot.All, nameof(SaveSlotSize));
 
-			Debug.Assert(Sizes.SaveSlot.All == Sizes.SaveSlot.AllKnown + Sizes.SaveSlot.AllUnknown);
+			Debug.Assert(SramSizes.SaveSlot.All == SramSizes.SaveSlot.AllKnown + SramSizes.SaveSlot.AllUnknown);
 		}
 
 		/// <summary>
@@ -65,7 +66,7 @@ namespace RosettaStone.Sram.SoE
 		public override bool IsValid(int slotIndex) => base.IsValid(slotIndex) && _validSaveSlots[slotIndex];
 
 		/// <summary>
-		/// Loads the entire Sram buffer and structure from a stream
+		/// Loads the entire S-RAM buffer and structure from a stream
 		/// </summary>
 		/// <param name="stream">The (openned) stream which holds the sram buffer</param>
 		public override void Load(Stream stream)
@@ -77,7 +78,7 @@ namespace RosettaStone.Sram.SoE
 			{
 				var fileGameChecksum = GetChecksum(slotIndex);
 
-				var calculatedChecksum = ChecksumHelper.CalcChecksum(SramBuffer, slotIndex, GameRegion);
+				var calculatedChecksum = ChecksumHelper.CalcChecksum(Buffer, slotIndex, GameRegion);
 				if (fileGameChecksum != calculatedChecksum) continue;
 
 				anyIsValid = true;
@@ -89,83 +90,85 @@ namespace RosettaStone.Sram.SoE
 		}
 
 		/// <summary>
-		/// Gets the game from Sram structure for the given save slot index
+		/// Gets the savegame from S-RAM structure for the given save slot index
 		/// </summary>
 		/// <param name="slotIndex"></param>
 		/// <returns></returns>
 		public override SaveSlotSoE GetSaveSlot(int slotIndex)
 		{
-			ref var game = ref Sram.SaveSlots[slotIndex];
+			ref var saveSlot = ref Sram.SaveSlots[slotIndex];
 #if DEBUG
 			if (Debugger.IsAttached)
 			{
 #pragma warning disable IDE0059 // Unnötige Zuweisung eines Werts.
 				// ReSharper disable UnusedVariable
 
-				var boyLevel = game.BoyLevel;
-				var boyExperience = game.BoyExperience;
-				var boyCurrentHp = game.BoyCurrentHp;
-				var boyMaxHp = game.BoyMaxHp;
-				var boyName = game.BoyName.StringValue;
+				ref var data = ref saveSlot.Data;
 
-				var dogLevel = game.DogLevel;
-				var dogExperience = game.DogExperience;
-				var dogCurrentHp = game.DogCurrentHp;
-				var dogMaxHp = game.DogMaxHp;
-				var dogName = game.DogName.StringValue;
+				var boyLevel = data.BoyLevel;
+				var boyExperience = data.BoyExperience;
+				var boyCurrentHp = data.BoyCurrentHp;
+				var boyMaxHp = data.BoyMaxHp;
+				var boyName = data.BoyName.StringValue;
 
-				var alchemies = game.Alchemies.ToString();
-				var alchemyMajorLevels = game.AlchemyMajorLevels.ToString();
-				var alchemyMinorLevels = game.AlchemyMinorLevels.ToString();
-				var charms = game.Charms.ToString();
-				var weapons = game.Weapons.ToString();
-				var weaponLevels = game.WeaponLevels.ToString();
-				var dogAttackLevel = game.DogAttackLevel.ToString();
-				var money = game.Moneys.ToString();
-				var items = game.Items.ToString();
-				var armors = game.Armors.ToString();
-				var ammunitions = game.BazookaAmmunitions.ToString();
-				var tradeGoods = game.TradeGoods.ToString();
+				var dogLevel = data.DogLevel;
+				var dogExperience = data.DogExperience;
+				var dogCurrentHp = data.DogCurrentHp;
+				var dogMaxHp = data.DogMaxHp;
+				var dogName = data.DogName.StringValue;
 
-				var unknown1 = game.Unknown1.FormatAsString();
-				var unknown2 = game.Unknown2.FormatAsString();
-				var unknown3 = game.Unknown3.FormatAsString();
-				var unknown4 = game.Unknown4_BoyBuff.FormatAsString();
-				var unknown5 = game.Unknown5.FormatAsString();
-				var unknown6 = game.Unknown6.FormatAsString();
-				var unknown7 = game.Unknown7_DogBuff.FormatAsString();
-				var unknown8 = game.Unknown8.FormatAsString();
-				var unknown9 = game.Unknown9.FormatAsString();
-				var unknown10 = game.Unknown10.FormatAsString();
-				var unknown11 = game.Unknown11.FormatAsString();
-				var unknown12A = game.Unknown12A.FormatAsString();
-				var unknown12B = game.Unknown12B.ToString();
-				var unknown12C = game.Unknown12C.ToString();
-				var unknown13 = game.Unknown13.FormatAsString();
-				var unknown14 = game.Unknown14.ToString();
-				var unknown15 = game.Unknown15.FormatAsString();
-				var unknown16A = game.Unknown16A.FormatAsString();
-				var unknown16B = game.Unknown16B_GothicaFlags.ToString();
-				var unknown16C = game.Unknown16C.FormatAsString();
-				var unknown17 = game.Unknown17.FormatAsString();
-				var unknown18 = game.Unknown18.FormatAsString();
+				var alchemies = data.Alchemies.ToString();
+				var alchemyMajorLevels = data.AlchemyMajorLevels.ToString();
+				var alchemyMinorLevels = data.AlchemyMinorLevels.ToString();
+				var charms = data.Charms.ToString();
+				var weapons = data.Weapons.ToString();
+				var weaponLevels = data.WeaponLevels.ToString();
+				var dogAttackLevel = data.DogAttackLevel.ToString();
+				var money = data.Moneys.ToString();
+				var items = data.Items.ToString();
+				var armors = data.Armors.ToString();
+				var ammunitions = data.BazookaAmmunitions.ToString();
+				var tradeGoods = data.TradeGoods.ToString();
+
+				var unknown1 = data.Unknown1.FormatAsString();
+				var unknown2 = data.Unknown2.FormatAsString();
+				var unknown3 = data.Unknown3.FormatAsString();
+				var unknown4 = data.Unknown4_BoyBuff.FormatAsString();
+				var unknown5 = data.Unknown5.FormatAsString();
+				var unknown6 = data.Unknown6.FormatAsString();
+				var unknown7 = data.Unknown7_DogBuff.FormatAsString();
+				var unknown8 = data.Unknown8.FormatAsString();
+				var unknown9 = data.Unknown9.FormatAsString();
+				var unknown10 = data.Unknown10.FormatAsString();
+				var unknown11 = data.Unknown11.FormatAsString();
+				var unknown12A = data.Unknown12A.FormatAsString();
+				var unknown12B = data.Unknown12B.ToString();
+				var unknown12C = data.Unknown12C.ToString();
+				var unknown13 = data.Unknown13.FormatAsString();
+				var unknown14 = data.Unknown14.ToString();
+				var unknown15 = data.Unknown15.FormatAsString();
+				var unknown16A = data.Unknown16A.FormatAsString();
+				var unknown16B = data.Unknown16B_GothicaFlags.ToString();
+				var unknown16C = data.Unknown16C.FormatAsString();
+				var unknown17 = data.Unknown17.FormatAsString();
+				var unknown18 = data.Unknown18.FormatAsString();
 
 				// ReSharper restore UnusedVariable
 #pragma warning restore IDE0059 // Unnötige Zuweisung eines Werts.
 			}
 #endif
-			return game;
+			return saveSlot;
 		}
 
 		/// <summary>
-		/// Saves game to SaveSlot structure, not not to Sram buffer. To save to sram buffer call Save method.
+		/// Saves savegame to SaveSlot structure, not to S-RAM buffer. To save to S-RAM buffer call <see cref="Save"> method.
 		/// </summary>
 		/// <param name="slotIndex">The target save slot index the game is saved to</param>
 		/// <param name="slot">The game to be saved</param>
 		public override void SetSaveSlot(int slotIndex, SaveSlotSoE slot) => Sram.SaveSlots[slotIndex] = slot;
 
 		/// <summary>
-		/// Saves the data of Sram structure to Sram buffer.
+		/// Saves the data of S-RAM structure to S-RAM buffer.
 		/// </summary>
 		/// <param name="stream"></param>
 		public override void Save(Stream stream)
@@ -180,7 +183,7 @@ namespace RosettaStone.Sram.SoE
 		protected override void OnRawSave()
 		{
 			for (var slotIndex = 0; slotIndex <= 3; ++slotIndex)
-				SetChecksum(slotIndex, ChecksumHelper.CalcChecksum(SramBuffer, slotIndex, GameRegion));
+				SetChecksum(slotIndex, ChecksumHelper.CalcChecksum(Buffer, slotIndex, GameRegion));
 		}
 
 		/// <summary>
@@ -190,8 +193,8 @@ namespace RosettaStone.Sram.SoE
 		/// <returns>The checksum for the given save slot index</returns>
 		public virtual ushort GetChecksum(int slotIndex)
 		{
-			var offset = FirstSaveSlotOffset + slotIndex * SaveSlotSize + Offsets.SaveSlot.Checksum;
-			return BitConverter.ToUInt16(SramBuffer, offset);
+			var offset = FirstSaveSlotOffset + slotIndex * SaveSlotSize + SramOffsets.SaveSlot.Checksum;
+			return BitConverter.ToUInt16(Buffer, offset);
 		}
 
 		/// <summary>
@@ -201,12 +204,12 @@ namespace RosettaStone.Sram.SoE
 		/// <param name="checksum">The checksum to be set</param>
 		public virtual void SetChecksum(int slotIndex, ushort checksum)
 		{
-			var offset = FirstSaveSlotOffset + slotIndex * SaveSlotSize + Offsets.SaveSlot.Checksum;
+			var offset = FirstSaveSlotOffset + slotIndex * SaveSlotSize + SramOffsets.SaveSlot.Checksum;
 			var bytes = BitConverter.GetBytes(checksum);
 
 			Sram.SaveSlots[slotIndex].Checksum = checksum;
 
-			bytes.CopyTo(SramBuffer, offset);
+			bytes.CopyTo(Buffer, offset);
 		}
 	}
 }

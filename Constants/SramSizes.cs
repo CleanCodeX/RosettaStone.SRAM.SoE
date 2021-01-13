@@ -3,14 +3,14 @@
 namespace RosettaStone.Sram.SoE.Constants
 {
 	/// <summary>
-	/// Known sizes of SoE's SRAM buffers
+	/// Known sizes of SoE's S-RAM buffer
 	/// </summary>
-	public class Sizes
+	public class SramSizes
 	{
 		/// Size of the SRAM file
 		public const int Sram = 8_192;
 		
-		/// <summary>Sites of game buffers</summary>
+		/// <summary>Sizes of save slot buffers</summary>
 		public class SaveSlot
 		{
 			public const int Checksum = 2; // Offset 0
@@ -77,7 +77,8 @@ namespace RosettaStone.Sram.SoE.Constants
 										Charms + Weapons + Ingredients + Items + Armors + BazookaAmmunitions +
 										TradeGoods;
 
-			public const int All = 817;
+			public const int All = Data + 2;
+			public const int Data = 815;
 		}
 
 		/// Size of the SRAM Unknown buffer

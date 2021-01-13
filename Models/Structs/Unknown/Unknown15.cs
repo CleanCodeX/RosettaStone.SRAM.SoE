@@ -8,7 +8,7 @@ using SramCommons.Extensions;
 
 namespace RosettaStone.Sram.SoE.Models.Structs
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 1, Size = Sizes.SaveSlot.Unknown15)] // 118
+	[StructLayout(LayoutKind.Sequential, Pack = 1, Size = SramSizes.SaveSlot.Unknown15)] // 118
 	public struct Unknown15
 	{
 		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 17)] 

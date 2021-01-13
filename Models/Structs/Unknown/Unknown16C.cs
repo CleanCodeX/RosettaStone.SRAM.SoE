@@ -6,7 +6,7 @@ using SramCommons.Extensions;
 
 namespace RosettaStone.Sram.SoE.Models.Structs.Unknown
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 1, Size = Sizes.SaveSlot.Unknown16C)] // 6
+	[StructLayout(LayoutKind.Sequential, Pack = 1, Size = SramSizes.SaveSlot.Unknown16C)] // 6
 	public struct Unknown16C
 	{
 		public Unknown16C_Offset1 Offset0;
