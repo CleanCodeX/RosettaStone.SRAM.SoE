@@ -27,17 +27,13 @@ namespace RosettaStone.Sram.SoE.Constants
 
 			public const int Checksum = 0; // (2 bytes)
 
-			public const int Unknown1 = 2; // (36 bytes)
+			public const int LastSavePointName = 2; // (36 bytes)
 
 			///  of the boy's name
-			public const int BoyName = 38; // [x26] (34 bytes)
-
-			public const int Unknown2 = 72; // [x48] (2 bytes)
+			public const int BoyName = 38; // [x26] (36 bytes)
 
 			///  of the dog's name
-			public const int DogName = 74; // [x4A] (34 bytes)
-
-			public const int Unknown3 = 108; // [x67] (2 bytes)
+			public const int DogName = 74; // [x4A] (36 bytes)
 
 			///  of the boy's current HP
 			public const int BoyCurrentHp = 110; // [x69] (2 bytes)

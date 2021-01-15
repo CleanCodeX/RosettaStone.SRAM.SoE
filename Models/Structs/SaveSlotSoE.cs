@@ -20,22 +20,12 @@ namespace RosettaStone.Sram.SoE.Models.Structs
 	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	public struct SaveSlotDataSoE
 	{
-		// Unknown 1
-		[MarshalAs(UnmanagedType.ByValArray, SizeConst = SramSizes.SaveSlot.Unknown1)]
-		public byte[] Unknown1; // [2|x02] ~ (36 bytes)
+		// Last save point
+		public FixedString LastSavePointName; // [2|x02] ~ (36 bytes)
 
 		// Boy & Dog character
-		public CharacterName BoyName; // [38|x26] ~ (34 bytes) Null terminated
-
-		// Unknown 2
-		[MarshalAs(UnmanagedType.ByValArray, SizeConst = SramSizes.SaveSlot.Unknown2)]
-		public byte[] Unknown2; // [72|x48] ~ (2 bytes)
-
-		public CharacterName DogName; // [74|x4A] ~ (34 bytes) Null terminated
-
-		// Unknown 3
-		[MarshalAs(UnmanagedType.ByValArray, SizeConst = SramSizes.SaveSlot.Unknown3)]
-		public byte[] Unknown3; // [108|x67] ~ (2 bytes)
+		public FixedString BoyName; // [38|x26] ~ (36 bytes) Null terminated
+		public FixedString DogName; // [74|x4A] ~ (36 bytes) Null terminated
 
 		public ushort BoyCurrentHp; // [110|x69] ~ (30 bytes)
 		

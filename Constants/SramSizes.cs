@@ -14,11 +14,9 @@ namespace RosettaStone.Sram.SoE.Constants
 		public class SaveSlot
 		{
 			public const int Checksum = 2; // Offset 0
-			public const int Unknown1 = 36; // Offset 2
-			public const int BoyName = 34; // Offset 38
-			public const int Unknown2 = 2; // Offset 72
-			public const int DogName = 34; // Offset 74
-			public const int Unknown3 = 2; // Offset 108
+			public const int LastSavePointName = 36; // Offset 2
+			public const int BoyName = 36; // Offset 38
+			public const int DogName = 36; // Offset 74
 			public const int BoyCurrentHp = 2; // Offset 110
 			public const int Unknown4 = 30; // Offset 112
 			public const int BoyMaxHp = 2; // Offset 142
@@ -64,12 +62,12 @@ namespace RosettaStone.Sram.SoE.Constants
 			public const int TradeGoods = 26; // Offset 789
 			public const int Unknown18 = 2; // Offset 815
 
-			public const int AllUnknown = Unknown1 + Unknown2 + Unknown3 + Unknown4 + Unknown5 +
+			public const int AllUnknown = Unknown4 + Unknown5 +
 										  Unknown6 + Unknown7 + Unknown8 + Unknown9 + Unknown10 +
 										  Unknown11 + Unknown12A + Unknown12B + Unknown12C + Unknown13 + Unknown14 + Unknown15 +
 										  Unknown16A + Unknown16B_GothicaFlags + Unknown16C + Unknown17 + Unknown18;
 
-			public const int AllKnown = Checksum + BoyName + DogName + BoyCurrentHp + BoyMaxHp + BoyExperience + BoyLevel +
+			public const int AllKnown = Checksum + LastSavePointName + BoyName + DogName + BoyCurrentHp + BoyMaxHp + BoyExperience + BoyLevel +
 										DogCurrentHp + DogMaxHp + DogExperience + DogLevel +
 										Money +
 										WeaponLevels + DogAttackLevel +

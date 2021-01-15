@@ -109,13 +109,13 @@ namespace RosettaStone.Sram.SoE.Models
 				var boyExperience = data.BoyExperience;
 				var boyCurrentHp = data.BoyCurrentHp;
 				var boyMaxHp = data.BoyMaxHp;
-				var boyName = data.BoyName.StringValue;
+				var boyName = data.BoyName.AsTrimmedString;
 
 				var dogLevel = data.DogLevel;
 				var dogExperience = data.DogExperience;
 				var dogCurrentHp = data.DogCurrentHp;
 				var dogMaxHp = data.DogMaxHp;
-				var dogName = data.DogName.StringValue;
+				var dogName = data.DogName.AsTrimmedString;
 
 				var alchemies = data.Alchemies.ToString();
 				var alchemyMajorLevels = data.AlchemyMajorLevels.ToString();
@@ -130,9 +130,7 @@ namespace RosettaStone.Sram.SoE.Models
 				var ammunitions = data.BazookaAmmunitions.ToString();
 				var tradeGoods = data.TradeGoods.ToString();
 
-				var unknown1 = data.Unknown1.FormatAsString();
-				var unknown2 = data.Unknown2.FormatAsString();
-				var unknown3 = data.Unknown3.FormatAsString();
+				var unknown1 = data.LastSavePointName.AsTrimmedString;
 				var unknown4 = data.Unknown4_BoyBuff.FormatAsString();
 				var unknown5 = data.Unknown5.FormatAsString();
 				var unknown6 = data.Unknown6.FormatAsString();
