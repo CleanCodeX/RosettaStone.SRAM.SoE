@@ -87,8 +87,9 @@ namespace RosettaStone.Sram.SoE.Models
 				_validSaveSlots[slotIndex] = true;
 			}
 
-			if (!anyIsValid)
-				throw new InvalidSramFileException(SramError.NoValidSaveSlots);
+			// TODO Unsure how to handle yet
+			//if (!anyIsValid)
+			//	throw new InvalidSramFileException(SramError.NoValidSaveSlots);
 		}
 
 		/// <summary>
