@@ -18,6 +18,8 @@ namespace RosettaStone.Sram.SoE.Models
 	/// </summary>
 	public class SramFileSoE : SramFile<SramSoE, SaveSlotSoE>
 	{
+		private const int BlankFileChecksum = 0xC10F;
+
 		/// <summary>
 		/// Checksum validation status of every game
 		/// </summary>
@@ -177,11 +179,12 @@ namespace RosettaStone.Sram.SoE.Models
 
 			base.Save(stream);
 		}
-
+		
 		protected override void OnRawSave()
 		{
 			for (var slotIndex = 0; slotIndex <= 3; ++slotIndex)
-				SetChecksum(slotIndex, ChecksumHelper.CalcChecksum(Buffer, slotIndex, GameRegion));
+				if(Sram.SaveSlots[slotIndex].Checksum != BlankFileChecksum)
+					SetChecksum(slotIndex, ChecksumHelper.CalcChecksum(Buffer, slotIndex, GameRegion));
 		}
 
 		/// <summary>
