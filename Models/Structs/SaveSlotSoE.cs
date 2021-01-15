@@ -1,4 +1,5 @@
 using System.Runtime.InteropServices;
+using System.Text;
 using RosettaStone.Sram.SoE.Constants;
 using RosettaStone.Sram.SoE.Models.Enums;
 using RosettaStone.Sram.SoE.Models.Structs.Unknown;
@@ -15,6 +16,8 @@ namespace RosettaStone.Sram.SoE.Models.Structs
 
 		// Data
 		public SaveSlotDataSoE Data; // [2|x02] ~ (815 bytes)
+
+		public override string ToString() => Data.ToString();
 	}
 
 	[StructLayout(LayoutKind.Sequential, Pack = 1)]
@@ -144,5 +147,56 @@ namespace RosettaStone.Sram.SoE.Models.Structs
 		// Unknown 18
 		[MarshalAs(UnmanagedType.ByValArray, SizeConst = SramSizes.SaveSlot.Unknown18)]
 		public byte[] Unknown18; // [815|x32F] ~ (2 bytes)
+
+		public override string ToString()
+		{
+			var sb = new StringBuilder();
+
+			sb.AppendLine($"{nameof(LastSavePointName)}: {LastSavePointName}");
+			sb.AppendLine($"{nameof(BoyName)}: {BoyName}");
+			sb.AppendLine($"{nameof(DogName)}: {DogName}");
+			sb.AppendLine($"{nameof(BoyCurrentHp)}: {BoyCurrentHp}");
+			sb.AppendLine($"{nameof(Unknown4_BoyBuff)}: {Unknown4_BoyBuff}");
+			sb.AppendLine($"{nameof(BoyMaxHp)}: {BoyMaxHp}");
+			sb.AppendLine($"{nameof(Unknown5)}: {Unknown5}");
+			sb.AppendLine($"{nameof(BoyExperience)}: {BoyExperience}");
+			sb.AppendLine($"{nameof(BoyLevel)}: {BoyLevel}");
+			sb.AppendLine($"{nameof(Unknown6)}: {Unknown6}");
+			sb.AppendLine($"{nameof(DogCurrentHp)}: {DogCurrentHp}");
+			sb.AppendLine($"{nameof(Unknown7_DogBuff)}: {Unknown7_DogBuff}");
+			sb.AppendLine($"{nameof(DogMaxHp)}: {DogMaxHp}");
+			sb.AppendLine($"{nameof(Unknown8)}: {Unknown8}");
+			sb.AppendLine($"{nameof(DogExperience)}: {DogExperience}");
+			sb.AppendLine($"{nameof(DogLevel)}: {DogLevel}");
+			sb.AppendLine($"{nameof(Unknown9)}: {Unknown9}");
+			sb.AppendLine($"{nameof(Moneys)}: {Moneys}");
+			sb.AppendLine($"{nameof(Unknown10)}: {Unknown10}");
+			sb.AppendLine($"{nameof(WeaponLevels)}: {WeaponLevels}");
+			sb.AppendLine($"{nameof(Unknown11)}: {Unknown11}");
+			sb.AppendLine($"{nameof(DogAttackLevel)}: {DogAttackLevel}");
+			sb.AppendLine($"{nameof(Unknown12A)}: {Unknown12A}");
+			sb.AppendLine($"{nameof(Unknown12B)}: {Unknown12B}");
+			sb.AppendLine($"{nameof(Unknown12C)}: {Unknown12C}");
+			sb.AppendLine($"{nameof(AlchemyMinorLevels)}: {AlchemyMinorLevels}");
+			sb.AppendLine($"{nameof(AlchemyMajorLevels)}: {AlchemyMajorLevels}");
+			sb.AppendLine($"{nameof(Unknown13)}: {Unknown13}");
+			sb.AppendLine($"{nameof(Alchemies)}: {Alchemies}");
+			sb.AppendLine($"{nameof(Unknown14)}: {Unknown14}");
+			sb.AppendLine($"{nameof(Charms)}: {Charms}");
+			sb.AppendLine($"{nameof(Unknown15)}: {Unknown15}");
+			sb.AppendLine($"{nameof(Weapons)}: {Weapons}");
+			sb.AppendLine($"{nameof(Unknown16A)}: {Unknown16A}");
+			sb.AppendLine($"{nameof(Unknown16B_GothicaFlags)}: {Unknown16B_GothicaFlags}");
+			sb.AppendLine($"{nameof(Unknown16C)}: {Unknown16C}");
+			sb.AppendLine($"{nameof(Ingredients)}: {Ingredients}");
+			sb.AppendLine($"{nameof(Items)}: {Items}");
+			sb.AppendLine($"{nameof(Armors)}: {Armors}");
+			sb.AppendLine($"{nameof(BazookaAmmunitions)}: {BazookaAmmunitions}");
+			sb.AppendLine($"{nameof(Unknown17)}: {Unknown17}");
+			sb.AppendLine($"{nameof(TradeGoods)}: {TradeGoods}");
+			sb.AppendLine($"{nameof(Unknown18)}: {Unknown18}");
+
+			return sb.ToString();
+		}
 	}
 }
