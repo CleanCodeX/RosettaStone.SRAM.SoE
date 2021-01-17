@@ -12,8 +12,10 @@ namespace RosettaStone.Sram.SoE.Constants
 	{
 		/// base offset of the game data in the S-RAM
 		public const int AudioMode = 0; 
-		public const int LastSaveSlotId = 2;
-		
+		public const int LastSaveSlotId = 1;
+		public const int FirstSaveSlot = 2;
+		public const int Unknown1 = 3_270; // [xCC6]
+
 		public class SaveSlot
 		{
 			public static string? GetNameFromOffset(int offset)
@@ -139,7 +141,5 @@ namespace RosettaStone.Sram.SoE.Constants
 
 			public const int Unknown18 = 815; // [x32F] (2 bytes)
 		}
-
-		public const int SramUnknown1 = 3_270; // [xCC6]
 	}
 }
