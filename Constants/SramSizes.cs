@@ -16,7 +16,7 @@ namespace RosettaStone.Sram.SoE.Constants
 		/// Size of the S-RAM file
 		public const int All = 8_192;
 
-		public const bool IsValid = AudioMode + LastSaveSlotId + SaveSlot.All + Unknown1 == All;
+		public static readonly bool IsValid = AudioMode + LastSaveSlotId + SaveSlot.All + Unknown1 == All;
 
 		/// <summary>Sizes of save slot buffers</summary>
 		public class SaveSlot
@@ -91,7 +91,7 @@ namespace RosettaStone.Sram.SoE.Constants
 			public const int KnownPercentage = (AllKnown + 2) * 100 / All;
 
 			// ReSharper disable once MemberHidesStaticFromOuterClass
-			public const bool IsValid = AllKnown + AllUnknown == All;
+			public static readonly bool IsValid = AllKnown + AllUnknown == Data;
 		}
 	}
 }
