@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>
-    <Version>0.4.1-a1</Version>
+    <Version>0.4.1-a2</Version>
     <PackageTags>SoE, Secret of Evermore, SRAM, S-RAM, SNES, Rosetta Stone, Rosetta-Stone, Format, Super Nintendo, Super Famicon</PackageTags>
     <Authors>CleanCoderX</Authors>
     <Description>Collection of SoE's S-RAM models, load (&amp; experimental save) functionality</Description>    

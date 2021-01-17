@@ -7,9 +7,17 @@ namespace RosettaStone.Sram.SoE.Constants
 	/// </summary>
 	public class SramSizes
 	{
-		/// Size of the SRAM file
-		public const int Sram = 8_192;
-		
+		public const int AudioMode = 1;
+		public const int LastSaveSlotId = 1;
+
+		/// Size of the S-RAM Unknown buffer
+		public const int Unknown1 = 4_922;
+
+		/// Size of the S-RAM file
+		public const int All = 8_192;
+
+		public const bool IsValid = AudioMode + LastSaveSlotId + SaveSlot.All + Unknown1 == All;
+
 		/// <summary>Sizes of save slot buffers</summary>
 		public class SaveSlot
 		{
@@ -75,16 +83,15 @@ namespace RosettaStone.Sram.SoE.Constants
 										Charms + Weapons + Ingredients + Items + Armors + BazookaAmmunitions +
 										TradeGoods;
 
+			// ReSharper disable once MemberHidesStaticFromOuterClass
 			public const int All = Data + 2;
 			public const int Data = 815;
+
+			public const int UnknownPercentage = AllUnknown * 100 / All;
+			public const int KnownPercentage = (AllKnown + 2) * 100 / All;
 
 			// ReSharper disable once MemberHidesStaticFromOuterClass
 			public const bool IsValid = AllKnown + AllUnknown == All;
 		}
-
-		/// Size of the SRAM Unknown buffer
-		public const int SramUnknown1 = 4_922;
-
-		public const bool IsValid = SaveSlot.All + SramUnknown1 == Sram;
 	}
 }

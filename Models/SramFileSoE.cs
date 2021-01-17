@@ -34,7 +34,7 @@ namespace RosettaStone.Sram.SoE.Models
 		/// </summary>
 		/// <param name="buffer"></param>
 		/// <param name="gameRegion">The SRAM's file gameRegion</param>
-		public SramFileSoE(byte[] buffer, GameRegion gameRegion) : base(buffer, SramOffsets.FirstSaveSlot, 3)
+		public SramFileSoE(byte[] buffer, GameRegion gameRegion) : base(buffer, SramOffsets.LastSaveSlotId, 3)
 		{
 			SizeChecks();
 			GameRegion = gameRegion;
@@ -45,7 +45,7 @@ namespace RosettaStone.Sram.SoE.Models
 		/// </summary>
 		/// <param name="stream">The (opened) stream from which the S-RAM buffer and S-RAM structure will be loaded</param>
 		/// <param name="gameRegion">The SRAM's file gameRegion</param>
-		public SramFileSoE(Stream stream, GameRegion gameRegion) : base(stream, SramOffsets.FirstSaveSlot, 3)
+		public SramFileSoE(Stream stream, GameRegion gameRegion) : base(stream, SramOffsets.LastSaveSlotId, 3)
 		{
 			SizeChecks();
 			GameRegion = gameRegion;
@@ -53,10 +53,11 @@ namespace RosettaStone.Sram.SoE.Models
 
 		private void SizeChecks()
 		{
-			Requires.Equal(Marshal.SizeOf<SramSoE>(), SramSizes.Sram, nameof(Size));
-			Requires.Equal(Marshal.SizeOf<SaveSlotSoE>(), SramSizes.SaveSlot.All, nameof(SegmentSize));
+			Debug.Assert(SramSizes.IsValid);
+			Debug.Assert(SramSizes.SaveSlot.IsValid);
 
-			Debug.Assert(SramSizes.SaveSlot.All == SramSizes.SaveSlot.AllKnown + SramSizes.SaveSlot.AllUnknown);
+			Requires.Equal(Marshal.SizeOf<SramSoE>(), SramSizes.All, nameof(Size));
+			Requires.Equal(Marshal.SizeOf<SaveSlotSoE>(), SramSizes.SaveSlot.All, nameof(SegmentSize));
 		}
 
 		/// <summary>
@@ -76,10 +77,10 @@ namespace RosettaStone.Sram.SoE.Models
 
 			for (var slotIndex = 0; slotIndex <= 3; ++slotIndex)
 			{
-				var fileGameChecksum = GetChecksum(slotIndex);
+				var fileChecksum = GetChecksum(slotIndex);
 
 				var calculatedChecksum = ChecksumHelper.CalcChecksum(Buffer, slotIndex, GameRegion);
-				if (fileGameChecksum != calculatedChecksum) continue;
+				if (fileChecksum != calculatedChecksum) continue;
 
 				_validSaveSlots[slotIndex] = true;
 			}
