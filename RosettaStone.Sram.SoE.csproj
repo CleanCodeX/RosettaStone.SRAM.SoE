@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>
-    <Version>0.4.0-b2</Version>
-    <PackageTags>SoE, Secret of Evermore, SRAM, S-RAM, SNES, Rosetta, Stone, Rosetta-Stone, Format, Super Nintendo, Super Famicon</PackageTags>
+    <Version>0.4.1-a1</Version>
+    <PackageTags>SoE, Secret of Evermore, SRAM, S-RAM, SNES, Rosetta Stone, Rosetta-Stone, Format, Super Nintendo, Super Famicon</PackageTags>
     <Authors>CleanCoderX</Authors>
     <Description>Collection of SoE's S-RAM models, load (&amp; experimental save) functionality</Description>    
     <Company>KST</Company>
@@ -44,7 +44,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="CCX.SramCommons" Version="1.1.0-a3" />
+    <PackageReference Include="CCX.SramCommons" Version="1.2.0-a1" />
   </ItemGroup>
 
   <ItemGroup>

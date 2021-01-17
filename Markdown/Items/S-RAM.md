@@ -1,9 +1,10 @@
-﻿# SRAM - Map
+﻿# S-RAM - Map
 
 Size: 8192 bytes (8 KiB)
 
 ### Checksum
-* UInt16 Checksum (2 bytes)
+* byte MonoStereo : (0) => mono, (1) = stereo
+* byte LastSaveSlotId : (0) => slot 1, (2) => slot 2, (4) => slot 3, (6) => slot 4)
 
 ### Save slots 1-4
 * [SaveSlot](SaveSlot.md)[] (817 bytes each)

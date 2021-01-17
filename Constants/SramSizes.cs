@@ -77,9 +77,14 @@ namespace RosettaStone.Sram.SoE.Constants
 
 			public const int All = Data + 2;
 			public const int Data = 815;
+
+			// ReSharper disable once MemberHidesStaticFromOuterClass
+			public const bool IsValid = AllKnown + AllUnknown == All;
 		}
 
 		/// Size of the SRAM Unknown buffer
 		public const int SramUnknown1 = 4_922;
+
+		public const bool IsValid = SaveSlot.All + SramUnknown1 == Sram;
 	}
 }

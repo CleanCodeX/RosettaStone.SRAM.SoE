@@ -7,7 +7,6 @@ using RosettaStone.Sram.SoE.Constants;
 using RosettaStone.Sram.SoE.Enums;
 using RosettaStone.Sram.SoE.Helpers;
 using RosettaStone.Sram.SoE.Models.Structs;
-using SramCommons.Exceptions;
 using SramCommons.Extensions;
 using SramCommons.Models;
 
@@ -54,8 +53,8 @@ namespace RosettaStone.Sram.SoE.Models
 
 		private void SizeChecks()
 		{
-			Requires.Equal(Marshal.SizeOf<SramSoE>(), SramSizes.Sram, nameof(BufferSize));
-			Requires.Equal(Marshal.SizeOf<SaveSlotSoE>(), SramSizes.SaveSlot.All, nameof(SaveSlotSize));
+			Requires.Equal(Marshal.SizeOf<SramSoE>(), SramSizes.Sram, nameof(Size));
+			Requires.Equal(Marshal.SizeOf<SaveSlotSoE>(), SramSizes.SaveSlot.All, nameof(SegmentSize));
 
 			Debug.Assert(SramSizes.SaveSlot.All == SramSizes.SaveSlot.AllKnown + SramSizes.SaveSlot.AllUnknown);
 		}
@@ -63,9 +62,9 @@ namespace RosettaStone.Sram.SoE.Models
 		/// <summary>
 		/// Returns if a save slot index itself is valid and the game's checksum is correct
 		/// </summary>
-		/// <param name="slotIndex">The index which game's checksum should be checked</param>
+		/// <param name="index">The index which game's checksum should be checked</param>
 		/// <returns>Returns true if the save slot index itself is valid and the checksum for that game is</returns>
-		public override bool IsValid(int slotIndex) => base.IsValid(slotIndex) && _validSaveSlots[slotIndex];
+		public override bool IsValid(int index) => base.IsValid(index) && _validSaveSlots[index];
 
 		/// <summary>
 		/// Loads the entire S-RAM buffer and structure from a stream
@@ -75,7 +74,6 @@ namespace RosettaStone.Sram.SoE.Models
 		{
 			base.Load(stream);
 
-			var anyIsValid = false;
 			for (var slotIndex = 0; slotIndex <= 3; ++slotIndex)
 			{
 				var fileGameChecksum = GetChecksum(slotIndex);
@@ -83,23 +81,18 @@ namespace RosettaStone.Sram.SoE.Models
 				var calculatedChecksum = ChecksumHelper.CalcChecksum(Buffer, slotIndex, GameRegion);
 				if (fileGameChecksum != calculatedChecksum) continue;
 
-				anyIsValid = true;
 				_validSaveSlots[slotIndex] = true;
 			}
-
-			// TODO Unsure how to handle yet
-			//if (!anyIsValid)
-			//	throw new InvalidSramFileException(SramError.NoValidSaveSlots);
 		}
 
 		/// <summary>
 		/// Gets the savegame from S-RAM structure for the given save slot index
 		/// </summary>
-		/// <param name="slotIndex"></param>
+		/// <param name="index"></param>
 		/// <returns></returns>
-		public override SaveSlotSoE GetSaveSlot(int slotIndex)
+		public override SaveSlotSoE GetSegment(int index)
 		{
-			ref var saveSlot = ref Sram.SaveSlots[slotIndex];
+			ref var saveSlot = ref Struct.SaveSlots[index];
 #if DEBUG
 			if (Debugger.IsAttached)
 			{
@@ -112,13 +105,13 @@ namespace RosettaStone.Sram.SoE.Models
 				var boyExperience = data.BoyExperience;
 				var boyCurrentHp = data.BoyCurrentHp;
 				var boyMaxHp = data.BoyMaxHp;
-				var boyName = data.BoyName.AsTrimmedString;
+				var boyName = data.BoyName.AsString;
 
 				var dogLevel = data.DogLevel;
 				var dogExperience = data.DogExperience;
 				var dogCurrentHp = data.DogCurrentHp;
 				var dogMaxHp = data.DogMaxHp;
-				var dogName = data.DogName.AsTrimmedString;
+				var dogName = data.DogName.AsString;
 
 				var alchemies = data.Alchemies.ToString();
 				var alchemyMajorLevels = data.AlchemyMajorLevels.ToString();
@@ -133,7 +126,7 @@ namespace RosettaStone.Sram.SoE.Models
 				var ammunitions = data.BazookaAmmunitions.ToString();
 				var tradeGoods = data.TradeGoods.ToString();
 
-				var unknown1 = data.LastSavePointName.AsTrimmedString;
+				var unknown1 = data.LastSavePointName.AsString;
 				var unknown4 = data.Unknown4_BoyBuff.FormatAsString();
 				var unknown5 = data.Unknown5.FormatAsString();
 				var unknown6 = data.Unknown6.FormatAsString();
@@ -164,9 +157,9 @@ namespace RosettaStone.Sram.SoE.Models
 		/// <summary>
 		/// Saves savegame to SaveSlot structure, not to S-RAM buffer. To save to S-RAM buffer call <see cref="Save"> method.
 		/// </summary>
-		/// <param name="slotIndex">The target save slot index the game is saved to</param>
+		/// <param name="index">The target save slot index the game is saved to</param>
 		/// <param name="slot">The game to be saved</param>
-		public override void SetSaveSlot(int slotIndex, SaveSlotSoE slot) => Sram.SaveSlots[slotIndex] = slot;
+		public override void SetSegment(int index, SaveSlotSoE slot) => Struct.SaveSlots[index] = slot;
 
 		/// <summary>
 		/// Saves the data of S-RAM structure to S-RAM buffer.
@@ -176,16 +169,16 @@ namespace RosettaStone.Sram.SoE.Models
 		{
 			for (var slotIndex = 0; slotIndex <= 3; ++slotIndex)
 				if (IsValid(slotIndex))
-					base.SetSaveSlot(slotIndex, Sram.SaveSlots[slotIndex]);
+					base.SetSegment(slotIndex, Struct.SaveSlots[slotIndex]);
 
 			base.Save(stream);
 		}
-		
-		protected override void OnRawSave()
+
+		protected override void OnSaving()
 		{
-			for (var slotIndex = 0; slotIndex <= 3; ++slotIndex)
-				if(Sram.SaveSlots[slotIndex].Checksum != BlankFileChecksum)
-					SetChecksum(slotIndex, ChecksumHelper.CalcChecksum(Buffer, slotIndex, GameRegion));
+			for (var index = 0; index <= 3; ++index)
+				if(Struct.SaveSlots[index].Checksum != BlankFileChecksum)
+					SetChecksum(index, ChecksumHelper.CalcChecksum(Buffer, index, GameRegion));
 		}
 
 		/// <summary>
@@ -195,7 +188,7 @@ namespace RosettaStone.Sram.SoE.Models
 		/// <returns>The checksum for the given save slot index</returns>
 		public virtual ushort GetChecksum(int slotIndex)
 		{
-			var offset = FirstSaveSlotOffset + slotIndex * SaveSlotSize + SramOffsets.SaveSlot.Checksum;
+			var offset = FirstSegmentOffset + slotIndex * SegmentSize + SramOffsets.SaveSlot.Checksum;
 			return BitConverter.ToUInt16(Buffer, offset);
 		}
 
@@ -206,10 +199,10 @@ namespace RosettaStone.Sram.SoE.Models
 		/// <param name="checksum">The checksum to be set</param>
 		public virtual void SetChecksum(int slotIndex, ushort checksum)
 		{
-			var offset = FirstSaveSlotOffset + slotIndex * SaveSlotSize + SramOffsets.SaveSlot.Checksum;
+			var offset = FirstSegmentOffset + slotIndex * SegmentSize + SramOffsets.SaveSlot.Checksum;
 			var bytes = BitConverter.GetBytes(checksum);
 
-			Sram.SaveSlots[slotIndex].Checksum = checksum;
+			Struct.SaveSlots[slotIndex].Checksum = checksum;
 
 			bytes.CopyTo(Buffer, offset);
 		}

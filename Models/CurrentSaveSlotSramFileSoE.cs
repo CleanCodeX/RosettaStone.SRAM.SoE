@@ -30,18 +30,18 @@ namespace RosettaStone.Sram.SoE.Models
 			set
 			{
 				_currentSaveSlotIndex = value;
-				_currentSaveSlot = GetSaveSlot(value);
+				_currentSaveSlot = GetSegment(value);
 			}
 		}
 
 		/// <summary>
 		/// Overwrites game data for <see cref="CurrentSaveSlotIndex"/> with modified data from <see cref="CurrentSaveSlot"/>
 		/// </summary>
-		public virtual void AcceptCurrentSaveSlotChanges() => SetSaveSlot(CurrentSaveSlotIndex, CurrentSaveSlot);
+		public virtual void AcceptCurrentSaveSlotChanges() => SetSegment(CurrentSaveSlotIndex, CurrentSaveSlot);
 
 		/// <summary>
-		/// Overwrites game data for <see cref="CurrentSaveSlotIndex"/> with original data from <see cref="CurrentSaveSlotSramFileSoE.Sram"/> buffer
+		/// Overwrites game data for <see cref="CurrentSaveSlotIndex"/> with original data from <see cref="SramFileSoE.Struct"/> buffer
 		/// </summary>
-		public virtual void DiscardCurrentSaveSlotChanges() => base.SetSaveSlot(CurrentSaveSlotIndex, Sram.SaveSlots[CurrentSaveSlotIndex]);
+		public virtual void DiscardCurrentSaveSlotChanges() => base.SetSegment(CurrentSaveSlotIndex, Struct.SaveSlots[CurrentSaveSlotIndex]);
 	}
 }

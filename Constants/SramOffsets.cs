@@ -11,9 +11,9 @@ namespace RosettaStone.Sram.SoE.Constants
 	public class SramOffsets
 	{
 		/// base offset of the game data in the S-RAM
+		public const int MonoStereo = 0; 
 		public const int FirstSaveSlot = 2;
-		public const int SramChecksum = 0;
-
+		
 		public class SaveSlot
 		{
 			public static string? GetNameFromOffset(int offset)

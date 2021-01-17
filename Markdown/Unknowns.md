@@ -3,7 +3,7 @@
 ## Opened containers
 * Gourds (act 1)
 * Pots (act 2)
-* (✓) Chests (act 3) ### FOUND (some of them in Unknown15)
+* (✓) Chests (act 3) § **FOUND** (some of them in Unknown15)
 * Containerrs (act 4)
 * Other hidden spots
 * Broken walls (axe)
@@ -26,14 +26,14 @@
 * Hector's Regenerate found
 * Pyramid water gone
 * Chicken taunted
-* ✓ Annihilation amulet seller (nobilia) screwed up (Found in game's Unknown14 buffer) ### FOUND (Unknown14)
-* ✓ Underground oglin rescued from well (Found in game's Unknown16 buffer) ### FOUND (Unknown16)
+* ✓ Annihilation amulet seller (nobilia) screwed up § **FOUND** in Unknown14
+* ✓ Underground oglin rescued from well (Found in game's Unknown16 buffer) § **FOUND** in Unknown16
 * Whether special charms already have been traded (moxa stick, sun stone, etc.)
 
 ## Menu stuff: (probably not game related, change applies for all games)
 * Messagebox Color
 * Messagebox Border style
-* Mono/Stereo sound
+✓ Mono/Stereo sound § **FOUND**: byte 1 of [S-RAM](sram.md)
 * Boy fight behavior
 * Dog fight behavior
 * Boy fight Auto Level
@@ -43,9 +43,9 @@
 ## Other stuff:
 * Selected Character (Boy or dog)
 * random bytes (changed values without any progress made)
-* Market timer
+* (✓) Market timer § **FOUND** in Unknown17
 * Superheal "guess" wait timer
-* (✓) Buffs ### FOUND but most bytes still unknown (boy: Unknown4, dog: Unknown7)
+* (✓) Buffs § **FOUND**: but most bytes still unknown (boy: Unknown4, dog: Unknown7)
 
 ## Save slot-unrelated SRAM (?)
-* last used Save slot
+✓ last used Save slot § **FOUND**: byte 2 of [S-RAM](sram.md)

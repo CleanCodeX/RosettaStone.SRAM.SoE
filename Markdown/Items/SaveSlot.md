@@ -1,22 +1,21 @@
-﻿# SRAM Save Slot
+﻿# S-RAM Save Slot
+
+100% exploration for:
+Unknown 1 => [Last Savepoint Name](FixedLengthString.md)
+Unknown 2 => Belong to [BoyName](FixedLengthString.md)
+Unknown 3 => Belong to [DogName](FixedLengthString.md)
 
 ###### Unknown game file bytes: 462 of 817
 * UInt16 Checksum # [0] ~ (2 bytes)
 
-###### Unknown 1
-* byte[] Unknown1 # [2|x02] ~ (36 bytes)
+###### Last Savepoint Name
+* [LastSavepointName](FixedLengthString.md) # [2|x02] ~ (36 bytes, null-terminated)
 
-###### Boy & Dog character
-* [BoyName](CharacterName.md) # [38|x26] ~ (34 bytes) 
-
-###### Unknown 2
-* byte[] Unknown2 # [74|x4A] ~ (2 bytes)
+###### The boy's name
+* [BoyName](FixedLengthString.md) # [38|x26] ~ (36 bytes, null-terminated) 
 
 ###### The dog's name
-* [DogName](CharacterName.md) # [74|x4A] ~ (34 bytes) 
-
-###### Unknown 3
-* byte[] Unknown3 # [108|x67] ~ (2 bytes)
+* [DogName](FixedLengthString.md) # [74|x4A] ~ (36 bytes, null-terminated) 
 
 ###### The boy's current HP'
 * UInt16 BoyCurrentHp # [110|x6E] ~ (2 bytes)
@@ -79,7 +78,7 @@
 * byte[] Unknown12A # [319|x13F] ~ (16 bytes)
 
 ###### Unknown 12 B
-* UInt16 Unknown12B # 335|x14F] ~ (2 bytes) Maybe frame-counter, changes at every in-game save
+* UInt16 Unknown12B # 335|x14F] ~ (2 bytes) Probably frame-counter, changes at every in-game save
 
 ###### Unknown 12 C
 * UInt32 Unknown12C # [337|x151] ~ (4 bytes)
@@ -123,7 +122,7 @@
 ###### Bazooka Ammunitions
 * [BazookaAmmunitions](BazookaAmmunitions.md) # [719|x2CF] ~ (3 bytes)
 
-###### Unknown 17
+###### Unknown 17 (contains market timer)
 * byte[] Unknown17 # [722|x2D2] ~ (67 bytes)
 
 ###### Trade Goods

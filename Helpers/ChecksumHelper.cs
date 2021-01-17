@@ -1,4 +1,6 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
+using Common.Shared.Min.Extensions;
 using RosettaStone.Sram.SoE.Constants;
 using RosettaStone.Sram.SoE.Enums;
 
@@ -16,7 +18,7 @@ namespace RosettaStone.Sram.SoE.Helpers
 		/// <param name="slotIndex">The game's index which checksum to be calculated</param>
 		/// <param name="region">the game's region of sram</param>
 		/// <returns>The calculated checksum for the given save slot index</returns>
-		public static ushort CalcChecksum(byte[] sram, int slotIndex, GameRegion region) =>
+		public static ushort CalcChecksum([NotNull] byte[] sram, int slotIndex, GameRegion region) =>
 			CalcChecksum(sram, slotIndex, region == GameRegion.EnglishNtsc);
 
 		/// <summary>
@@ -26,8 +28,10 @@ namespace RosettaStone.Sram.SoE.Helpers
 		/// <param name="slotIndex">The game's index which checksum to be calculated</param>
 		/// <param name="isUsVersion">sets if this sram is the US region</param>
 		/// <returns>The calculated checksum for the given save slot index</returns>
-		public static ushort CalcChecksum(byte[] sram, int slotIndex, bool isUsVersion)
+		public static ushort CalcChecksum([NotNull] byte[] sram, int slotIndex, bool isUsVersion)
 		{
+			sram.ThrowIfNull(nameof(sram));
+
 			const int gameSize = SramSizes.SaveSlot.All;
 			const int sizeChecksum = 2;
 			var checksum = isUsVersion ? ChecksumStartValues.US : ChecksumStartValues.Europe;

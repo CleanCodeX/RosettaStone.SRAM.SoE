@@ -24,11 +24,11 @@ namespace RosettaStone.Sram.SoE.Models.Structs
 	public struct SaveSlotDataSoE
 	{
 		// Last save point
-		public FixedString LastSavePointName; // [2|x02] ~ (36 bytes)
+		public FixedLengthString LastSavePointName; // [2|x02] ~ (36 bytes, null terminated)
 
 		// Boy & Dog character
-		public FixedString BoyName; // [38|x26] ~ (36 bytes) Null terminated
-		public FixedString DogName; // [74|x4A] ~ (36 bytes) Null terminated
+		public FixedLengthString BoyName; // [38|x26] ~ (36 bytes, null terminated)
+		public FixedLengthString DogName; // [74|x4A] ~ (36 bytes, null terminated)
 
 		public ushort BoyCurrentHp; // [110|x69] ~ (30 bytes)
 		
@@ -89,7 +89,7 @@ namespace RosettaStone.Sram.SoE.Models.Structs
 		public byte[] Unknown12A; // [319|x13F] ~ (16 bytes)
 
 		// Unknown 12 B
-		public ushort Unknown12B;// 335|x14F] ~ (2 bytes) Maybe frame-counter, changes at every in-game save
+		public ushort Unknown12B;// 335|x14F] ~ (2 bytes) Note: contains probably frame-counter, changes at every in-game save
 
 		// Unknown 12 C
 		public uint Unknown12C; // [337|x151] ~ (4 bytes)
@@ -139,7 +139,7 @@ namespace RosettaStone.Sram.SoE.Models.Structs
 
 		// Unknown 17
 		[MarshalAs(UnmanagedType.ByValArray, SizeConst = SramSizes.SaveSlot.Unknown17)]
-		public byte[] Unknown17; // [722|x2D2] ~ (67 bytes)
+		public byte[] Unknown17; // [722|x2D2] ~ (67 bytes) Note: contains market timer
 
 		// Trade Goods
 		public TradeGoods TradeGoods; // [789|x315] ~ (26 bytes)
