@@ -1,4 +1,6 @@
-// ReSharper disable InconsistentNaming
+// ReSharper disable MemberHidesStaticFromOuterClass
+
+using System;
 
 namespace RosettaStone.Sram.SoE.Constants
 {
@@ -16,7 +18,7 @@ namespace RosettaStone.Sram.SoE.Constants
 		/// Size of the S-RAM file
 		public const int All = 8_192;
 
-		public static readonly bool IsValid = AudioMode + LastSaveSlotId + SaveSlot.All + Unknown1 == All;
+		public const bool IsValid = AudioMode + LastSaveSlotId + SaveSlot.All * 4 + Unknown1 == All;
 
 		/// <summary>Sizes of save slot buffers</summary>
 		public class SaveSlot
@@ -83,15 +85,13 @@ namespace RosettaStone.Sram.SoE.Constants
 										Charms + Weapons + Ingredients + Items + Armors + BazookaAmmunitions +
 										TradeGoods;
 
-			// ReSharper disable once MemberHidesStaticFromOuterClass
-			public const int All = Data + 2;
 			public const int Data = 815;
+			public const int All = Data + Checksum;
 
-			public const int UnknownPercentage = AllUnknown * 100 / All;
-			public const int KnownPercentage = (AllKnown + 2) * 100 / All;
+			public static readonly double UnknownPercentage = AllUnknown * 100D / All;
+			public static readonly double KnownPercentage = (AllKnown + Checksum) * 100D / All;
 
-			// ReSharper disable once MemberHidesStaticFromOuterClass
-			public static readonly bool IsValid = AllKnown + AllUnknown == Data;
+			public const bool IsValid = AllKnown + AllUnknown == All;
 		}
 	}
 }
