@@ -89,7 +89,7 @@ namespace RosettaStone.Sram.SoE.Models.Structs
 		public byte[] Unknown12A; // [319|x13F] ~ (16 bytes)
 
 		// Unknown 12 B
-		public ushort Unknown12B;// 335|x14F] ~ (2 bytes) Note: contains probably frame-counter, changes at every in-game save
+		public uint Unknown12B;// 333|x14D] ~ (2 bytes) Note: contains probably frame-counter, changes at every in-game save
 
 		// Unknown 12 C
 		public uint Unknown12C; // [337|x151] ~ (4 bytes)

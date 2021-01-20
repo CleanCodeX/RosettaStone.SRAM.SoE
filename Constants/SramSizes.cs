@@ -47,8 +47,8 @@ namespace RosettaStone.Sram.SoE.Constants
 			public const int Unknown11 = 14; // Offset 303
 			public const int DogAttackLevel = 2; // Offset 317
 
-			public const int Unknown12A = 16; // Offset 319
-			public const int Unknown12B = 2; // Offset 335
+			public const int Unknown12A = 14; // Offset 319
+			public const int Unknown12B = 4; // Offset 333
 			public const int Unknown12C = 4; // Offset 337
 
 			public const int AlchemyMinorLevels = 70; // Offset 341

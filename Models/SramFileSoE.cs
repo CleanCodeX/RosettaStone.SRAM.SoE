@@ -25,7 +25,7 @@ namespace RosettaStone.Sram.SoE.Models
 		private readonly bool[] _validSaveSlots = new bool[4];
 
 		/// <summary>
-		/// The SRAM's file gameRegion 
+		/// The S-RAM's file gameRegion 
 		/// </summary>
 		public GameRegion GameRegion { get; }
 
@@ -33,7 +33,7 @@ namespace RosettaStone.Sram.SoE.Models
 		/// Creates an instance of <see cref="SramFileSoE" />
 		/// </summary>
 		/// <param name="buffer"></param>
-		/// <param name="gameRegion">The SRAM's file gameRegion</param>
+		/// <param name="gameRegion">The S-RAM's file gameRegion</param>
 		public SramFileSoE(byte[] buffer, GameRegion gameRegion) : base(buffer, SramOffsets.LastSaveSlotId, 3)
 		{
 			SizeChecks();
@@ -44,7 +44,7 @@ namespace RosettaStone.Sram.SoE.Models
 		/// Creates an instance of <see cref="SramFileSoE" />
 		/// </summary>
 		/// <param name="stream">The (opened) stream from which the S-RAM buffer and S-RAM structure will be loaded</param>
-		/// <param name="gameRegion">The SRAM's file gameRegion</param>
+		/// <param name="gameRegion">The S-RAM's file gameRegion</param>
 		public SramFileSoE(Stream stream, GameRegion gameRegion) : base(stream, SramOffsets.LastSaveSlotId, 3)
 		{
 			SizeChecks();

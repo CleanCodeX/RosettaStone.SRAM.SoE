@@ -94,8 +94,8 @@ namespace RosettaStone.Sram.SoE.Constants
 			///  of the dog's attack level
 			public const int DogAttackLevel = 317; // [x13D] (2 bytes)
 
-			public const int Unknown12A = 319; // [x13F] (16 bytes)
-			public const int Unknown12B = 335; // [x14F] (2 bytes)
+			public const int Unknown12A = 319; // [x13F] (14 bytes)
+			public const int Unknown12B = 333; // [x14D] (4 bytes)
 			public const int Unknown12C = 337; // [x151] (4 bytes)
 
 			/// base minor alchemy Levels offset
