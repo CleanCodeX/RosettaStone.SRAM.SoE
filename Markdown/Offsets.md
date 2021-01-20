@@ -59,8 +59,8 @@ Unknown 3 => Belong to [DogName](Items/FixedLengthString.md)
 
 * DogAttackLevel: [317|x13D] ~ (2 bytes)
 
-* Unknown12A: [319|x13F] ~ (16 bytes)
-* Unknown12B: [335|x14F] ~ (2 bytes)
+* Unknown12A: [319|x13F] ~ (14 bytes)
+* Unknown12B: [333|x14D] ~ (4 bytes)
 * Unknown12C: [337|x151] ~ (4 bytes)
 
 * [AlchemyMinorLevels](Items/AlchemyLevels.md): [341|x155] ~ (70 bytes)
