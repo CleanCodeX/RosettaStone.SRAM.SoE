@@ -77,19 +77,16 @@ namespace RosettaStone.Sram.SoE.Constants
 										  Unknown11 + Unknown12A + Unknown12B + Unknown12C + Unknown13 + Unknown14 + Unknown15 +
 										  Unknown16A + Unknown16B_GothicaFlags + Unknown16C + Unknown17 + Unknown18;
 
-			public const int AllKnown = Checksum + LastSavePointName + BoyName + DogName + BoyCurrentHp + BoyMaxHp + BoyExperience + BoyLevel +
-										DogCurrentHp + DogMaxHp + DogExperience + DogLevel +
-										Money +
-										WeaponLevels + DogAttackLevel +
-										AlchemyMinorLevels + AlchemyMajorLevels + Alchemies +
-										Charms + Weapons + Ingredients + Items + Armors + BazookaAmmunitions +
-										TradeGoods;
+			public const int AllKnown = Checksum + LastSavePointName + BoyName + DogName + BoyCurrentHp + BoyMaxHp + BoyExperience + 
+			                            BoyLevel + DogCurrentHp + DogMaxHp + DogExperience + DogLevel + Money +
+										WeaponLevels + DogAttackLevel + AlchemyMinorLevels + AlchemyMajorLevels + Alchemies +
+										Charms + Weapons + Ingredients + Items + Armors + BazookaAmmunitions + TradeGoods;
 
 			public const int Data = 815;
 			public const int All = Data + Checksum;
 
 			public static readonly double UnknownPercentage = AllUnknown * 100D / All;
-			public static readonly double KnownPercentage = (AllKnown + Checksum) * 100D / All;
+			public static readonly double KnownPercentage = AllKnown * 100D / All;
 
 			public const bool IsValid = AllKnown + AllUnknown == All;
 		}
