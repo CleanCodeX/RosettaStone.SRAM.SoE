@@ -5,7 +5,7 @@ using SramCommons.Extensions;
 namespace RosettaStone.Sram.SoE.Models.Structs
 {
 	[DebuggerDisplay("{ToString(),nq}")]
-	[StructLayout(LayoutKind.Sequential, Pack = 1)]
+	[StructLayout(LayoutKind.Sequential, Pack = 4)]
 	public struct BazookaAmmunitions
 	{
 		public byte ThunderBall; // 0 - 99

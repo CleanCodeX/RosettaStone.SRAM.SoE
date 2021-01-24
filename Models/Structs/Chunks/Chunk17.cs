@@ -9,6 +9,7 @@ namespace RosettaStone.Sram.SoE.Models.Structs.Chunks
 	/// </summary>
 	/// <remarks><see cref="SramSizes.SaveSlot.Chunk17"/></remarks>
 	[DebuggerDisplay("{ToString(),nq}")]
+	[StructLayout(LayoutKind.Sequential, Pack = 2)]
 	public struct Chunk17
 	{
 		// Alchemy Levels

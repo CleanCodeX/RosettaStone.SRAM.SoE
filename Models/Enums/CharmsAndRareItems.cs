@@ -33,6 +33,7 @@ namespace RosettaStone.Sram.SoE.Models.Enums
 		ThugsCloak = 0x2 + (1 << 16), // $2263&0x02
 		WizardsCoin = 0x4 + (1 << 16), // $2263&0x04
 		JadeDiskOnceOwned = 0x8 + (1 << 16), // $2263&0x08 indicates previously owned JadeDisk (can be traded in Ivor Tower alley)
+
 		SunStoneOnceOwned = 0x10 + (1 << 16), // $2263&0x10 indicates previously owned SunStone (can be traded in Ivor Tower alley)
 		SilverSheathOnceOwned = 0x20 + (1 << 16), // $2263&0x20 indicates previously owned SilverSheath (can be traded in Ivor Tower alley)
 		RunbyHeartOnceOwned = 0x40 + (1 << 16), // $2263&0x40 indicates previously owned RubyHeart see [0x96942d] (used to trade back against MoxaStick in Nobilia)
@@ -43,6 +44,7 @@ namespace RosettaStone.Sram.SoE.Models.Enums
 		DiamondEyes = 0x2 + (1 << 24), // $2264&0x02
 		Gauge = 0x4 + (1 << 24), // $2264&0x04
 		Wheel = 0x8 + (1 << 24), // $2264&0x08
+
 		QuennsKey = 0x10 + (1 << 24), // $2264&0x10
 		EnegeryCore = 0x20 + (1 << 24), // $2264&0x20
 		Unknown1 = 0x40 + (1 << 24), // $2264&0x40

@@ -11,6 +11,7 @@ namespace RosettaStone.Sram.SoE.Models.Structs.Chunks
 	/// </summary>
 	/// <remarks><see cref="SramSizes.SaveSlot.Chunk18"/></remarks>
 	[DebuggerDisplay("{ToString(),nq}")]
+	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	public struct Chunk18
 	{
 		// Alchemies

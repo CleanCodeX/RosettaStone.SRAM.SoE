@@ -1,6 +1,6 @@
 namespace RosettaStone.Sram.SoE.Models.Enums
 {
-	public enum GourdSpots
+	public enum GourdSpots : uint
 	{
 
 	}

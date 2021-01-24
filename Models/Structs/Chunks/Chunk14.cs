@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 using SramCommons.Extensions;
 
 namespace RosettaStone.Sram.SoE.Models.Structs.Chunks
@@ -8,6 +9,7 @@ namespace RosettaStone.Sram.SoE.Models.Structs.Chunks
 	/// </summary>
 	/// <remarks><see cref="SramSizes.SaveSlot.Chunk14"/></remarks>
 	[DebuggerDisplay("{ToString(),nq}")]
+	[StructLayout(LayoutKind.Sequential, Pack = 4)]
 	public struct Chunk14
 	{
 		public ushort DogLevel; // [222|xDE] :: (2 bytes)

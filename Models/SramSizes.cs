@@ -54,6 +54,8 @@ namespace RosettaStone.Sram.SoE.Models
 			public const int Unknown10 = 3;
 			public const int Unknown11 = 14;
 
+			public const int EquippedAlchemies = 9;
+
 			#region Unknown12
 			public const int Unknown12A = 16;
 			public const int Unknown12B = 2;
@@ -72,7 +74,7 @@ namespace RosettaStone.Sram.SoE.Models
 
 			#region Unknown17
 			public const int Unknown17A = 12;
-			public const int Unknown17B = 9;
+			public const int Unknown17B = 5;
 			public const int Unknown17C = 2;
 			public const int Unknown17D = 3;
 			public const int Unknown17E = 3;

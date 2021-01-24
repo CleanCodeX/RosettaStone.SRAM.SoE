@@ -9,6 +9,7 @@ namespace RosettaStone.Sram.SoE.Models.Structs.Chunks
 	/// </summary>
 	/// <remarks><see cref="SramSizes.SaveSlot.Chunk16"/></remarks>
 	[DebuggerDisplay("{ToString(),nq}")]
+	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	public struct Chunk16
 	{
 		public ushort CurrentEquippedWeapon; // [240|xF0] :: (2 bytes)
@@ -25,6 +26,7 @@ namespace RosettaStone.Sram.SoE.Models.Structs.Chunks
 		public Moneys Moneys; // [252|xFC] :: (12 bytes)
 
 		// WRAM
+		[MarshalAs(UnmanagedType.ByValArray, SizeConst = SramSizes.SaveSlot.EquippedAlchemies)]
 		public byte[] EquippedAlchemies; // [264|x108] :: (9 bytes)
 
 		public byte CurrentMapId;// [273|x111] :: (1 byte)

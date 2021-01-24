@@ -32,22 +32,16 @@ namespace RosettaStone.Sram.SoE.Models
 		/// </summary>
 		/// <param name="buffer"></param>
 		/// <param name="gameRegion">The S-RAM's file gameRegion</param>
-		public SramFileSoE(byte[] buffer, GameRegion gameRegion) : base(buffer, SramOffsets.LastSaveSlotId, 3)
-		{
-			SizeChecks();
-			GameRegion = gameRegion;
-		}
+		public SramFileSoE(byte[] buffer, GameRegion gameRegion) : base(buffer, SramOffsets.LastSaveSlotId, 3) => GameRegion = gameRegion;
 
 		/// <summary>
 		/// Creates an instance of <see cref="SramFileSoE" />
 		/// </summary>
 		/// <param name="stream">The (opened) stream from which the S-RAM buffer and S-RAM structure will be loaded</param>
 		/// <param name="gameRegion">The S-RAM's file gameRegion</param>
-		public SramFileSoE(Stream stream, GameRegion gameRegion) : base(stream, SramOffsets.LastSaveSlotId, 3)
-		{
-			SizeChecks();
-			GameRegion = gameRegion;
-		}
+		public SramFileSoE(Stream stream, GameRegion gameRegion) : base(stream, SramOffsets.LastSaveSlotId, 3) => GameRegion = gameRegion;
+
+		protected override void OnLoading() => SizeChecks();
 
 		private void SizeChecks()
 		{

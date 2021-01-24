@@ -10,9 +10,10 @@ namespace RosettaStone.Sram.SoE.Models.Structs.Chunks
 	/// </summary>
 	/// <remarks><see cref="SramSizes.SaveSlot.Chunk20"/></remarks>
 	[DebuggerDisplay("{ToString(),nq}")]
+	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	public struct Chunk20
 	{
-		[MarshalAs(UnmanagedType.ByValArray, SizeConst = SramSizes.SaveSlot.Unknown17B)]
+		[MarshalAs(UnmanagedType.ByValArray, SizeConst = SramSizes.SaveSlot.Unknown17C)]
 		public byte[] Unknown17C; // [741|x2DD] :: (2 bytes) 
 
 		/// 00 - 1A, even numbers, inclusive. See <see cref="Weapons" /> for weapon order.

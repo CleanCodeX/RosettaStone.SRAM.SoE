@@ -5,7 +5,7 @@ using SramCommons.Extensions;
 namespace RosettaStone.Sram.SoE.Models.Structs
 {
 	[DebuggerDisplay("{ToString(),nq}")]
-	[StructLayout(LayoutKind.Sequential, Pack = 1)]
+	[StructLayout(LayoutKind.Sequential, Pack = 8)]
 	public struct Items
 	{
 		// Items

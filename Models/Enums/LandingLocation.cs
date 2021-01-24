@@ -1,6 +1,6 @@
 namespace RosettaStone.Sram.SoE.Models.Enums
 {
-	public enum LandingLocation : ushort
+	public enum LandingLocation : byte
 	{
 		Unknown1 = 0,
 		Unknown2 = 2,

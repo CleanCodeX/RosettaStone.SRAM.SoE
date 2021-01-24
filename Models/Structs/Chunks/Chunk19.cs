@@ -9,6 +9,7 @@ namespace RosettaStone.Sram.SoE.Models.Structs.Chunks
 	/// </summary>
 	/// <remarks><see cref="SramSizes.SaveSlot.Chunk19"/></remarks>
 	[DebuggerDisplay("{ToString(),nq}")]
+	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	public struct Chunk19
 	{
 		// Ingredients
@@ -19,7 +20,7 @@ namespace RosettaStone.Sram.SoE.Models.Structs.Chunks
 
 		public Armors Armors; // [679|x2A7] :: (40 bytes)
 
-		public BazookaAmmunitions BazookaAmmunitions; // [719|x2CF] :: (3 bytes)
+		public BazookaAmmunitions BazookaAmmunitions; // [719|x2CF] :: (4 bytes)
 
 		// Unknown 17
 		// Note: contains market timer
@@ -30,7 +31,7 @@ namespace RosettaStone.Sram.SoE.Models.Structs.Chunks
 		public byte FlyingMachineType; // [734|x2DE] :: (1 byte) 
 
 		[MarshalAs(UnmanagedType.ByValArray, SizeConst = SramSizes.SaveSlot.Unknown17B)]
-		public byte[] Unknown17B; // [735|x2DF] :: (7 bytes) 
+		public byte[] Unknown17B; // [735|x2DF] :: (5 bytes) 
 
 		public override string ToString() => this.FormatAsString();
 	}
