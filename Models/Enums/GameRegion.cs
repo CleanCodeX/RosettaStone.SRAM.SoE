@@ -1,7 +1,7 @@
 using Common.Shared.Min.Attributes;
 using Res = RosettaStone.Sram.SoE.Properties.Resources;
 
-namespace RosettaStone.Sram.SoE.Enums
+namespace RosettaStone.Sram.SoE.Models.Enums
 {
 	/// The game's regions
 	public enum GameRegion

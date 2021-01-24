@@ -2,7 +2,7 @@ using System;
 
 // ReSharper disable InconsistentNaming
 
-namespace RosettaStone.Sram.SoE.Models.Enums
+namespace RosettaStone.Sram.SoE.Models.Enums.Unknown
 {
 	[Flags]
 	public enum Unknown15_IvorTowerFlags_Offset18 : byte

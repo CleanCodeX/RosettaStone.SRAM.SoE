@@ -1,133 +1,70 @@
-﻿# S-RAM Save Slot
+﻿# S-RAM Save Slot (817 bytes)
 
-100% exploration for:
-Unknown 1 => [Last Savepoint Name](FixedLengthString.md)
-Unknown 2 => Belong to [BoyName](FixedLengthString.md)
-Unknown 3 => Belong to [DogName](FixedLengthString.md)
+###### Checksum
+* UInt16 Checksum # [0] (2 bytes)
 
-###### Unknown game file bytes: 462 of 817
-* UInt16 Checksum # [0] ~ (2 bytes)
+###### Last save point 
+* [LastSavePointName](FixedLengthString.md) # [2|x02] : (36 bytes, null terminated)
 
-###### Last Savepoint Name
-* [LastSavepointName](FixedLengthString.md) # [2|x02] ~ (36 bytes, null-terminated)
+###### BoyName, dogName 
+* [BoyNameDogName](Chunks/Chunk01.md) # [38|x26] : (72 bytes)
 
-###### The boy's name
-* [BoyName](FixedLengthString.md) # [38|x26] ~ (36 bytes, null-terminated) 
+###### BoyCurrentHp 
+* [BoyCurrentHp](Chunks/Chunk02.md) # [110|x6E] : (2 bytes)
 
-###### The dog's name
-* [DogName](FixedLengthString.md) # [74|x4A] ~ (36 bytes, null-terminated) 
+###### BoyStatusBuffs 
+* [BoyStatusBuffs](Chunks/Chunk03.md) # [112|x70] : (24 bytes)
 
-###### The boy's current HP'
-* UInt16 BoyCurrentHp # [110|x6E] ~ (2 bytes)
+###### Chunk04 
+* [Chunk04](Chunks/Chunk04.md) # [136|x88] : (6 bytes)
 
-###### Unknown 4
-* [Unknown4_BoyBuff](CharacterBuff.md) # [112|x70] ~ (30 bytes)
+###### BoyHpNextLevel 
+* [BoyHpNextLevel](Chunks/Chunk05.md) # [142|x8E] : (2 bytes)
 
-###### The boy's max HP
-* UInt16 BoyMaxHp # [142|x8E] ~ (2 bytes)
+###### BoyStats1 
+* [BoyStats1](Chunks/Chunk06.md) # [144|x90] : (13 bytes)
 
-###### Unknown 5
-* byte[] Unknown5 # [144|x90] ~ (10 bytes)
+###### BoyLevel 
+* [BoyLevel](Chunks/Chunk07.md) # [157|x9D] : (2 bytes)
 
-###### The boy's experience
-* UInt24 BoyExperience # [154|x9A] ~ (3 bytes)
+###### BoyStats2 
+* [BoyStats2](Chunks/Chunk08.md) # [161|xA1] : (14 bytes)
 
-###### The boy's level
-* UInt16 BoyLevel # [157|x9D] ~ (2 bytes)
+###### DogCurrentHp 
+* [DogCurrentHp](Chunks/Chunk09.md) # [175|xAF] : (2 bytes)
 
-###### Unknown 6
-* byte[] Unknown6 # [159|x9F] ~ (16 bytes)
+###### Dog Status Buffs 
+* [DogStatusBuffs](Chunks/Chunk10.md) # [177|xB1] : (24 bytes)
 
-###### The dog's current HP
-* UInt16 DogCurrentHp # [175|xAF] ~ (2 bytes)
+###### Unknown 7 
+* [Unknown 7](Chunks/Chunk11.md) # [201|xC9] : (6 bytes)
 
-###### Unknown 7
-* [Unknown7_DogBuff](CharacterBuff.md) # [177|xB1] ~ (30 bytes)
+###### DogHpNextLevel 
+* [DogHpNextLevel](Chunks/Chunk12.md) # [207|xCF] : (2 bytes)
 
-###### The dog's max HP
-* UInt16 DogMaxHp # [207|xCF] ~ (2 bytes)
+###### Chunk13_DogStats1 
+* [DogStats1](Chunks/Chunk13.md) # [209|xD1] : (13 bytes)
 
-###### Unknown 8
-* byte[] Unknown8 # [209|xD1] ~ (10 bytes)
+###### Chunk14_DogLevel 
+* [DogLevel](Chunks/Chunk14.md) # [222|xDE] : (2 bytes)
 
-###### The dog's experience
-* UInt24 DogExperience # [219|xDB] ~ (3 bytes)
+###### DogStats2 
+* [DogStats2](Chunks/Chunk15.md) # [226|xE4] : (14 bytes) 
 
-###### The dog's level
-* UInt16 DogLevel # [222|xDE] ~ (2 bytes)
+###### EquWeapon_Moneys_EquAlchemies_WeaponLvls_DogAtkLvl 
+* [EquippedStuff_Moneys_Levels](Chunks/Chunk16.md) # [240|xF0] : (101 bytes)
 
-###### Unknown 9
-* byte[] Unknown9 # [224|xE0] ~ (28 bytes)
+###### Chunk17_AlchemyLevels 
+* [AlchemyLevels](Chunks/Chunk17.md) # [341|x155] : (162 bytes)
 
-###### Moneys
-* [Moneys](Moneys.md) # [252|xFC] ~ (12 bytes)
+###### Alchemies_Charms_Spots_Weapons 
+* [Collectables_Spots](Chunks/Chunk18.md) # [503|x1F7] : (146 bytes)
 
-###### Unknown 10
-* byte[] Unknown10 # [264|x107] ~ (13 bytes)
+###### Ingredients_Items_Armors_Ammo_FlyingMachine 
+* [PossessedStuff](Chunks/Chunk19.md) # [649|x289] : (92 bytes)
 
-###### Weapon Levels
-* [WeaponLevels](WeaponLevels.md) # [277|x115] ~ (26 bytes)
+###### LastLanding_CurrentWeapon 
+* [LastLanding_CurrentWeapon](Chunks/Chunk20.md) # [741|x2E5] : (44 bytes)
 
-###### Unknown 11
-* byte[] Unknown11 # [303|x12F] ~ (14 bytes)
-
-###### The dogs's attack level
-* [DogAttackLevel](WeaponLevel.md) # [317|x13D] ~ (2 bytes)
-
-###### Unknown 12 A
-* byte[] Unknown12A # [319|x13F] ~ (16 bytes)
-
-###### Unknown 12 B
-* UInt16 Unknown12B # 335|x14F] ~ (2 bytes) Probably frame-counter, changes at every in-game save
-
-###### Unknown 12 C
-* UInt32 Unknown12C # [337|x151] ~ (4 bytes)
-
-###### Alchemy Levels
-* [AlchemyMinorLevels](AlchemyLevels.md) # [341|x155] ~ (70 bytes)
-* [AlchemyMajorLevels](AlchemyLevels.md) # [411|x19B] ~ (70 bytes)
-
-###### Unknown 13
-* byte[] Unknown13 # [481|x1E1] ~ (22 bytes)
-
-###### Weapons
-* Alchemies Alchemies # [503|x1F7] ~ (5 bytes)
-
-###### Unknown 14
-* [Unknown14](Enums/Unknown14.md) # [508|x1FC] ~ (4 bytes) 
-
-###### Charms
-* [Charms](Enums/Charm.md) # [512|x200] ~ (3 bytes)
-
-###### Unknown 15
-* [Unknown15](Unknown15.md) # [515|x203] ~ (118 bytes)
-
-###### Weapons
-* [Weapons](Weapons.md) # [633|x279] ~ (2 bytes)
-
-###### Unknown 16
-* byte[] Unknown16A # [635|x27B] ~ (4 bytes) 
-* [Unknown16B_GothicaFlags](Enums/Unknown16B_GothicaFlags.md) # [639|x27F] ~ (4 bytes)
-* [Unknown16C](Unknown16C.md) # [643|x283] ~ (6 bytes) 
-
-###### Ingredients
-* [Ingredients](Ingredients.md) # [649|x289] ~ (22 bytes)
-
-###### Items
-* [Items](Items.md) # [671|x29F] ~ (8 bytes)
-
-###### Armors
-* [Armors](Armors.md) # [679|x2A7] ~ (40 bytes)
-
-###### Bazooka Ammunitions
-* [BazookaAmmunitions](BazookaAmmunitions.md) # [719|x2CF] ~ (3 bytes)
-
-###### Unknown 17 (contains market timer)
-* byte[] Unknown17 # [722|x2D2] ~ (67 bytes)
-
-###### Trade Goods
-* [TradeGoods](TradeGoods.md) # [789|x315] ~ (26 bytes)
-
-###### Unknown 18
-* byte[] Unknown18 # [815|x32F] ~ (2 bytes)
-
+###### TradeGoods 
+* [TradeGoods](Chunks/Chunk21.md) # [785|x311] : (32 bytes)

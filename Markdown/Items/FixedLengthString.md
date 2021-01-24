@@ -1,3 +1,3 @@
 ## CharacterName (34 bytes)
 
-* char[] NameCharacters // (34 Bytes) Null terminated
+* char[] NameCharacters // (36 bytes) Null terminated

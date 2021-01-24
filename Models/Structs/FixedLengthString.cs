@@ -1,7 +1,7 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Text;
-using Common.Shared.Min.Extensions;
+using SramCommons.Extensions;
 
 namespace RosettaStone.Sram.SoE.Models.Structs
 {
@@ -13,8 +13,8 @@ namespace RosettaStone.Sram.SoE.Models.Structs
 		public byte[] Bytes; // (36 Bytes) Null terminated
 
 		public char[] AsChars => Encoding.ASCII.GetChars(Bytes);
-		public string AsString => new string(AsChars).Remove("\0")!;
+		public string AsString => AsChars.GetString();
 
-		public override string ToString() => new string(AsChars);
+		public override string ToString() => AsString;
 	}
 }

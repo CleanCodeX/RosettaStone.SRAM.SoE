@@ -1,6 +1,6 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using RosettaStone.Sram.SoE.Extensions;
+using SramCommons.Extensions;
 
 namespace RosettaStone.Sram.SoE.Models.Structs
 {
@@ -21,21 +21,8 @@ namespace RosettaStone.Sram.SoE.Models.Structs
 		public ushort Spice; 
 		public ushort SouvenirSpoon; 
 		public ushort Tapestry; 
-		public ushort TicketForExhibition; 
+		public ushort TicketForExhibition;
 
-		public override string ToString() => $@"{nameof(AnnihilationAmulet)}: {AnnihilationAmulet}
-{nameof(Beads)}: {Beads}
-{nameof(CeramicPot)}: {CeramicPot}
-{nameof(Chicken)}: {Chicken}
-{nameof(GoldenJackal)}: {GoldenJackal}
-{nameof(JeweledScarab)}: {JeweledScarab}
-{nameof(LimestoneTablet)}: {LimestoneTablet}
-{nameof(Perfume)}: {Perfume}
-{nameof(Rice)}: {Rice}
-{nameof(Spice)}: {Spice}
-{nameof(SouvenirSpoon)}: {SouvenirSpoon}
-{nameof(Tapestry)}: {Tapestry}
-{nameof(TicketForExhibition)}: {TicketForExhibition}
-".ReplaceLineBreaks();
+		public override string ToString() => this.FormatAsString();
 	}
 }

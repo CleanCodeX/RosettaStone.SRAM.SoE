@@ -1,6 +1,6 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using RosettaStone.Sram.SoE.Extensions;
+using SramCommons.Extensions;
 
 namespace RosettaStone.Sram.SoE.Models.Structs
 {
@@ -56,50 +56,6 @@ namespace RosettaStone.Sram.SoE.Models.Structs
 		public byte DefenderCollar;
 		public byte SpotsCollar;
 
-		public override string ToString() => 
-			$@"{nameof(GrassVest)}: {GrassVest}
-{nameof(ShellPlate)}: {ShellPlate}
-{nameof(DinoSkin)}: {DinoSkin}
-{nameof(BronzeArmor)}: {BronzeArmor}
-{nameof(StoneVest)}: {StoneVest}
-{nameof(CenturionCape)}: {CenturionCape}
-{nameof(SilverMail)}: {SilverMail}
-{nameof(GoldPlatedVest)}: {GoldPlatedVest}
-{nameof(ShiningArmor)}: {ShiningArmor}
-{nameof(MagnaMail)}: {MagnaMail}
-{nameof(TitaniumVest)}: {TitaniumVest}
-{nameof(VirtualVest)}: {VirtualVest}
-
-{nameof(GrassHat)}: {GrassHat}
-{nameof(ShellHat)}: {ShellHat}
-{nameof(DinoHelmet)}: {DinoHelmet}
-{nameof(BronzeHelmet)}: {BronzeHelmet}
-{nameof(ObsidianHelmet)}: {ObsidianHelmet}
-{nameof(CenturionHelmet)}: {CenturionHelmet}
-{nameof(TitansCrown)}: {TitansCrown}
-{nameof(DragonHelmet)}: {DragonHelmet}
-{nameof(KnightsHelmet)}: {KnightsHelmet}
-{nameof(LightningHelmet)}: {LightningHelmet}
-{nameof(OldReliable)}: {OldReliable}
-{nameof(BrainStorm)}: {BrainStorm}
-
-{nameof(VineBracelet)}: {VineBracelet}
-{nameof(MammothGuard)}: {MammothGuard}
-{nameof(ClawGuard)}: {ClawGuard}
-{nameof(SerpentBracer)}: {SerpentBracer}
-{nameof(BronzeGauntlet)}: {BronzeGauntlet}
-{nameof(GlovesOfRa)}: {GlovesOfRa}
-{nameof(IronBracer)}: {IronBracer}
-{nameof(MagiciansRing)}: {MagiciansRing}
-{nameof(DragonsClaw)}: {DragonsClaw}
-{nameof(CyberGlove)}: {CyberGlove}
-{nameof(ProtectorRing)}: {ProtectorRing}
-{nameof(VirtualGlove)}: {VirtualGlove}
-
-{nameof(LeatherCollar)}: {LeatherCollar}
-{nameof(SpikyCollar)}: {SpikyCollar}
-{nameof(DefenderCollar)}: {DefenderCollar}
-{nameof(SpotsCollar)}: {SpotsCollar}
-".ReplaceLineBreaks();
+		public override string ToString() => this.FormatAsString();
 	}
 }

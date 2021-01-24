@@ -1,6 +1,6 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using RosettaStone.Sram.SoE.Extensions;
+using SramCommons.Extensions;
 
 namespace RosettaStone.Sram.SoE.Models.Structs
 {
@@ -11,10 +11,8 @@ namespace RosettaStone.Sram.SoE.Models.Structs
 		public byte ThunderBall; // 0 - 99
 		public byte ParticleBomb; // 0 - 99
 		public byte CryoBlast; // 0 - 99
+		public byte CurrentAmmunitionType; // 0 = Thunder Ball, 2 = Particle Bomb, 4 = Cryo Blast
 
-		public override string ToString() => $@"{nameof(ThunderBall)}: {ThunderBall}
-{nameof(ParticleBomb)}: {ParticleBomb}
-{nameof(CryoBlast)}: {CryoBlast}
-".ReplaceLineBreaks();
+		public override string ToString() => this.FormatAsString();
 	}
 }

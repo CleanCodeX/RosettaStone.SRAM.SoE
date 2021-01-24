@@ -1,9 +1,7 @@
 // ReSharper disable InconsistentNaming
 
 using System.Runtime.InteropServices;
-using System.Text;
-using RosettaStone.Sram.SoE.Constants;
-using RosettaStone.Sram.SoE.Models.Enums;
+using RosettaStone.Sram.SoE.Models.Enums.Unknown;
 using SramCommons.Extensions;
 
 namespace RosettaStone.Sram.SoE.Models.Structs
@@ -26,23 +24,6 @@ namespace RosettaStone.Sram.SoE.Models.Structs
 		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 93)]
 		public byte[] Offset25To117;
 
-		public string FormatAsString()
-		{
-			var sb = new StringBuilder();
-
-			sb.AppendLine(nameof(Offset0To16) + ": " + Offset0To16.FormatAsString())
-				.AppendLine(nameof(Offset17) + ": " + Offset17)
-				.AppendLine(nameof(Offset18) + ": " + Offset18)
-				.AppendLine(nameof(Offset19) + ": " + Offset19)
-				.AppendLine(nameof(Offset20) + ": " + Offset20)
-				.AppendLine(nameof(Offset21) + ": " + Offset21)
-				.AppendLine(nameof(Offset22) + ": " + Offset22)
-				.AppendLine(nameof(Offset23) + ": " + Offset23)
-				.AppendLine(nameof(Offset24) + ": " + Offset24)
-				.AppendLine(nameof(Offset25To117) + ": " + Offset25To117.FormatAsString())
-				;
-
-			return sb.ToString();
-		}
+		public override string ToString() => this.FormatAsString();
 	}
 }

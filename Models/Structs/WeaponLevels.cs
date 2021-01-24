@@ -1,14 +1,16 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using RosettaStone.Sram.SoE.Extensions;
+using SramCommons.Extensions;
 
 namespace RosettaStone.Sram.SoE.Models.Structs
 {
 	[DebuggerDisplay("{ToString(),nq}")]
-	[StructLayout(LayoutKind.Sequential, Pack = 1)]
+	[StructLayout(LayoutKind.Sequential, Pack = 2)]
 	public struct WeaponLevels
 	{
-		public WeaponLevel BoneCrusher;
+		public WeaponLevel BareHands; // you can't ever fight with them
+
+		public WeaponLevel BoneCrusher; // %256 * 100 gives in-game display)
 		public WeaponLevel GladiatorSword;
 		public WeaponLevel CrusaderSword;
 		public WeaponLevel NeutronBlade;
@@ -23,24 +25,8 @@ namespace RosettaStone.Sram.SoE.Models.Structs
 		public WeaponLevel LanceWeapon;
 		public WeaponLevel LaserLance;
 
-		public WeaponLevel Bazooka;
+		public WeaponLevel Bazooka; // high part never initialized to 1 like the other weapons are, and its default of 0 causes bugs with the computer-controlled character and with Energize.
 
-		public override string ToString() => $@"{nameof(BoneCrusher)}: {BoneCrusher.Major}.{BoneCrusher.Minor}
-{nameof(GladiatorSword)}: {GladiatorSword.Major}.{GladiatorSword.Minor}
-{nameof(CrusaderSword)}: {CrusaderSword.Major}.{CrusaderSword.Minor}
-{nameof(NeutronBlade)}: {NeutronBlade.Major}.{NeutronBlade.Minor}
-
-{nameof(SpidersClaw)}: {SpidersClaw.Major}.{SpidersClaw.Minor}
-{nameof(BronzeAxe)}: {BronzeAxe.Major}.{BronzeAxe.Minor}
-{nameof(KnightBasher)}: {KnightBasher.Major}.{KnightBasher.Minor}
-{nameof(AtomSmasher)}: {AtomSmasher.Major}.{AtomSmasher.Minor}
-
-{nameof(HornSpear)}: {HornSpear.Major}.{HornSpear.Minor}
-{nameof(BronzeSpear)}: {BronzeSpear.Major}.{BronzeSpear.Minor}
-{nameof(LanceWeapon)}: {LanceWeapon.Major}.{LanceWeapon.Minor}
-{nameof(LaserLance)}: {LaserLance.Major}.{LaserLance.Minor}
-
-{nameof(Bazooka)}: {Bazooka.Major}.{Bazooka.Minor}
-".ReplaceLineBreaks();
+		public override string ToString() => this.FormatAsString();
 	}
 }

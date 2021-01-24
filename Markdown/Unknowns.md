@@ -33,7 +33,7 @@
 ## Menu stuff: (probably not game related, change applies for all games)
 * Messagebox Color
 * Messagebox Border style
-✓ Mono/Stereo sound § **FOUND**: byte 1 of [S-RAM](sram.md)
+✓ Mono/Stereo sound § **FOUND**: byte 1 of [S-RAM](S-RAM.md)
 * Boy fight behavior
 * Dog fight behavior
 * Boy fight Auto Level
@@ -48,4 +48,4 @@
 * (✓) Buffs § **FOUND**: but most bytes still unknown (boy: Unknown4, dog: Unknown7)
 
 ## Save slot-unrelated SRAM (?)
-✓ last used Save slot § **FOUND**: byte 2 of [S-RAM](sram.md)
+✓ last used Save slot § **FOUND**: byte 2 of [S-RAM](S-RAM.md)

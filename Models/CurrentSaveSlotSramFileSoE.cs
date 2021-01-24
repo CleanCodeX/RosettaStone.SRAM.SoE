@@ -1,5 +1,5 @@
 using System.IO;
-using RosettaStone.Sram.SoE.Enums;
+using RosettaStone.Sram.SoE.Models.Enums;
 using RosettaStone.Sram.SoE.Models.Structs;
 
 namespace RosettaStone.Sram.SoE.Models
@@ -22,7 +22,7 @@ namespace RosettaStone.Sram.SoE.Models
 
 		/// <summary>
 		/// The current save slot index
-		/// Setting the index set sets automatically <see cref="CurrentSaveSlot"/>
+		/// Setting the index sets automatically <see cref="CurrentSaveSlot"/>
 		/// </summary>
 		public virtual int CurrentSaveSlotIndex
 		{
@@ -35,12 +35,12 @@ namespace RosettaStone.Sram.SoE.Models
 		}
 
 		/// <summary>
-		/// Overwrites game data for <see cref="CurrentSaveSlotIndex"/> with modified data from <see cref="CurrentSaveSlot"/>
+		/// Overwrites save slot for <see cref="CurrentSaveSlotIndex"/> with modified data from <see cref="CurrentSaveSlot"/>
 		/// </summary>
 		public virtual void AcceptCurrentSaveSlotChanges() => SetSegment(CurrentSaveSlotIndex, CurrentSaveSlot);
 
 		/// <summary>
-		/// Overwrites game data for <see cref="CurrentSaveSlotIndex"/> with original data from <see cref="SramFileSoE.Struct"/> buffer
+		/// Overwrites save slot for <see cref="CurrentSaveSlotIndex"/> with original data from <see cref="SramFileSoE.Struct"/> buffer
 		/// </summary>
 		public virtual void DiscardCurrentSaveSlotChanges() => base.SetSegment(CurrentSaveSlotIndex, Struct.SaveSlots[CurrentSaveSlotIndex]);
 	}

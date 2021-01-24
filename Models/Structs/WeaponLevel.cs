@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace RosettaStone.Sram.SoE.Models.Structs
 {
 	[DebuggerDisplay("{ToString(),nq}")]
-	[StructLayout(LayoutKind.Sequential, Pack = 1)]
+	[StructLayout(LayoutKind.Sequential, Pack = 2)]
 	public struct WeaponLevel
 	{
 		public byte Minor; // 0-255

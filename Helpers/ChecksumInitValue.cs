@@ -1,12 +1,12 @@
-namespace RosettaStone.Sram.SoE.Constants
+namespace RosettaStone.Sram.SoE.Helpers
 {
-	public class ChecksumStartValues
+	internal enum ChecksumInitValue: uint
 	{
 		/// The starting value for the checksum in the US version
 		// ReSharper disable once InconsistentNaming
-		public const uint US = 1_087;
+		US = 1_087,
 
 		/// The starting value for the checksum in the European versions
-		public const uint Europe = 5_887;
+		Europe = 5_887
 	}
 }

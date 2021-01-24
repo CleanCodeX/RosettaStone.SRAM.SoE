@@ -1,8 +1,8 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using Common.Shared.Min.Extensions;
-using RosettaStone.Sram.SoE.Constants;
-using RosettaStone.Sram.SoE.Enums;
+using RosettaStone.Sram.SoE.Models;
+using RosettaStone.Sram.SoE.Models.Enums;
 
 namespace RosettaStone.Sram.SoE.Helpers
 {
@@ -34,7 +34,7 @@ namespace RosettaStone.Sram.SoE.Helpers
 
 			const int gameSize = SramSizes.SaveSlot.All;
 			const int sizeChecksum = 2;
-			var checksum = isUsVersion ? ChecksumStartValues.US : ChecksumStartValues.Europe;
+			var checksum = (isUsVersion ? ChecksumInitValue.US : ChecksumInitValue.Europe).ToUInt();
 			var offset = SramOffsets.LastSaveSlotId + slotIndex * gameSize;
 			var temp = (byte)(checksum + sram[offset + sizeChecksum]);
 

@@ -1,6 +1,6 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using RosettaStone.Sram.SoE.Extensions;
+using SramCommons.Extensions;
 
 namespace RosettaStone.Sram.SoE.Models.Structs
 {
@@ -18,14 +18,6 @@ namespace RosettaStone.Sram.SoE.Models.Structs
 		public byte PixieDust; // 0 - 6
 		public byte CallBead; // 0 - 99
 
-		public override string ToString() => $@"{nameof(Petal)}: {Petal}
-{nameof(Nectar)}: {Nectar}
-{nameof(Honey)}: {Honey}
-{nameof(DogBiscuit)}: {DogBiscuit}
-{nameof(Wings)}: {Wings}
-{nameof(Essence)}: {Essence}
-{nameof(PixieDust)}: {PixieDust}
-{nameof(CallBead)}: {CallBead}
-".ReplaceLineBreaks();
+		public override string ToString() => this.FormatAsString();
 	}
 }

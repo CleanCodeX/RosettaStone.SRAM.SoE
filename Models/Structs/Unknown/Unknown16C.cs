@@ -1,10 +1,8 @@
 ﻿using System.Runtime.InteropServices;
-using System.Text;
-using RosettaStone.Sram.SoE.Constants;
-using RosettaStone.Sram.SoE.Models.Enums;
+using RosettaStone.Sram.SoE.Models.Enums.Unknown;
 using SramCommons.Extensions;
 
-namespace RosettaStone.Sram.SoE.Models.Structs.Unknown
+namespace RosettaStone.Sram.SoE.Models.Structs
 {
 	[StructLayout(LayoutKind.Sequential, Pack = 1, Size = SramSizes.SaveSlot.Unknown16C)] // 6
 	public struct Unknown16C
@@ -14,15 +12,6 @@ namespace RosettaStone.Sram.SoE.Models.Structs.Unknown
 		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 5)]
 		public byte[] Offset1To5;
 
-		public string FormatAsString()
-		{
-			var sb = new StringBuilder();
-
-			sb.AppendLine(nameof(Offset0) + ": " + Offset0.ToString())
-				.AppendLine(nameof(Offset1To5) + ": " + Offset1To5.FormatAsString())
-				;
-
-			return sb.ToString();
-		}
+		public override string ToString() => this.FormatAsString();
 	}
 }

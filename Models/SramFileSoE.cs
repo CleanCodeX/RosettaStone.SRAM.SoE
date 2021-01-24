@@ -3,11 +3,9 @@ using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
 using Common.Shared.Min.Helpers;
-using RosettaStone.Sram.SoE.Constants;
-using RosettaStone.Sram.SoE.Enums;
 using RosettaStone.Sram.SoE.Helpers;
+using RosettaStone.Sram.SoE.Models.Enums;
 using RosettaStone.Sram.SoE.Models.Structs;
-using SramCommons.Extensions;
 using SramCommons.Models;
 
 namespace RosettaStone.Sram.SoE.Models
@@ -75,14 +73,14 @@ namespace RosettaStone.Sram.SoE.Models
 		{
 			base.Load(stream);
 
-			for (var slotIndex = 0; slotIndex <= 3; ++slotIndex)
+			for (var index = 0; index <= 3; ++index)
 			{
-				var fileChecksum = GetChecksum(slotIndex);
+				var fileChecksum = GetChecksum(index);
 
-				var calculatedChecksum = ChecksumHelper.CalcChecksum(Buffer, slotIndex, GameRegion);
+				var calculatedChecksum = ChecksumHelper.CalcChecksum(Buffer, index, GameRegion);
 				if (fileChecksum != calculatedChecksum) continue;
 
-				_validSaveSlots[slotIndex] = true;
+				_validSaveSlots[index] = true;
 			}
 		}
 
@@ -101,52 +99,6 @@ namespace RosettaStone.Sram.SoE.Models
 				// ReSharper disable UnusedVariable
 
 				ref var data = ref saveSlot.Data;
-
-				var boyLevel = data.BoyLevel;
-				var boyExperience = data.BoyExperience;
-				var boyCurrentHp = data.BoyCurrentHp;
-				var boyMaxHp = data.BoyMaxHp;
-				var boyName = data.BoyName.AsString;
-
-				var dogLevel = data.DogLevel;
-				var dogExperience = data.DogExperience;
-				var dogCurrentHp = data.DogCurrentHp;
-				var dogMaxHp = data.DogMaxHp;
-				var dogName = data.DogName.AsString;
-
-				var alchemies = data.Alchemies.ToString();
-				var alchemyMajorLevels = data.AlchemyMajorLevels.ToString();
-				var alchemyMinorLevels = data.AlchemyMinorLevels.ToString();
-				var charms = data.Charms.ToString();
-				var weapons = data.Weapons.ToString();
-				var weaponLevels = data.WeaponLevels.ToString();
-				var dogAttackLevel = data.DogAttackLevel.ToString();
-				var money = data.Moneys.ToString();
-				var items = data.Items.ToString();
-				var armors = data.Armors.ToString();
-				var ammunitions = data.BazookaAmmunitions.ToString();
-				var tradeGoods = data.TradeGoods.ToString();
-
-				var unknown1 = data.LastSavePointName.AsString;
-				var unknown4 = data.Unknown4_BoyBuff.FormatAsString();
-				var unknown5 = data.Unknown5.FormatAsString();
-				var unknown6 = data.Unknown6.FormatAsString();
-				var unknown7 = data.Unknown7_DogBuff.FormatAsString();
-				var unknown8 = data.Unknown8.FormatAsString();
-				var unknown9 = data.Unknown9.FormatAsString();
-				var unknown10 = data.Unknown10.FormatAsString();
-				var unknown11 = data.Unknown11.FormatAsString();
-				var unknown12A = data.Unknown12A.FormatAsString();
-				var unknown12B = data.Unknown12B.ToString();
-				var unknown12C = data.Unknown12C.ToString();
-				var unknown13 = data.Unknown13.FormatAsString();
-				var unknown14 = data.Unknown14.ToString();
-				var unknown15 = data.Unknown15.FormatAsString();
-				var unknown16A = data.Unknown16A.FormatAsString();
-				var unknown16B = data.Unknown16B_GothicaFlags.ToString();
-				var unknown16C = data.Unknown16C.FormatAsString();
-				var unknown17 = data.Unknown17.FormatAsString();
-				var unknown18 = data.Unknown18.FormatAsString();
 
 				// ReSharper restore UnusedVariable
 #pragma warning restore IDE0059 // Unnötige Zuweisung eines Werts.
@@ -168,9 +120,9 @@ namespace RosettaStone.Sram.SoE.Models
 		/// <param name="stream"></param>
 		public override void Save(Stream stream)
 		{
-			for (var slotIndex = 0; slotIndex <= 3; ++slotIndex)
-				if (IsValid(slotIndex))
-					base.SetSegment(slotIndex, Struct.SaveSlots[slotIndex]);
+			for (var index = 0; index <= 3; ++index)
+				if (IsValid(index))
+					base.SetSegment(index, Struct.SaveSlots[index]);
 
 			base.Save(stream);
 		}
@@ -185,25 +137,25 @@ namespace RosettaStone.Sram.SoE.Models
 		/// <summary>
 		/// Gets the checksum for a save slot index
 		/// </summary>
-		/// <param name="slotIndex">the save slot index which game's checksum should be returned</param>
+		/// <param name="index">the save slot index which game's checksum should be returned</param>
 		/// <returns>The checksum for the given save slot index</returns>
-		public virtual ushort GetChecksum(int slotIndex)
+		public virtual ushort GetChecksum(int index)
 		{
-			var offset = FirstSegmentOffset + slotIndex * SegmentSize + SramOffsets.SaveSlot.Checksum;
+			var offset = FirstSegmentOffset + index * SegmentSize;
 			return BitConverter.ToUInt16(Buffer, offset);
 		}
 
 		/// <summary>
 		/// Sets the checksum for the given save slot index
 		/// </summary>
-		/// <param name="slotIndex">The save slot index which game's checksum should be set</param>
+		/// <param name="index">The save slot index which game's checksum should be set</param>
 		/// <param name="checksum">The checksum to be set</param>
-		public virtual void SetChecksum(int slotIndex, ushort checksum)
+		public virtual void SetChecksum(int index, ushort checksum)
 		{
-			var offset = FirstSegmentOffset + slotIndex * SegmentSize + SramOffsets.SaveSlot.Checksum;
+			var offset = FirstSegmentOffset + index * SegmentSize;
 			var bytes = BitConverter.GetBytes(checksum);
 
-			Struct.SaveSlots[slotIndex].Checksum = checksum;
+			Struct.SaveSlots[index].Checksum = checksum;
 
 			bytes.CopyTo(Buffer, offset);
 		}

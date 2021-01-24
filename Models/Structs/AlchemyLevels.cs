@@ -1,9 +1,13 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using RosettaStone.Sram.SoE.Extensions;
+using SramCommons.Extensions;
 
 namespace RosettaStone.Sram.SoE.Models.Structs
 {
+	/// <summary>
+	/// AlchemyLevels
+	/// </summary>
+	/// <remarks>70 bytes</remarks>
 	[DebuggerDisplay("{ToString(),nq}")]
 	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	public struct AlchemyLevels
@@ -48,45 +52,6 @@ namespace RosettaStone.Sram.SoE.Models.Structs
 		public ushort Stop;
 		public ushort SuperHeal;
 
-		public override string ToString() => $@"{nameof(AcidRain)}: {AcidRain}
-{nameof(Atlas)}: {Atlas}
-{nameof(Barrier)}: {Barrier}
-{nameof(CallUp)}: {CallUp}
-{nameof(Corrosion)}: {Corrosion}
-{nameof(Crush)}: {Crush}
-{nameof(Cure)}: {Cure}
-{nameof(Defend)}: {Defend}
-
-{nameof(DoubleDrain)}: {DoubleDrain}
-{nameof(Drain)}: {Drain}
-{nameof(Energize)}: {Energize}
-{nameof(Escape)}: {Escape}
-{nameof(Explosion)}: {Explosion}
-{nameof(FireBall)}: {FireBall}
-{nameof(FirePower)}: {FirePower}
-{nameof(Flash)}: {Flash}
-
-{nameof(ForceField)}: {ForceField}
-{nameof(HardBall)}: {HardBall}
-{nameof(Heal)}: {Heal}
-{nameof(Lance)}: {Lance}
-{nameof(Laser)}: {Laser}
-{nameof(Levitate)}: {Levitate}
-{nameof(LightningStorm)}: {LightningStorm}
-{nameof(MiracleCure)}: {MiracleCure}
-
-{nameof(Nitro)}: {Nitro}
-{nameof(OneUp)}: {OneUp}
-{nameof(Reflect)}: {Reflect}
-{nameof(Regrowth)}: {Regrowth}
-{nameof(Revealer)}: {Revealer}
-{nameof(Revive)}: {Revive}
-{nameof(SlowBurn)}: {SlowBurn}
-{nameof(Speed)}: {Speed}
-
-{nameof(Sting)}: {Sting}
-{nameof(Stop)}: {Stop}
-{nameof(SuperHeal)}: {SuperHeal}
-".ReplaceLineBreaks();
+		public override string ToString() => this.FormatAsString();
 	}
 }
