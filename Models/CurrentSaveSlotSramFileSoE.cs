@@ -1,15 +1,15 @@
 using System.IO;
-using RosettaStone.Sram.SoE.Models.Enums;
-using RosettaStone.Sram.SoE.Models.Structs;
+using SoE.Models.Enums;
+using SRAM.SoE.Models.Structs;
 
-namespace RosettaStone.Sram.SoE.Models
+namespace SRAM.SoE.Models
 {
 	/// <summary>
 	/// Implementation of SramFileSoE with <see cref="CurrentSaveSlot"/> functionality
 	/// </summary>
 	public class CurrentSaveSlotSramFileSoE : SramFileSoE
 	{
-		public CurrentSaveSlotSramFileSoE(Stream stream, GameRegion gameRegion) : base(stream, gameRegion)
+		public CurrentSaveSlotSramFileSoE(Stream stream, GameRegion region) : base(stream, region)
 		{ }
 
 		private SaveSlotSoE _currentSaveSlot;

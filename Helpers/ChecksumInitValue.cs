@@ -1,4 +1,4 @@
-namespace RosettaStone.Sram.SoE.Helpers
+namespace SRAM.SoE.Helpers
 {
 	internal enum ChecksumInitValue: uint
 	{

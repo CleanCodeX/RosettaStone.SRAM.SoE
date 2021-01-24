@@ -1,6 +1,6 @@
 using System.Runtime.InteropServices;
 
-namespace RosettaStone.Sram.SoE.Models.Enums
+namespace SRAM.SoE.Models.Enums
 {
 	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	public struct IngredientSniffSpots

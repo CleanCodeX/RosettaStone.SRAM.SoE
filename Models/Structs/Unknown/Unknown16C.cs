@@ -1,8 +1,8 @@
 ﻿using System.Runtime.InteropServices;
-using RosettaStone.Sram.SoE.Models.Enums.Unknown;
-using SramCommons.Extensions;
+using SRAM.SoE.Models.Enums.Unknown;
+using IO.Extensions;
 
-namespace RosettaStone.Sram.SoE.Models.Structs
+namespace SRAM.SoE.Models.Structs
 {
 	[StructLayout(LayoutKind.Sequential, Pack = 1, Size = SramSizes.SaveSlot.Unknown16C)] // 6
 	public struct Unknown16C

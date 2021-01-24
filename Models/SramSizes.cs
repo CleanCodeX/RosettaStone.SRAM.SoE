@@ -1,7 +1,7 @@
 // ReSharper disable MemberHidesStaticFromOuterClass
 // ReSharper disable PossibleLossOfFraction
 
-namespace RosettaStone.Sram.SoE.Models
+namespace SRAM.SoE.Models
 {
 	/// <summary>
 	/// Known sizes of SoE's S-RAM buffer

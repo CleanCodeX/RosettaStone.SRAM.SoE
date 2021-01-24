@@ -1,9 +1,9 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using RosettaStone.Sram.SoE.Models.Enums;
-using SramCommons.Extensions;
+using SoE.Models.Enums;
+using IO.Extensions;
 
-namespace RosettaStone.Sram.SoE.Models.Structs.Chunks
+namespace SRAM.SoE.Models.Structs.Chunks
 {
 	/// <summary>
 	/// LastLanding_CurrentWeapon

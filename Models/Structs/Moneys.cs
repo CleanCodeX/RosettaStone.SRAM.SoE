@@ -1,8 +1,8 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using SramCommons.Models.Structs;
+using IO.Models.Structs;
 
-namespace RosettaStone.Sram.SoE.Models.Structs
+namespace SRAM.SoE.Models.Structs
 {
 	[DebuggerDisplay("{ToString(),nq}")]
 	[StructLayout(LayoutKind.Sequential, Pack = 1, Size = 12)]

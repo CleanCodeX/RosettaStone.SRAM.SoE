@@ -1,9 +1,9 @@
 using System.Runtime.InteropServices;
-using SramCommons.Extensions;
+using IO.Extensions;
 
 // ReSharper disable InconsistentNaming
 
-namespace RosettaStone.Sram.SoE.Models.Structs
+namespace SRAM.SoE.Models.Structs
 {
 	[StructLayout(LayoutKind.Sequential, Pack = 2)]
 	public struct CharacterBuffStatus

@@ -1,4 +1,4 @@
-﻿# S-RAM - Map
+﻿# Secret Of Evermore ~ S-RAM - Map
 
 Size: 8192 bytes (8 KiB)
 

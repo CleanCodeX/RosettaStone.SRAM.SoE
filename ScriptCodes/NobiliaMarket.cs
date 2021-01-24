@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
-using RosettaStone.Sram.SoE.Extensions;
+using SRAM.SoE.Extensions;
 // ReSharper disable InconsistentNaming
 
-namespace RosettaStone.Sram.SoE.ScriptCodes
+namespace SRAM.SoE.ScriptCodes
 {
 	/// <summary>
 	/// Relevant code routines of Nobilia market merchants starting at script address offset around [0x968736]

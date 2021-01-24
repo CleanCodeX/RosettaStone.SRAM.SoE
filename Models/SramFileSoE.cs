@@ -3,12 +3,12 @@ using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
 using Common.Shared.Min.Helpers;
-using RosettaStone.Sram.SoE.Helpers;
-using RosettaStone.Sram.SoE.Models.Enums;
-using RosettaStone.Sram.SoE.Models.Structs;
-using SramCommons.Models;
+using SRAM.Models;
+using SRAM.SoE.Helpers;
+using SoE.Models.Enums;
+using SRAM.SoE.Models.Structs;
 
-namespace RosettaStone.Sram.SoE.Models
+namespace SRAM.SoE.Models
 {
 	/// <summary>
 	/// SramFile implementation for <see cref="SramSoE"/> and <see cref="SaveSlotSoE"/>
@@ -23,7 +23,7 @@ namespace RosettaStone.Sram.SoE.Models
 		private readonly bool[] _validSaveSlots = new bool[4];
 
 		/// <summary>
-		/// The S-RAM's file gameRegion 
+		/// The S-RAM's file region 
 		/// </summary>
 		public GameRegion GameRegion { get; }
 
@@ -31,15 +31,15 @@ namespace RosettaStone.Sram.SoE.Models
 		/// Creates an instance of <see cref="SramFileSoE" />
 		/// </summary>
 		/// <param name="buffer"></param>
-		/// <param name="gameRegion">The S-RAM's file gameRegion</param>
-		public SramFileSoE(byte[] buffer, GameRegion gameRegion) : base(buffer, SramOffsets.LastSaveSlotId, 3) => GameRegion = gameRegion;
+		/// <param name="region">The S-RAM's file region</param>
+		public SramFileSoE(byte[] buffer, GameRegion region) : base(buffer, SramOffsets.FirstSaveSlot, 3) => GameRegion = region;
 
 		/// <summary>
 		/// Creates an instance of <see cref="SramFileSoE" />
 		/// </summary>
 		/// <param name="stream">The (opened) stream from which the S-RAM buffer and S-RAM structure will be loaded</param>
-		/// <param name="gameRegion">The S-RAM's file gameRegion</param>
-		public SramFileSoE(Stream stream, GameRegion gameRegion) : base(stream, SramOffsets.LastSaveSlotId, 3) => GameRegion = gameRegion;
+		/// <param name="region">The S-RAM's file region</param>
+		public SramFileSoE(Stream stream, GameRegion region) : base(stream, SramOffsets.FirstSaveSlot, 3) => GameRegion = region;
 
 		protected override void OnLoading() => SizeChecks();
 
@@ -104,7 +104,7 @@ namespace RosettaStone.Sram.SoE.Models
 		}
 
 		/// <summary>
-		/// Saves savegame to SaveSlot structure, not to S-RAM buffer. To save to S-RAM buffer call <see cref="Save"> method.
+		/// Saves savegame to SaveSlot structure, not to S-RAM buffer. To save to S-RAM buffer call <see cref="Save" /> method.
 		/// </summary>
 		/// <param name="index">The target save slot index the game is saved to</param>
 		/// <param name="slot">The game to be saved</param>

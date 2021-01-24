@@ -1,9 +1,9 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using SramCommons.Extensions;
-using SramCommons.Models.Structs;
+using IO.Extensions;
+using IO.Models.Structs;
 
-namespace RosettaStone.Sram.SoE.Models.Structs.Chunks
+namespace SRAM.SoE.Models.Structs.Chunks
 {
 	/// <summary>
 	/// BoyStats1

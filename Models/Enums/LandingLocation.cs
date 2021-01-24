@@ -1,4 +1,4 @@
-namespace RosettaStone.Sram.SoE.Models.Enums
+namespace SoE.Models.Enums
 {
 	public enum LandingLocation : byte
 	{

@@ -1,10 +1,10 @@
 using System.Runtime.InteropServices;
-using RosettaStone.Sram.SoE.Models.Structs.Chunks;
-using SramCommons.Extensions;
+using SRAM.SoE.Models.Structs.Chunks;
+using IO.Extensions;
 
 // ReSharper disable InconsistentNaming
 
-namespace RosettaStone.Sram.SoE.Models.Structs
+namespace SRAM.SoE.Models.Structs
 {
 	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	public struct SaveSlotSoE

@@ -1,7 +1,7 @@
 ﻿using System.Runtime.InteropServices;
-using SramCommons.Extensions;
+using IO.Extensions;
 
-namespace RosettaStone.Sram.SoE.Models.Structs
+namespace SRAM.SoE.Models.Structs
 {
 	/// <summary>
 	/// CharacterStats2
