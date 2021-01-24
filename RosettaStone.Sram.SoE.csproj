@@ -5,7 +5,7 @@
     <Nullable>enable</Nullable>
     <LangVersion>preview</LangVersion>
     <Version>0.4.1-a4</Version>
-    <PackageTags>SoE, Secret of Evermore, SRAM, S-RAM, SNES, Rosetta Stone, Rosetta-Stone, Format, Super Nintendo, Super Famicon</PackageTags>
+    <PackageTags>SoE, Secret of Evermore, S-RAM, S-RAM, SNES, Rosetta Stone, Rosetta-Stone, Format, Super Nintendo, Super Famicon</PackageTags>
     <Authors>CleanCoderX</Authors>
     <Description>Collection of SoE's S-RAM models, load (&amp; experimental save) functionality</Description>    
     <Company>KST</Company>
@@ -16,7 +16,7 @@
     <PackageProjectUrl>http://evermore.xeth.de</PackageProjectUrl>
     <PackageId>CCX.RosettaStone.Sram.SoE</PackageId>
     <PackageIcon>Icon.png</PackageIcon>
-    <Product>RosettaStone.SRAM.SoE</Product>
+    <Product>RosettaStone.S-RAM.SoE</Product>
     <Platforms>AnyCPU</Platforms>
     <RepositoryType>Rosetta Stone</RepositoryType>
   </PropertyGroup>

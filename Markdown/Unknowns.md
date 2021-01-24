@@ -47,5 +47,5 @@
 * Superheal "guess" wait timer
 * (✓) Buffs § **FOUND**: but most bytes still unknown (boy: Unknown4, dog: Unknown7)
 
-## Save slot-unrelated SRAM (?)
+## Save slot-unrelated S-RAM (?)
 ✓ last used Save slot § **FOUND**: byte 2 of [S-RAM](S-RAM.md)
