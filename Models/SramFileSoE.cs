@@ -54,6 +54,8 @@ namespace RosettaStone.Sram.SoE.Models
 			Debug.Assert(SramSizes.IsValid);
 			Debug.Assert(SramSizes.SaveSlot.IsValid);
 
+			StructSizeValidator.Validate();
+
 			Requires.Equal(Marshal.SizeOf<SramSoE>(), SramSizes.All, nameof(Size));
 			Requires.Equal(Marshal.SizeOf<SaveSlotSoE>(), SramSizes.SaveSlot.All, nameof(SegmentSize));
 		}
