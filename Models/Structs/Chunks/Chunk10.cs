@@ -13,7 +13,7 @@ namespace RosettaStone.Sram.SoE.Models.Structs.Chunks
 	{
 		// Dog Status Buffs 1-4
 		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
-		public CharacterBuffStatus[] DogStatusBuffs; // [177|xB1] :: (24 bytes)
+		public CharacterBuffStatus[] Status; // [177|xB1] :: (24 bytes)
 
 		public override string ToString() => this.FormatAsString();
 	}

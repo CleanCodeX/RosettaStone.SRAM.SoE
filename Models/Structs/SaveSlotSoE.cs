@@ -35,8 +35,8 @@ namespace RosettaStone.Sram.SoE.Models.Structs
 		// Chunk04 [136|x88] :: (6 bytes)
 		public Chunk04 Chunk04;
 
-		// BoyHpNextLevel [142|x8E] :: (2 bytes)
-		public Chunk05 BoyHpNextLevel;
+		// BoyMaxHp [142|x8E] :: (2 bytes)
+		public Chunk05 BoyMaxHp;
 
 		// BoyStats1 [144|x90] :: (13 bytes)
 		public Chunk06 BoyStats1;
@@ -56,13 +56,13 @@ namespace RosettaStone.Sram.SoE.Models.Structs
 		// Unknown 7 [201|xC9] :: (6 bytes)
 		public Chunk11 Chunk11;
 
-		// DogHpNextLevel [207|xCF] :: (2 bytes)
-		public Chunk12 DogHpNextLevel;
+		// DogMaxHp [207|xCF] :: (2 bytes)
+		public Chunk12 DogMaxHp;
 
 		// Chunk13_DogStats1 [209|xD1] :: (13 bytes)
 		public Chunk13 DogStats1;
 
-		// Chunk14_DogLevel [222|xDE] :: (2 bytes)
+		// Chunk14_DogLevel [222|xDE] :: (4 bytes)
 		public Chunk14 DogLevel;
 
 		// Chunk15_DogStats2 [226|xE4] :: (14 bytes) 

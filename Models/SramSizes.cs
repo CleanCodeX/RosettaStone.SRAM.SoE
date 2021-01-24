@@ -10,14 +10,11 @@ namespace RosettaStone.Sram.SoE.Models
 	{
 		public const int AudioMode = 1;
 		public const int LastSaveSlotId = 1;
-
-		/// Size of the S-RAM Unknown buffer
-		public const int Unknown1 = 4_922;
-
+		
 		/// Size of the S-RAM file
-		public const int All = 8_192;
+		public const int All = AudioMode + LastSaveSlotId + SaveSlot.All * 4 + Unknown19;
 
-		public static readonly bool IsValid = AudioMode + LastSaveSlotId + SaveSlot.All * 4 + Unknown1 == All;
+		public static readonly bool IsValid = All == 8_192;
 
 		/// <summary>Sizes of save slot buffers</summary>
 		public class SaveSlot
@@ -26,15 +23,15 @@ namespace RosettaStone.Sram.SoE.Models
 			public const int LastSavePointName = 36;
 
 			#region Chunks 1-21
-			public const int Chunk1 = 72; // (x24) 
-			public const int Chunk2 = 2; // (x2) 
-			public const int Chunk3 = 24; // (x18) 
-			public const int Chunk4 = 6; // (x6) 
-			public const int Chunk5 = 2; // (x2) 
-			public const int Chunk6 = 13; // (xD) 
-			public const int Chunk7 = 4; // (x4) 
-			public const int Chunk8 = 14; // (xE) 
-			public const int Chunk9 = 2; // (x2) 
+			public const int Chunk01 = 72; // (x24) 
+			public const int Chunk02 = 2; // (x2) 
+			public const int Chunk03 = 24; // (x18) 
+			public const int Chunk04 = 6; // (x6) 
+			public const int Chunk05 = 2; // (x2) 
+			public const int Chunk06 = 13; // (xD) 
+			public const int Chunk07 = 4; // (x4) 
+			public const int Chunk08 = 14; // (xE) 
+			public const int Chunk09 = 2; // (x2) 
 			public const int Chunk10 = 24; // (x18) 
 			public const int Chunk11 = 6; // (x6) 
 			public const int Chunk12 = 2; // (x2) 
@@ -85,21 +82,31 @@ namespace RosettaStone.Sram.SoE.Models
 
 			public const int Unknown18 = 2;
 
-			public const int AllUnknown = Unknown4 + Unknown6 + Unknown7 + Unknown8 + Unknown9 + Unknown10 +
-										  Unknown11 + Unknown12A + Unknown12B + Unknown12C + Unknown13 + Unknown14 + Unknown15 +
-										  Unknown16A + Unknown16B_GothicaFlags + Unknown16C + Unknown17A + Unknown17B + 
-										  Unknown17B + Unknown17C + Unknown17D + Unknown17E + Unknown17F + Unknown17G + Unknown18;
+			public const int AllUnknown = Unknown4 + Unknown6 + Unknown7 + Unknown8 + Unknown9 + 
+			                              Unknown10 + Unknown11 + 
+			                              Unknown12A + Unknown12B + Unknown12C + 
+			                              Unknown13 + Unknown14 + Unknown15 + 
+			                              Unknown16A + Unknown16B_GothicaFlags + Unknown16C + 
+			                              Unknown17A + Unknown17B + Unknown17C + Unknown17D + 
+			                              Unknown17E + Unknown17F + Unknown17G + 
+			                              Unknown18;
 
-			public const int AllChunks = Chunk1 + Chunk2 + Chunk3 + Chunk4 + Chunk5 + Chunk6 + Chunk7 + Chunk8 + Chunk9 + Chunk10 +
-										Chunk11 + Chunk12 + Chunk13 + Chunk14 + Chunk15 + Chunk16 + Chunk17 + Chunk18 + Chunk19 + Chunk20 + Chunk21;
+			public const int AllChunks = Chunk01 + Chunk02 + Chunk03 + Chunk04 + Chunk05 + 
+			                             Chunk06 + Chunk07 + Chunk08 + Chunk09 + Chunk10 + 
+			                             Chunk11 + Chunk12 + Chunk13 + Chunk14 + Chunk15 + 
+			                             Chunk16 + Chunk17 + Chunk18 + Chunk19 + Chunk20 + 
+			                             Chunk21;
 
-			public const int Data = 815;
-			public const int All = Data + Checksum;
+			public const int All = AllChunks + LastSavePointName + Checksum;
+			public const int AllKnowns = All - AllUnknown;
 
 			public static readonly double UnknownPercentage = AllUnknown * 100D / All;
-			public static readonly double KnownPercentage = (AllChunks - AllUnknown + Checksum) * 100D / All;
+			public static readonly double KnownPercentage = AllKnowns * 100D / All;
 
-			public static readonly bool IsValid = AllChunks == All;
+			public static readonly bool IsValid = All == 817;
 		}
+
+		/// Size of the S-RAM Unknown buffer
+		public const int Unknown19 = 4_922;
 	}
 }

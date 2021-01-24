@@ -10,15 +10,15 @@ namespace RosettaStone.Sram.SoE.Helpers
 	{
 		internal static void Validate()
 		{
-			Requires.True(Marshal.SizeOf<Chunk01>() == Slot.Chunk1, nameof(Slot.Chunk1));
-			Requires.True(Marshal.SizeOf<Chunk02>() == Slot.Chunk2, nameof(Slot.Chunk2));
-			Requires.True(Marshal.SizeOf<Chunk03>() == Slot.Chunk3, nameof(Slot.Chunk3));
-			Requires.True(Marshal.SizeOf<Chunk04>() == Slot.Chunk4, nameof(Slot.Chunk4));
-			Requires.True(Marshal.SizeOf<Chunk05>() == Slot.Chunk5, nameof(Slot.Chunk5));
-			Requires.True(Marshal.SizeOf<Chunk06>() == Slot.Chunk6, nameof(Slot.Chunk6));
-			Requires.True(Marshal.SizeOf<Chunk07>() == Slot.Chunk7, nameof(Slot.Chunk7));
-			Requires.True(Marshal.SizeOf<Chunk08>() == Slot.Chunk8, nameof(Slot.Chunk8));
-			Requires.True(Marshal.SizeOf<Chunk09>() == Slot.Chunk9, nameof(Slot.Chunk9));
+			Requires.True(Marshal.SizeOf<Chunk01>() == Slot.Chunk01, nameof(Slot.Chunk01));
+			Requires.True(Marshal.SizeOf<Chunk02>() == Slot.Chunk02, nameof(Slot.Chunk02));
+			Requires.True(Marshal.SizeOf<Chunk03>() == Slot.Chunk03, nameof(Slot.Chunk03));
+			Requires.True(Marshal.SizeOf<Chunk04>() == Slot.Chunk04, nameof(Slot.Chunk04));
+			Requires.True(Marshal.SizeOf<Chunk05>() == Slot.Chunk05, nameof(Slot.Chunk05));
+			Requires.True(Marshal.SizeOf<Chunk06>() == Slot.Chunk06, nameof(Slot.Chunk06));
+			Requires.True(Marshal.SizeOf<Chunk07>() == Slot.Chunk07, nameof(Slot.Chunk07));
+			Requires.True(Marshal.SizeOf<Chunk08>() == Slot.Chunk08, nameof(Slot.Chunk08));
+			Requires.True(Marshal.SizeOf<Chunk09>() == Slot.Chunk09, nameof(Slot.Chunk09));
 			Requires.True(Marshal.SizeOf<Chunk10>() == Slot.Chunk10, nameof(Slot.Chunk10));
 			Requires.True(Marshal.SizeOf<Chunk11>() == Slot.Chunk11, nameof(Slot.Chunk11));
 			Requires.True(Marshal.SizeOf<Chunk12>() == Slot.Chunk12, nameof(Slot.Chunk12));

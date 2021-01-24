@@ -6,7 +6,7 @@ namespace RosettaStone.Sram.SoE.Models.Structs.Chunks
 	/// <summary>
 	/// DogCurrentHp
 	/// </summary>
-	/// <remarks><see cref="SramSizes.SaveSlot.Chunk9"/></remarks>
+	/// <remarks><see cref="SramSizes.SaveSlot.Chunk09"/></remarks>
 	[DebuggerDisplay("{ToString(),nq}")]
 	public struct Chunk09
 	{

@@ -6,7 +6,7 @@ namespace RosettaStone.Sram.SoE.Models.Structs.Chunks
 	/// <summary>
 	/// BoyLevel
 	/// </summary>
-	/// <remarks><see cref="SramSizes.SaveSlot.Chunk7"/></remarks>
+	/// <remarks><see cref="SramSizes.SaveSlot.Chunk07"/></remarks>
 	[DebuggerDisplay("{ToString(),nq}")]
 	public struct Chunk07
 	{

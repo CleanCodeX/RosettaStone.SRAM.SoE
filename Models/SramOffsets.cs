@@ -26,18 +26,18 @@ namespace RosettaStone.Sram.SoE.Models
 						select kvp.Key).LastOrDefault();
 			}
 
-			public const int Chunk1 = 38; // (x26) 
+			public const int Chunk01 = 38; // (x26) 
 
-			public const int Chunk2 = 110; // (x6E) 
-			public const int Chunk3 = 112; // (x70) 
-			public const int Chunk4 = 136; // (x88) 
+			public const int Chunk02 = 110; // (x6E) 
+			public const int Chunk03 = 112; // (x70) 
+			public const int Chunk04 = 136; // (x88) 
 
-			public const int Chunk5 = 142; // (x8E) 
-			public const int Chunk6 = 144; // (x90) 
-			public const int Chunk7 = 157; // (x9D) 
+			public const int Chunk05 = 142; // (x8E) 
+			public const int Chunk06 = 144; // (x90) 
+			public const int Chunk07 = 157; // (x9D) 
 
-			public const int Chunk8 = 161; // (xA1) 
-			public const int Chunk9 = 175; // (xAF) 
+			public const int Chunk08 = 161; // (xA1) 
+			public const int Chunk09 = 175; // (xAF) 
 			public const int Chunk10 = 177; // (xB1) 
 
 			public const int Chunk11 = 201; // (xC9) 
@@ -125,13 +125,13 @@ namespace RosettaStone.Sram.SoE.Models
 
 			//public const int IngredientSniffSpots = 516; // [x204] (89 bytes)
 
-			//public const int Unknown15 = 609; // [x261] (24 bytes)
+			public const int Unknown15 = 609; // [x261] (24 bytes)
 
 			//public const int Weapons = 633; // [x279] (2 bytes)
 
 			//public const int Unknown16A = 635; // [x27B] (4 bytes)
 			//public const int Unknown16B_GothicaFlags = 639; // [x27F] (4 bytes)
-			//public const int Unknown16C = 643; // [x283] (6 bytes)
+			public const int Unknown16C = 643; // [x283] (6 bytes)
 
 			//public const int Ingredients = 649; // [x289] (22 bytes)
 
