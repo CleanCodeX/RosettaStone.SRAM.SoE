@@ -4,6 +4,7 @@ using SoE.Models.Enums;
 using SRAM.SoE.Models.Enums.Unknown;
 using IO.Extensions;
 using SRAM.SoE.Models.Enums;
+using SRAM.SoE.Models.Structs.Unknown;
 
 namespace SRAM.SoE.Models.Structs.Chunks
 {

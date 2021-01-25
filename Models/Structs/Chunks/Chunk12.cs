@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using IO.Extensions;
@@ -12,7 +13,7 @@ namespace SRAM.SoE.Models.Structs.Chunks
 	[StructLayout(LayoutKind.Sequential, Pack = 2)]
 	public struct Chunk12
 	{
-		public ushort DogMaxHp; // [207|xCF] :: (2 bytes)
+		public UInt16 DogMaxHp; // [207|xCF] :: (2 bytes)
 
 		public override string ToString() => this.FormatAsString();
 	}

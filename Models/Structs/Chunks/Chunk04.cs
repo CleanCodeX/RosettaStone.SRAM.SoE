@@ -1,6 +1,4 @@
-using System;
 using System.Diagnostics;
-using System.Linq;
 using System.Runtime.InteropServices;
 using IO.Extensions;
 
@@ -19,8 +17,6 @@ namespace SRAM.SoE.Models.Structs.Chunks
 		public byte[] Unknown4; // [136|x88] :: (6 bytes)
 
 		public char[] AsChars => Unknown4.GetChars();
-		public uint AsNumber => BitConverter.ToUInt32(Unknown4);
-		public uint AsReversedNumber => BitConverter.ToUInt32(Unknown4.Reverse().ToArray());
 
 		public override string ToString() => this.FormatAsString();
 	}

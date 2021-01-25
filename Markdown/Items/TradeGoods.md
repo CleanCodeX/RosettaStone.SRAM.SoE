@@ -1,4 +1,4 @@
-## TradeGoods (26 bytes | 13 items)
+## TradeGoods (26 bytes, 13 items)
 
 Amount: (0 - 99)
 

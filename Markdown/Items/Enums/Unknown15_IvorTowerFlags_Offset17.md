@@ -1,5 +1,5 @@
 ## Unknown15_IvorTowerFlags_Offset17
 
-### Level 1
-* Level1_House1_Floor0_LeftUpperChest_20GM = 0b0010_0000
-* Level1_House1_Floor0_LeftFrontChest_2xAcorns = 0b0100_0000
+### Town house level 1
+* Level1_House1_Floor0_LeftUpperChest_20GM = 0x20
+* Level1_House1_Floor0_LeftFrontChest_2xAcorns = 0x40

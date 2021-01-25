@@ -3,6 +3,10 @@ using IO.Extensions;
 
 namespace SRAM.SoE.Models.Structs
 {
+	/// <summary>
+	/// The S-RAM structure containing all saveslot data 
+	/// </summary>
+	/// <remarks>8192 bytes (8 KiB)</remarks>
 	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	public struct SramSoE
 	{

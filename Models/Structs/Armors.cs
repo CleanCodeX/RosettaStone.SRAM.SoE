@@ -4,6 +4,10 @@ using IO.Extensions;
 
 namespace SRAM.SoE.Models.Structs
 {
+	/// <summary>
+	/// The armory the boy and dog can wear
+	/// </summary>
+	/// <remarks>40 bytes</remarks>
 	[DebuggerDisplay("{ToString(),nq}")]
 	[StructLayout(LayoutKind.Sequential, Pack = 8)]
 	public struct Armors
@@ -17,6 +21,7 @@ namespace SRAM.SoE.Models.Structs
 		public byte CenturionCape;
 		public byte SilverMail;
 		public byte GoldPlatedVest;
+
 		public byte ShiningArmor;
 		public byte MagnaMail;
 		public byte TitaniumVest;
@@ -27,6 +32,7 @@ namespace SRAM.SoE.Models.Structs
 		public byte ShellHat;
 		public byte DinoHelmet;
 		public byte BronzeHelmet;
+
 		public byte ObsidianHelmet;
 		public byte CenturionHelmet;
 		public byte TitansCrown;
@@ -45,6 +51,7 @@ namespace SRAM.SoE.Models.Structs
 		public byte GlovesOfRa;
 		public byte IronBracer;
 		public byte MagiciansRing;
+
 		public byte DragonsClaw;
 		public byte CyberGlove;
 		public byte ProtectorRing;

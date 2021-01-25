@@ -1,7 +1,7 @@
 ﻿# S-RAM Save Slot (817 bytes)
 
 ###### Checksum
-* UInt16 Checksum # [0] (2 bytes)
+* UInt16 Checksum # [0] : (2 bytes)
 
 ###### Chunk00
 * [LastSavePointName](FixedLengthString.md) # [2|x02] : (36 bytes, null terminated)

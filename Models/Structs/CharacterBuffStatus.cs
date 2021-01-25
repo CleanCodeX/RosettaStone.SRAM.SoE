@@ -1,16 +1,20 @@
+using System;
 using System.Runtime.InteropServices;
 using IO.Extensions;
-
-// ReSharper disable InconsistentNaming
+// ReSharper disable BuiltInTypeReferenceStyle
 
 namespace SRAM.SoE.Models.Structs
 {
+	/// <summary>
+	/// Status values of a character buff
+	/// </summary>
+	/// <remarks>6 bytes</remarks>
 	[StructLayout(LayoutKind.Sequential, Pack = 2)]
 	public struct CharacterBuffStatus
 	{
-		public ushort Id; // FFFFh = none, Bit 15: 1 = most recently given, see list of IDs below
-		public ushort Timer; // ascending from 0, frame-based
-		public ushort Boost; // Boost provided to statistic(s), OR Time since/until last/next damage/healing interval
+		public UInt16 Id; // FFFFh = none, Bit 15: 1 = most recently given, see list of IDs below
+		public UInt16 Timer; // ascending from 0, frame-based
+		public UInt16 Boost; // Boost provided to statistic(s), OR Time since/until last/next damage/healing interval
 
 		public override string ToString() => this.FormatAsString();
 	}

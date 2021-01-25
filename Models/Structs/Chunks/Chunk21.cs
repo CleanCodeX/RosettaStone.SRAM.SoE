@@ -5,7 +5,7 @@ using IO.Extensions;
 namespace SRAM.SoE.Models.Structs.Chunks
 {
 	/// <summary>
-	/// TradeGoods
+	/// Trade Goods
 	/// </summary>
 	/// <remarks><see cref="SramSizes.SaveSlot.Chunk21"/></remarks>
 	[DebuggerDisplay("{ToString(),nq}")]

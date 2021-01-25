@@ -4,6 +4,10 @@ using IO.Extensions;
 
 namespace SRAM.SoE.Models.Structs
 {
+	/// <summary>
+	/// The amount of ingredients the boy can hold
+	/// </summary>
+	/// <remarks>22 bytes</remarks>
 	[DebuggerDisplay("{ToString(),nq}")]
 	[StructLayout(LayoutKind.Sequential, Pack = 2)]
 	public struct Ingredients

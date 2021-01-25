@@ -1,6 +1,6 @@
 ## Moneys (12 bytes)
 
-Max: 2 ^ 24 (16.7M)
+Max: 16.7M
 
 * UInt24 Talons
 * UInt24 Jewels

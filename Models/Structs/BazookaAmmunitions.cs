@@ -4,6 +4,10 @@ using IO.Extensions;
 
 namespace SRAM.SoE.Models.Structs
 {
+	/// <summary>
+	/// The bazooka ammunitions the boy can hold
+	/// </summary>
+	/// <remarks>4 bytes</remarks>
 	[DebuggerDisplay("{ToString(),nq}")]
 	[StructLayout(LayoutKind.Sequential, Pack = 4)]
 	public struct BazookaAmmunitions

@@ -5,6 +5,10 @@ using IO.Extensions;
 
 namespace SRAM.SoE.Models.Structs
 {
+	/// <summary>
+	/// Null terminated ANSI string
+	/// </summary>
+	/// <remarks>36 bytes</remarks>
 	[DebuggerDisplay("{ToString(),nq}")]
 	[StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Ansi)]
 	public struct FixedLengthString

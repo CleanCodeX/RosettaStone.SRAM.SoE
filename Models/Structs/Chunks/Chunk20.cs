@@ -2,6 +2,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using SoE.Models.Enums;
 using IO.Extensions;
+using SRAM.SoE.Models.Enums;
 
 namespace SRAM.SoE.Models.Structs.Chunks
 {

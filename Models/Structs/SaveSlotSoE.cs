@@ -1,22 +1,28 @@
+using System;
 using System.Runtime.InteropServices;
 using SRAM.SoE.Models.Structs.Chunks;
 using IO.Extensions;
-
-// ReSharper disable InconsistentNaming
+// ReSharper disable BuiltInTypeReferenceStyle
 
 namespace SRAM.SoE.Models.Structs
 {
+	/// <summary>
+	/// The saveslot actually consists of a large data chunk and a preceding checksum
+	/// </summary>
+	/// <remarks>817 bytes</remarks>
 	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	public struct SaveSlotSoE
 	{
-		public ushort Checksum; // [0] :: (2 bytes)
-
-		// Unknown4
+		public UInt16 Checksum; // [0] :: (2 bytes)
 		public SaveSlotDataSoE Data; // [2|x02] :: (815 bytes)
 
 		public override string ToString() => Data.ToString();
 	}
 
+	/// <summary>
+	/// Thge actual save slot data, without checksum
+	/// </summary>
+	/// <remarks>815 bytes</remarks>
 	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	public struct SaveSlotDataSoE
 	{
