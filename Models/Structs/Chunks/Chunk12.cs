@@ -1,8 +1,9 @@
+using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using SramCommons.Extensions;
+using IO.Extensions;
 
-namespace RosettaStone.Sram.SoE.Models.Structs.Chunks
+namespace SRAM.SoE.Models.Structs.Chunks
 {
 	/// <summary>
 	/// DogMaxHp
@@ -12,7 +13,7 @@ namespace RosettaStone.Sram.SoE.Models.Structs.Chunks
 	[StructLayout(LayoutKind.Sequential, Pack = 2)]
 	public struct Chunk12
 	{
-		public ushort DogMaxHp; // [207|xCF] :: (2 bytes)
+		public UInt16 DogMaxHp; // [207|xCF] :: (2 bytes)
 
 		public override string ToString() => this.FormatAsString();
 	}

@@ -1,4 +1,4 @@
-﻿# There are unknown offsets for:
+﻿# There are unknown S-RAM offsets for:
 
 ## Opened containers
 * Gourds (act 1)

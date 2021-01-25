@@ -1,9 +1,9 @@
 ﻿using System.Runtime.InteropServices;
 using Common.Shared.Min.Helpers;
-using RosettaStone.Sram.SoE.Models.Structs.Chunks;
-using Slot = RosettaStone.Sram.SoE.Models.SramSizes.SaveSlot;
+using SRAM.SoE.Models.Structs.Chunks;
+using Slot = SRAM.SoE.Models.SramSizes.SaveSlot;
 
-namespace RosettaStone.Sram.SoE.Helpers
+namespace SRAM.SoE.Helpers
 {
 	internal static class StructSizeValidator
 	{

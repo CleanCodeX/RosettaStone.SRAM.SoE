@@ -1,8 +1,8 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using SramCommons.Extensions;
+using IO.Extensions;
 
-namespace RosettaStone.Sram.SoE.Models.Structs.Chunks
+namespace SRAM.SoE.Models.Structs.Chunks
 {
 	/// <summary>
 	/// Ingredients_Items_Armors_Ammo_FlyingMachine
@@ -12,18 +12,11 @@ namespace RosettaStone.Sram.SoE.Models.Structs.Chunks
 	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	public struct Chunk19
 	{
-		// Ingredients
 		public Ingredients Ingredients; // [649|x289] :: (22 bytes)
-
-		// Items
 		public Items Items; // [671|x29F] :: (8 bytes)
-
 		public Armors Armors; // [679|x2A7] :: (40 bytes)
-
 		public BazookaAmmunitions BazookaAmmunitions; // [719|x2CF] :: (4 bytes)
 
-		// Unknown 17
-		// Note: contains market timer
 		[MarshalAs(UnmanagedType.ByValArray, SizeConst = SramSizes.SaveSlot.Unknown17A)]
 		public byte[] Unknown17A; // [723|x2D3] :: (12 bytes) 
 

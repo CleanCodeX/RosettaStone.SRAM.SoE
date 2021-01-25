@@ -1,7 +1,7 @@
 ﻿# Chunk18 (146 bytes)
 
 ###### Alchemies
-* [Alchemies](../Alchemies.md) # [503|x1F7] : (5 bytes)
+* [Alchemies](../Enums/Alchemies.md) # [503|x1F7] : (5 bytes)
 
 ###### Unknown 14
 * [Unknown14](../Enums/Unknown14.md) # [508|x1FC] : (4 bytes) 
@@ -19,7 +19,7 @@
 * [Unknown15](../Unknown15.md) # [609|x261] : (24 bytes)
 
 ###### Weapons
-* [Weapons](../Weapons.md) # [633|x279] : (2 bytes)
+* [Weapons](../Enums/Weapons.md) # [633|x279] : (2 bytes)
 
 ###### Unknown 16
 * byte[4] Unknown16A # [635|x27B] : (4 bytes) 

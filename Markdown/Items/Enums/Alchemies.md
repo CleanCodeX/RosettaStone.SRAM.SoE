@@ -1,0 +1,61 @@
+## Alchemies (5 bytes)
+	
+### Byte #1
+* AcidRain = 0x1
+* Atlas = 0x2
+* Barrier = 0x4
+* CallUp = 0x8
+* Corrosion = 0x10
+* Crush = 0x20
+* Cure = 0x40
+* Defend = 0x80
+
+### Byte #2
+* DoubleDrain = 0x1
+* Drain = 0x2
+* Energize = 0x4
+* Escape = 0x8
+* Explosion = 0x10
+* FireBall = 0x20
+* FirePower = 0x40
+* Flash = 0x80
+
+### Byte #3
+* ForceField = 0x1
+* HardBall = 0x2
+* Heal = 0x4
+* Lance = 0x8
+* Laser = 0x10
+* Levitate = 0x20
+* LightningStorm = 0x40
+* MiracleCure = 0x80
+
+### Byte #4
+* Nitro = 0x1
+* OneUp = 0x2
+* Reflect = 0x4
+* Regrowth = 0x8
+* Revealer = 0x10
+* Revive = 0x20
+* SlowBurn = 0x40
+* Speed = 0x80
+
+### Byte #5
+* Sting = 0x1
+* Stop = 0x2
+* SuperHeal = 0x4
+* Unknown1 = 0x8
+* Unknown2 = 0x10
+* Unknown3 = 0x20
+* Unknown4 = 0x40
+* Horace = 0x80
+
+### Byte #6
+* Camellia = 0x1
+* Sidney = 0x2
+* Unknown5 = 0x4
+* Unknown6 = 0x8
+* Unknown7 = 0x10
+* Unknown8 = 0x20
+* Unknown9 = 0x40
+* Unknown10 = 0x80

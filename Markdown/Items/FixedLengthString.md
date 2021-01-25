@@ -1,3 +1,3 @@
-## CharacterName (34 bytes)
+## FixedLengthString (36 bytes)
 
-* char[] NameCharacters // (36 bytes) Null terminated
+* char[36] Name : Null terminated

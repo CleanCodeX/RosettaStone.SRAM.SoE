@@ -9,7 +9,7 @@
 * Unknown1: [3_270|xCC6]
 
 ### Save slot (relative)
-* Checksum: [0] ~ (2 bytes]
+* Checksum: [0]
 
 * Chunk1: [38|x26] 
 

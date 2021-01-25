@@ -1,11 +1,11 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using SramCommons.Extensions;
+using IO.Extensions;
 
-namespace RosettaStone.Sram.SoE.Models.Structs.Chunks
+namespace SRAM.SoE.Models.Structs.Chunks
 {
 	/// <summary>
-	/// TradeGoods
+	/// Trade Goods
 	/// </summary>
 	/// <remarks><see cref="SramSizes.SaveSlot.Chunk21"/></remarks>
 	[DebuggerDisplay("{ToString(),nq}")]

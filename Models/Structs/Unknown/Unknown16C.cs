@@ -1,10 +1,14 @@
 ﻿using System.Runtime.InteropServices;
-using RosettaStone.Sram.SoE.Models.Enums.Unknown;
-using SramCommons.Extensions;
+using IO.Extensions;
+using SRAM.SoE.Models.Enums.Unknown;
 
-namespace RosettaStone.Sram.SoE.Models.Structs
+namespace SRAM.SoE.Models.Structs.Unknown
 {
-	[StructLayout(LayoutKind.Sequential, Pack = 1, Size = SramSizes.SaveSlot.Unknown16C)] // 6
+	/// <summary>
+	/// Unknown 16C
+	/// </summary>
+	/// <remarks>6 bytes</remarks>
+	[StructLayout(LayoutKind.Sequential, Pack = 1, Size = SramSizes.SaveSlot.Unknown16C)] 
 	public struct Unknown16C
 	{
 		public Unknown16C_Offset1 Offset0;

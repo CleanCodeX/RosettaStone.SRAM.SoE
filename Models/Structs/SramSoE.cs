@@ -1,8 +1,12 @@
 using System.Runtime.InteropServices;
-using SramCommons.Extensions;
+using IO.Extensions;
 
-namespace RosettaStone.Sram.SoE.Models.Structs
+namespace SRAM.SoE.Models.Structs
 {
+	/// <summary>
+	/// The S-RAM structure containing all saveslot data 
+	/// </summary>
+	/// <remarks>8192 bytes (8 KiB)</remarks>
 	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	public struct SramSoE
 	{
@@ -13,7 +17,7 @@ namespace RosettaStone.Sram.SoE.Models.Structs
 		public SaveSlotSoE[] SaveSlots; // Offset [2] (3268 = 4* 817 Bytes)
 
 		[MarshalAs(UnmanagedType.ByValArray, SizeConst = SramSizes.Unknown19)]
-		public byte[] Unknown1; // Offset [3270|xCC6] (4922 Bytes)
+		public byte[] Unknown19; // Offset [3270|xCC6] (4922 Bytes)
 
 		public override string ToString() => this.FormatAsString();
 	}

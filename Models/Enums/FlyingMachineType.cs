@@ -1,4 +1,4 @@
-namespace RosettaStone.Sram.SoE.Models.Enums
+namespace SRAM.SoE.Models.Enums
 {
 	/// FlyingMachineType
 	public enum FlyingMachineType

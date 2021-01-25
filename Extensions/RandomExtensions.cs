@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace RosettaStone.Sram.SoE.Extensions
+namespace SRAM.SoE.Extensions
 {
 	public static class RandomExtensions
 	{

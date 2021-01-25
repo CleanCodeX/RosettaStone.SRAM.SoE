@@ -1,8 +1,9 @@
+using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using SramCommons.Extensions;
+using IO.Extensions;
 
-namespace RosettaStone.Sram.SoE.Models.Structs.Chunks
+namespace SRAM.SoE.Models.Structs.Chunks
 {
 	/// <summary>
 	/// DogLevel
@@ -12,8 +13,8 @@ namespace RosettaStone.Sram.SoE.Models.Structs.Chunks
 	[StructLayout(LayoutKind.Sequential, Pack = 4)]
 	public struct Chunk14
 	{
-		public ushort DogLevel; // [222|xDE] :: (2 bytes)
-		public ushort DogMaxChargeup; // [224|xE0] :: (2 bytes)
+		public UInt16 DogLevel; // [222|xDE] :: (2 bytes)
+		public UInt16 DogMaxChargeup; // [224|xE0] :: (2 bytes)
 
 		public override string ToString() => this.FormatAsString();
 	}

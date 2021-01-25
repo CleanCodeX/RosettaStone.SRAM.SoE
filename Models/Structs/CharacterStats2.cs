@@ -1,35 +1,37 @@
-﻿using System.Runtime.InteropServices;
-using SramCommons.Extensions;
+﻿using System;
+using System.Runtime.InteropServices;
+using IO.Extensions;
+// ReSharper disable BuiltInTypeReferenceStyle
 
-namespace RosettaStone.Sram.SoE.Models.Structs
+namespace SRAM.SoE.Models.Structs
 {
 	/// <summary>
-	/// CharacterStats2
+	/// Second chunk of bundled CharacterStats
 	/// </summary>
 	/// <remarks>14 Bytes</remarks>
 	[StructLayout(LayoutKind.Sequential, Pack = 2)]
 	public struct CharacterStats2
 	{
 		// Overall boost to Attack statistic from alchemy/items/statuses
-		public ushort OverallAttackBoost; // (2 bytes)
+		public UInt16 OverallAttackBoost; // (2 bytes)
 
 		// Overall boost to Defense statistic from alchemy/items/statuses
-		public ushort OverallDefenseBoost; // (2 bytes)
+		public UInt16 OverallDefenseBoost; // (2 bytes)
 
 		// Overall boost to Evade % statistic from alchemy/items/statuses
-		public ushort OverallEvadeBoost; // (2 bytes)
+		public UInt16 OverallEvadeBoost; // (2 bytes)
 
 		// Overall boost to Hit % statistic from alchemy/items/statuses
-		public ushort OverallHitBoost; // (2 bytes)
+		public UInt16 OverallHitBoost; // (2 bytes)
 
 		// Overall boost to Magic Defense statistic from alchemy/items/statuses(unused)
-		public ushort OverallMagicDefenseBoost; // (2 bytes)
+		public UInt16 OverallMagicDefenseBoost; // (2 bytes)
 
 		// Last damage taken.  Used by time Warp (Horace).
-		public ushort LastDamageTaken; // (2 bytes)
+		public UInt16 LastDamageTaken; // (2 bytes)
 
 		// Regenerate (Horace) or Pixie Dust protection in effect (0001 = yes, 0000 = no)
-		public ushort RegenerateOrPixieDustInEffect; // (2 bytes)
+		public UInt16 RegenerateOrPixieDustInEffect; // (2 bytes)
 
 		public override string ToString() => this.FormatAsString();
 	}

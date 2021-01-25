@@ -4,22 +4,34 @@
     <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>
     <LangVersion>preview</LangVersion>
-    <Version>0.4.1-a4</Version>
+    <Version>0.5.0-a2</Version>
     <PackageTags>SoE, Secret of Evermore, S-RAM, S-RAM, SNES, Rosetta Stone, Rosetta-Stone, Format, Super Nintendo, Super Famicon</PackageTags>
-    <Authors>CleanCoderX</Authors>
+    <Authors>S. Krauter { CleanCoderX, XETH }</Authors>
     <Description>Collection of SoE's S-RAM models, load (&amp; experimental save) functionality</Description>    
     <Company>KST</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
       <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <RepositoryUrl>https://github.com/CleanCodeX/RosettaStone.Sram.SoE</RepositoryUrl>
+    <RepositoryUrl>https://github.com/CleanCodeX/SRAM.SoE</RepositoryUrl>
     <PackageProjectUrl>http://evermore.xeth.de</PackageProjectUrl>
-    <PackageId>CCX.RosettaStone.Sram.SoE</PackageId>
+    <PackageId>CCX.SRAM.SoE</PackageId>
     <PackageIcon>Icon.png</PackageIcon>
-    <Product>RosettaStone.S-RAM.SoE</Product>
+    <Product>S-RAM.SoE »Rosetta Stone«</Product>
     <Platforms>AnyCPU</Platforms>
     <RepositoryType>Rosetta Stone</RepositoryType>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CCX.IO" Version="1.0.0-a4" />
+    <PackageReference Include="CCX.SoE" Version="0.5.0-a2" />
+	  <PackageReference Include="CCX.SRAM" Version="1.0.0-a2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IO\IO.csproj" />
+    <ProjectReference Include="..\SoE\SoE.csproj" />
+    <ProjectReference Include="..\SRAM\SRAM.csproj" />
+  </ItemGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
@@ -34,6 +46,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove=".gitignore" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
 
@@ -42,14 +58,6 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="CCX.SramCommons" Version="1.2.0-a2" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\SramCommons\SramCommons.csproj" />
   </ItemGroup>
 
   <ItemGroup>

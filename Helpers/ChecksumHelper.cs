@@ -1,10 +1,10 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using Common.Shared.Min.Extensions;
-using RosettaStone.Sram.SoE.Models;
-using RosettaStone.Sram.SoE.Models.Enums;
+using SRAM.SoE.Models;
+using SoE.Models.Enums;
 
-namespace RosettaStone.Sram.SoE.Helpers
+namespace SRAM.SoE.Helpers
 {
 	/// <summary>
 	/// Calculates the checksum of given save slot index from buffer
@@ -35,7 +35,7 @@ namespace RosettaStone.Sram.SoE.Helpers
 			const int gameSize = SramSizes.SaveSlot.All;
 			const int sizeChecksum = 2;
 			var checksum = (isUsVersion ? ChecksumInitValue.US : ChecksumInitValue.Europe).ToUInt();
-			var offset = SramOffsets.LastSaveSlotId + slotIndex * gameSize;
+			var offset = SramOffsets.FirstSaveSlot + slotIndex * gameSize;
 			var temp = (byte)(checksum + sram[offset + sizeChecksum]);
 
 			for (var i = 3; i < gameSize; ++i)
