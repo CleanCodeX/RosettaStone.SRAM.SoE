@@ -1,5 +1,6 @@
 using System.Runtime.InteropServices;
 using IO.Extensions;
+using IO.Helpers;
 
 namespace SRAM.SoE.Models.Structs
 {
@@ -7,6 +8,7 @@ namespace SRAM.SoE.Models.Structs
 	/// The S-RAM structure containing all saveslot data 
 	/// </summary>
 	/// <remarks>8192 bytes (8 KiB)</remarks>
+	[ContainsComplexStructures]
 	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	public struct SramSoE
 	{

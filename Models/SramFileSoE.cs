@@ -41,6 +41,12 @@ namespace SRAM.SoE.Models
 		/// <param name="region">The S-RAM's file region</param>
 		public SramFileSoE(Stream stream, GameRegion region) : base(stream, SramOffsets.FirstSaveSlot, 3) => GameRegion = region;
 
+		/// <summary>
+		/// Creates an instance of <see cref="SramFileSoE" />
+		/// </summary>
+		/// <param name="region">The S-RAM's file region</param>
+		public SramFileSoE(GameRegion region) : base(SramOffsets.FirstSaveSlot, 3) => GameRegion = region;
+
 		protected override void OnLoading() => SizeChecks();
 
 		private void SizeChecks()
@@ -74,9 +80,7 @@ namespace SRAM.SoE.Models
 				var fileChecksum = GetChecksum(index);
 
 				var calculatedChecksum = ChecksumHelper.CalcChecksum(Buffer, index, GameRegion);
-				if (fileChecksum != calculatedChecksum) continue;
-
-				_validSaveSlots[index] = true;
+				_validSaveSlots[index] = fileChecksum == calculatedChecksum;
 			}
 		}
 

@@ -3,6 +3,7 @@ using System.Runtime.InteropServices;
 using SoE.Models.Enums;
 using SRAM.SoE.Models.Enums.Unknown;
 using IO.Extensions;
+using IO.Helpers;
 using SRAM.SoE.Models.Enums;
 using SRAM.SoE.Models.Structs.Unknown;
 
@@ -13,14 +14,16 @@ namespace SRAM.SoE.Models.Structs.Chunks
 	/// </summary>
 	/// <remarks><see cref="SramSizes.SaveSlot.Chunk18"/></remarks>
 	[DebuggerDisplay("{ToString(),nq}")]
+	[ContainsComplexStructures]
 	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	public struct Chunk18
 	{
 		// Alchemies
-		public Alchemies Alchemies; // [503|x1F7] :: (5 bytes)
+		public Alchemies Alchemies; // [503|x1F7] :: (6 bytes)
 
 		// Unknown 14
-		public Unknown14 Unknown14; // [508|x1FC] :: (4 bytes) 
+		public Unknown14 Unknown14; // [509|x1FB] :: (2 bytes) 
+		public byte Unknown14B; // [5011|x1FD] :: (1 byte) 
 
 		// Charms
 		public CharmsAndRareItems CharmsAndRareItems; // [512|x200] :: (4 bytes)

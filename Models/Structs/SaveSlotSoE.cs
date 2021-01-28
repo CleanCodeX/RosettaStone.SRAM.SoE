@@ -1,7 +1,9 @@
 using System;
 using System.Runtime.InteropServices;
-using SRAM.SoE.Models.Structs.Chunks;
 using IO.Extensions;
+using IO.Helpers;
+using SRAM.SoE.Models.Structs.Chunks;
+
 // ReSharper disable BuiltInTypeReferenceStyle
 
 namespace SRAM.SoE.Models.Structs
@@ -10,6 +12,7 @@ namespace SRAM.SoE.Models.Structs
 	/// The saveslot actually consists of a large data chunk and a preceding checksum
 	/// </summary>
 	/// <remarks>817 bytes</remarks>
+	[ContainsComplexStructures]
 	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	public struct SaveSlotSoE
 	{
@@ -23,7 +26,8 @@ namespace SRAM.SoE.Models.Structs
 	/// Thge actual save slot data, without checksum
 	/// </summary>
 	/// <remarks>815 bytes</remarks>
-	[StructLayout(LayoutKind.Sequential, Pack = 1)]
+	[ContainsComplexStructures]
+	[StructLayout(LayoutKind.Sequential, Pack = 1)]	
 	public struct SaveSlotDataSoE
 	{
 		// Last save point [2|x02] :: (36 bytes, null terminated)

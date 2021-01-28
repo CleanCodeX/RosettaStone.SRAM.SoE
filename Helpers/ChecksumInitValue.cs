@@ -1,6 +1,8 @@
+using System;
+
 namespace SRAM.SoE.Helpers
 {
-	internal enum ChecksumInitValue: uint
+	internal enum ChecksumInitValue: UInt32
 	{
 		/// The starting value for the checksum in the US version
 		// ReSharper disable once InconsistentNaming

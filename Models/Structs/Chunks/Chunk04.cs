@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using IO.Extensions;
+using IO.Helpers;
 
 namespace SRAM.SoE.Models.Structs.Chunks
 {

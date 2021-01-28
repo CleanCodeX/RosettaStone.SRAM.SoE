@@ -2,6 +2,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using IO.Extensions;
+using IO.Helpers;
 
 namespace SRAM.SoE.Models.Structs.Chunks
 {
@@ -10,6 +11,7 @@ namespace SRAM.SoE.Models.Structs.Chunks
 	/// </summary>
 	/// <remarks><see cref="SramSizes.SaveSlot.Chunk16"/></remarks>
 	[DebuggerDisplay("{ToString(),nq}")]
+	[ContainsComplexStructures]
 	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	public struct Chunk16
 	{

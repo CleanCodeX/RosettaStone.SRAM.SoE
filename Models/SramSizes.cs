@@ -63,7 +63,7 @@ namespace SRAM.SoE.Models
 			#endregion
 
 			public const int Unknown13 = 22;
-			public const int Unknown14 = 4;
+			public const int Unknown14 = 3;
 			public const int Unknown15 = 24;
 
 			#region Unknown16

@@ -1,8 +1,3 @@
-// ReSharper disable InconsistentNaming
-
-using System.Linq;
-using IO.Extensions;
-
 namespace SRAM.SoE.Models
 {
 	/// <summary>
@@ -15,14 +10,7 @@ namespace SRAM.SoE.Models
 
 		public class SaveSlot
 		{
-			public static string? GetNameFromOffset(int offset)
-			{
-				var constants = typeof(SaveSlot).GetPublicConstants<int>().OrderBy(e => e.Value);
-
-				return (from kvp in constants 
-					where offset >= kvp.Value
-						select kvp.Key).LastOrDefault();
-			}
+			/* Not used atm */
 
 			public const int Chunk01 = 38; // (x26) 
 

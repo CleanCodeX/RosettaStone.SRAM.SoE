@@ -1,6 +1,8 @@
+using System;
+
 namespace SRAM.SoE.Models.Enums
 {
-	public enum GourdSpots : uint
+	public enum GourdSpots : UInt32
 	{
 
 	}
