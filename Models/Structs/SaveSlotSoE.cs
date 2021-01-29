@@ -12,7 +12,7 @@ namespace SRAM.SoE.Models.Structs
 	/// The saveslot actually consists of a large data chunk and a preceding checksum
 	/// </summary>
 	/// <remarks>817 bytes</remarks>
-	[ContainsComplexStructures]
+	[HasComplexMembers]
 	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	public struct SaveSlotSoE
 	{
@@ -26,7 +26,7 @@ namespace SRAM.SoE.Models.Structs
 	/// Thge actual save slot data, without checksum
 	/// </summary>
 	/// <remarks>815 bytes</remarks>
-	[ContainsComplexStructures]
+	[HasComplexMembers]
 	[StructLayout(LayoutKind.Sequential, Pack = 1)]	
 	public struct SaveSlotDataSoE
 	{

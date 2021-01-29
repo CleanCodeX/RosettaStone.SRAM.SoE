@@ -18,7 +18,7 @@ namespace SRAM.SoE.Extensions
 			var parentTye = fieldInfo.DeclaringType!;
 			var baseOffset = (int)Marshal.OffsetOf(parentTye, fieldInfo.Name);
 
-			while (parentTye.IsDefined<ContainsComplexStructures>())
+			while (parentTye.IsDefined<HasComplexMembersAttribute>())
 			{
 				if (fieldInfo.FieldType.IsArray)
 				{

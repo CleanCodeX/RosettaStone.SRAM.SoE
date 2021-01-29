@@ -10,7 +10,7 @@ namespace SRAM.SoE.Models.Structs.Chunks
 	/// </summary>
 	/// <remarks><see cref="SramSizes.SaveSlot.Chunk10"/></remarks>
 	[DebuggerDisplay("{ToString(),nq}")]
-	[ContainsComplexStructures]
+	[HasComplexMembers]
 	[StructLayout(LayoutKind.Sequential, Pack = 1)]
 	public struct Chunk10
 	{

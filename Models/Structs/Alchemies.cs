@@ -1,9 +1,8 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using IO.Extensions;
+using Common.Shared.Min.Extensions;
 using IO.Models.Structs;
 using SoE.Models.Enums;
-using SRAM.SoE.Extensions;
 
 namespace SRAM.SoE.Models.Structs
 {
@@ -20,7 +19,7 @@ namespace SRAM.SoE.Models.Structs
 		public Alchemy Value
 		{
 			get => (Alchemy)Data.Value;
-			set => Data.Value = value.ToUInt64();
+			set => Data.Value = value.ToULong();
 		}
 
 		public override string ToString() => Value.ToString();
