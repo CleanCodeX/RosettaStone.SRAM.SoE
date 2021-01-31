@@ -28,9 +28,8 @@ namespace SRAM.SoE.Models.Structs.Chunks
 		// Money
 		public Moneys Moneys; // [252|xFC] :: (12 bytes)
 
-		// WRAM
-		[MarshalAs(UnmanagedType.ByValArray, SizeConst = SramSizes.SaveSlot.EquippedAlchemies)]
-		public byte[] EquippedAlchemies; // [264|x108] :: (9 bytes)
+		// Equipped Alchemies
+		public EquippedAlchemies EquippedAlchemies; // [264|x108] :: (9 bytes)
 
 		public byte CurrentMapId;// [273|x111] :: (1 byte)
 

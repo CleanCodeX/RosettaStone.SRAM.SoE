@@ -1,7 +1,6 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using IO.Extensions;
-using IO.Helpers;
 
 namespace SRAM.SoE.Models.Structs.Chunks
 {
@@ -19,6 +18,6 @@ namespace SRAM.SoE.Models.Structs.Chunks
 
 		public char[] AsChars => Unknown4.GetChars();
 
-		public override string ToString() => this.FormatAsString();
+		public override string ToString() => Unknown4.FormatAsString();
 	}
 }

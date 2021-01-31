@@ -9,8 +9,8 @@ namespace SRAM.SoE.Models.Structs.Chunks
 	/// BoyStatusBuffs
 	/// </summary>
 	/// <remarks><see cref="SramSizes.SaveSlot.Chunk03"/></remarks>
-	[DebuggerDisplay("{ToString(),nq}")]
 	[HasComplexMembers]
+	[DebuggerDisplay("{ToString(),nq}")]
 	[StructLayout(LayoutKind.Sequential, Pack = 2)]
 	public struct Chunk03
 	{

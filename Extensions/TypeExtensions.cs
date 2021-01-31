@@ -10,50 +10,40 @@ namespace SRAM.SoE.Extensions
 {
 	public static class TypeExtensions
 	{
-		public static string? GetFieldNameFromOffset([NotNull] this Type type, int offset)
+		public static string? GetFieldNameByOffset([NotNull] this Type type, int offset)
 		{
-			var fieldInfo = GetFieldNameByOffset(type, offset);
+			var fieldInfo = InternalGetFieldNameByOffset(type, offset);
 			if (fieldInfo is null) return null;
 
-			var parentTye = fieldInfo.DeclaringType!;
-			var baseOffset = (int)Marshal.OffsetOf(parentTye, fieldInfo.Name);
+			offset -= (int)Marshal.OffsetOf(type, fieldInfo.Name);
+			type = fieldInfo.FieldType!;
 
-			while (parentTye.IsDefined<HasComplexMembersAttribute>())
+			if (type.IsDefined<HasComplexMembersAttribute>())
 			{
-				if (fieldInfo.FieldType.IsArray)
+				if (type.IsArray)
 				{
-					var structSize = Marshal.SizeOf(fieldInfo.FieldType);
+					var structSize = Marshal.SizeOf(type);
 					var value = fieldInfo.GetValue(null)!;
 
 					for (var i = 0; i < ((Array)value).Length; ++i)
 					{
-						var tempFieldInfo = GetFieldNameByOffset(fieldInfo.FieldType, offset);
-						if (tempFieldInfo is not null)
-						{
-							fieldInfo = tempFieldInfo;
-							goto EndLoop;
-						}
-
-						baseOffset += (int)Marshal.OffsetOf(parentTye, fieldInfo.Name);
 						offset -= structSize;
+						var fieldName = GetFieldNameByOffset(type, offset);
+						if (fieldName is not null)
+							return fieldName;
 					}
 				}
 				else
 				{
-					offset -= baseOffset;
-					var tempFieldInfo = GetFieldNameByOffset(fieldInfo.FieldType, offset);
-					if (tempFieldInfo is null) break;
-
-					fieldInfo = tempFieldInfo;
-					parentTye = fieldInfo.DeclaringType!;
-					baseOffset = (int) Marshal.OffsetOf(parentTye, fieldInfo.Name);
+					var fieldName = GetFieldNameByOffset(type, offset);
+					if (fieldName is not null)
+						return fieldName;
 				}
 			}
-			EndLoop:
 
 			return fieldInfo.Name;
 		}
 
-		private static FieldInfo? GetFieldNameByOffset(Type type, int offset) => type.GetFields().LastOrDefault(e => offset > (int)Marshal.OffsetOf(type, e.Name));
+		private static FieldInfo? InternalGetFieldNameByOffset(Type type, int offset) => type.GetFields().Reverse().FirstOrDefault(e =>(int) Marshal.OffsetOf(type, e.Name) <= offset);
 	}
 }
