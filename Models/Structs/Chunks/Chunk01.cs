@@ -15,6 +15,6 @@ namespace SRAM.SoE.Models.Structs.Chunks
 		public FixedLengthString BoyName; // [36|x26] (36 bytes)
 		public FixedLengthString DogName; // [74|x4A] (36 bytes)
 
-		public override string ToString() => this.FormatAsString();
+		public override string ToString() => this.Format();
 	}
 }

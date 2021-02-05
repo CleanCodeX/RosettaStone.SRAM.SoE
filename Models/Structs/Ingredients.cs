@@ -35,6 +35,6 @@ namespace SRAM.SoE.Models.Structs
 		public byte Ash;
 		public byte Acorn;
 
-		public override string ToString() => this.FormatAsString();
+		public override string ToString() => this.Format();
 	}
 }

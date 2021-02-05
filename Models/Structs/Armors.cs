@@ -63,6 +63,6 @@ namespace SRAM.SoE.Models.Structs
 		public byte DefenderCollar;
 		public byte SpotsCollar;
 
-		public override string ToString() => this.FormatAsString();
+		public override string ToString() => this.Format();
 	}
 }

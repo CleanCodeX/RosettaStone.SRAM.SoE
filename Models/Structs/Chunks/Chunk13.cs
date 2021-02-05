@@ -21,6 +21,6 @@ namespace SRAM.SoE.Models.Structs.Chunks
 		public UInt16 DogHitPercent;// [217|x9D9] :: (2 bytes)
 		public UInt24 Experience; // [219|xDB] :: (3 bytes)
 
-		public override string ToString() => this.FormatAsString();
+		public override string ToString() => this.Format();
 	}
 }

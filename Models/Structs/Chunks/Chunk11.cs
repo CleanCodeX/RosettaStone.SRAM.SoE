@@ -19,6 +19,6 @@ namespace SRAM.SoE.Models.Structs.Chunks
 		public char[] AsChars => Unknown7.GetChars();
 		public string AsString => Unknown7.GetString();
 
-		public override string ToString() => Unknown7.FormatAsString();
+		public override string ToString() => Unknown7.Format();
 	}
 }

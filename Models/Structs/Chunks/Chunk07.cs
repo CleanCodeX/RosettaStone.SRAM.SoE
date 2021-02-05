@@ -16,6 +16,6 @@ namespace SRAM.SoE.Models.Structs.Chunks
 		public UInt16 BoyLevel; // [157|x9D] :: (2 bytes)
 		public UInt16 BoyMaxChargeup; // [159|x9F] :: (2 bytes)
 
-		public override string ToString() => this.FormatAsString();
+		public override string ToString() => this.Format();
 	}
 }

@@ -17,6 +17,6 @@ namespace SRAM.SoE.Models.Structs
 		public byte CryoBlast; // 0 - 99
 		public byte CurrentAmmunitionType; // 0 = Thunder Ball, 2 = Particle Bomb, 4 = Cryo Blast
 
-		public override string ToString() => this.FormatAsString();
+		public override string ToString() => this.Format();
 	}
 }

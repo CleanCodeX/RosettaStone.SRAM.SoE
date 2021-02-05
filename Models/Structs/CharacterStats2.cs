@@ -33,6 +33,6 @@ namespace SRAM.SoE.Models.Structs
 		// Regenerate (Horace) or Pixie Dust protection in effect (0001 = yes, 0000 = no)
 		public UInt16 RegenerateOrPixieDustInEffect; // (2 bytes)
 
-		public override string ToString() => this.FormatAsString();
+		public override string ToString() => this.Format();
 	}
 }

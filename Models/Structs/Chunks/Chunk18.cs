@@ -46,6 +46,6 @@ namespace SRAM.SoE.Models.Structs.Chunks
 
 		public Unknown16C Unknown16C; // [643|x283] :: (6 bytes) 
 
-		public override string ToString() => this.FormatAsString();
+		public override string ToString() => this.Format();
 	}
 }

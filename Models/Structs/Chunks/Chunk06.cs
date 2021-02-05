@@ -21,6 +21,6 @@ namespace SRAM.SoE.Models.Structs.Chunks
 		public UInt16 BoyHitPercent;// [152|x98] :: (2 bytes)
 		public UInt24 BoyExperience; // [154|x9A] :: (3 bytes)
 
-		public override string ToString() => this.FormatAsString();
+		public override string ToString() => this.Format();
 	}
 }

@@ -16,7 +16,7 @@ namespace SRAM.SoE.Models.Structs
 		public UInt16 Timer; // ascending from 0, frame-based
 		public UInt16 Boost; // Boost provided to statistic(s), OR Time since/until last/next damage/healing interval
 
-		public override string ToString() => this.FormatAsString();
+		public override string ToString() => this.Format();
 	}
 
 	// NOTE: Since Plague doesn't auto-expire, it has time since last interval where the Timer would go, and an unknown value in the third(Time interval) slot.

@@ -55,6 +55,6 @@ namespace SRAM.SoE.Models.Structs.Chunks
 		// Unknown 12 C
 		public uint Unknown12C; // [337|x151] :: (4 bytes)
 
-		public override string ToString() => this.FormatAsString();
+		public override string ToString() => this.Format();
 	}
 }

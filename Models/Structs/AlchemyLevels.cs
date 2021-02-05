@@ -53,6 +53,6 @@ namespace SRAM.SoE.Models.Structs
 		public AlchemyLevel Stop;
 		public AlchemyLevel SuperHeal;
 
-		public override string ToString() => this.FormatAsString();
+		public override string ToString() => this.Format();
 	}
 }

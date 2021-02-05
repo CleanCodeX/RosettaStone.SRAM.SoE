@@ -29,6 +29,6 @@ namespace SRAM.SoE.Models.Structs
 		public UInt16 Tapestry; 
 		public UInt16 TicketForExhibition;
 
-		public override string ToString() => this.FormatAsString();
+		public override string ToString() => this.Format();
 	}
 }

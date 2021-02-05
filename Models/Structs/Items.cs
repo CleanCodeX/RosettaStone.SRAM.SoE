@@ -22,6 +22,6 @@ namespace SRAM.SoE.Models.Structs
 		public byte PixieDust; // 0 - 6
 		public byte CallBead; // 0 - 99
 
-		public override string ToString() => this.FormatAsString();
+		public override string ToString() => this.Format();
 	}
 }

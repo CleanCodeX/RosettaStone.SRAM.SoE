@@ -27,6 +27,6 @@ namespace SRAM.SoE.Models.Structs
 
 		public WeaponLevel Bazooka; // high part never initialized to 1 like the other weapons are, and its default of 0 causes bugs with the computer-controlled character and with Energize.
 
-		public override string ToString() => this.FormatAsString();
+		public override string ToString() => this.Format();
 	}
 }

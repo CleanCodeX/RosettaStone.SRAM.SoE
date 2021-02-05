@@ -16,6 +16,6 @@ namespace SRAM.SoE.Models.Structs.Chunks
 		public UInt16 DogLevel; // [222|xDE] :: (2 bytes)
 		public UInt16 DogMaxChargeup; // [224|xE0] :: (2 bytes)
 
-		public override string ToString() => this.FormatAsString();
+		public override string ToString() => this.Format();
 	}
 }

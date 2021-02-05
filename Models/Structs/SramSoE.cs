@@ -21,6 +21,6 @@ namespace SRAM.SoE.Models.Structs
 		[MarshalAs(UnmanagedType.ByValArray, SizeConst = SramSizes.Unknown19)]
 		public byte[] Unknown19; // Offset [3270|xCC6] (4922 Bytes)
 
-		public override string ToString() => this.FormatAsString();
+		public override string ToString() => this.Format();
 	}
 }

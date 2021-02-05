@@ -96,6 +96,6 @@ namespace SRAM.SoE.Models.Structs
 		// TradeGoods [785|x311] :: (32 bytes)
 		public Chunk21 TradeGoods;
 
-		public override string ToString() => this.FormatAsString();
+		public override string ToString() => this.Format();
 	}
 }

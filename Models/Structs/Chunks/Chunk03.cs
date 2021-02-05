@@ -18,6 +18,6 @@ namespace SRAM.SoE.Models.Structs.Chunks
 		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
 		public CharacterBuffStatus[] Status; // [112|x70] :: (4x6 bytes)
 
-		public override string ToString() => this.FormatAsString();
+		public override string ToString() => this.Format();
 	}
 }

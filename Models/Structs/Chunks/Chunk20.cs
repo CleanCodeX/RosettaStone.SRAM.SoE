@@ -35,6 +35,6 @@ namespace SRAM.SoE.Models.Structs.Chunks
 		[MarshalAs(UnmanagedType.ByValArray, SizeConst = SramSizes.SaveSlot.Unknown17F)]
 		public byte[] Unknown17F; // [748|x2EC] :: (33 bytes) 
 
-		public override string ToString() => this.FormatAsString();
+		public override string ToString() => this.Format();
 	}
 }

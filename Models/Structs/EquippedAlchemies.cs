@@ -22,6 +22,6 @@ namespace SRAM.SoE.Models.Structs
 		public byte Spell8;
 		public byte Spell9;
 
-		public override string ToString() => this.FormatAsString();
+		public override string ToString() => this.Format();
 	}
 }
