@@ -54,8 +54,6 @@ namespace SRAM.SoE.Models
 			public const int Unknown10 = 3;
 			public const int Unknown11 = 14;
 
-			public const int EquippedAlchemies = 9;
-
 			#region Unknown12
 			public const int Unknown12A = 16;
 			public const int Unknown12B = 2;
@@ -84,6 +82,25 @@ namespace SRAM.SoE.Models
 
 			public const int Unknown18 = 2;
 
+			#region Quasi unknown offsets
+
+			/* Chunk16 */
+			private const int CurrentEquippedWeaponChunk16 = 2;
+			private const int EquippedAlchemies = 9;
+
+			/* Chunk 18 */
+			private const int GourdSpots = 4;
+			private const int IngredientSniffSpots = 89;
+			
+			/* Chunk 19 */
+			private const int FlyingMachineType = 1;
+
+			/* Chunk 20 */
+			private const int CurrentEquippedWeaponChunk20 = 1;
+			private const int LastLandingLocation = 1;
+
+			#endregion
+
 			public const int AllUnknown = Unknown4 + Unknown6 + Unknown7 + Unknown8 + Unknown9 + 
 			                              Unknown10 + Unknown11 + 
 			                              Unknown12A + Unknown12B + Unknown12C + 
@@ -91,7 +108,15 @@ namespace SRAM.SoE.Models
 			                              Unknown16A + Unknown16B_GothicaFlags + Unknown16C + 
 			                              Unknown17A + Unknown17B + Unknown17C + Unknown17D + 
 			                              Unknown17E + Unknown17F + Unknown17G + 
-			                              Unknown18;
+			                              Unknown18 +
+										  /* Chunk16 */
+			                              CurrentEquippedWeaponChunk16 + EquippedAlchemies +
+			                              /* Chunk 18 */
+										  GourdSpots + IngredientSniffSpots +
+			                              /* Chunk 19 */
+										  FlyingMachineType +
+										  /* Chunk 20 */
+										  LastLandingLocation + CurrentEquippedWeaponChunk20;
 
 			public const int AllChunks = Chunk01 + Chunk02 + Chunk03 + Chunk04 + Chunk05 + 
 			                             Chunk06 + Chunk07 + Chunk08 + Chunk09 + Chunk10 + 

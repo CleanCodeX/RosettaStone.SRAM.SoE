@@ -1,4 +1,5 @@
 using System.Runtime.InteropServices;
+using IO.Extensions;
 
 namespace SRAM.SoE.Models.Structs
 {
@@ -12,5 +13,7 @@ namespace SRAM.SoE.Models.Structs
 		// Unknown 16
 		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 89)]
 		public byte[] SniffSpots; // [520|x208] :: (89 bytes)
+
+		public override string ToString() => SniffSpots.Format();
 	}
 }

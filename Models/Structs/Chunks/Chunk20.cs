@@ -20,7 +20,7 @@ namespace SRAM.SoE.Models.Structs.Chunks
 		public byte[] Unknown17C; // [741|x2DD] :: (2 bytes) 
 
 		/// 00 - 1A, even numbers, inclusive. See <see cref="Weapons" /> for weapon order.
-		public byte CurrentEquippedWapon; // [743|x2E7] :: (1 byte) 
+		public byte CurrentEquippedWeapon; // [743|x2E7] :: (1 byte) 
 
 		[MarshalAs(UnmanagedType.ByValArray, SizeConst = SramSizes.SaveSlot.Unknown17D)]
 		public byte[] Unknown17D; // [744|x2E8] :: (3 bytes)

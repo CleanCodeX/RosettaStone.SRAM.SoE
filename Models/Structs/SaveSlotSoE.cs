@@ -27,6 +27,7 @@ namespace SRAM.SoE.Models.Structs
 	/// </summary>
 	/// <remarks>815 bytes</remarks>
 	[HasComplexMembers]
+	[UseMemberGrouping]
 	[StructLayout(LayoutKind.Sequential, Pack = 1)]	
 	public struct SaveSlotDataSoE
 	{
