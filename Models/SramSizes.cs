@@ -6,15 +6,25 @@ namespace SRAM.SoE.Models
 	/// <summary>
 	/// Known sizes of SoE's S-RAM buffer
 	/// </summary>
-	public class SramSizes
+	public static class SramSizes
 	{
 		public const int AudioMode = 1;
 		public const int LastSaveSlotId = 1;
 		
-		/// Size of the S-RAM file
-		public const int All = AudioMode + LastSaveSlotId + SaveSlot.All * 4 + Unknown19;
+		public static readonly bool IsValid = All == 8192;
+		public const int Size = All + SaveSlot.All * 3 + Unknown19;
 
-		public static readonly bool IsValid = All == 8_192;
+		#region DO NOT RENAME - Accessed by Reflection
+
+		public const int All = AudioMode + LastSaveSlotId + SaveSlot.All;
+		
+		public const int AllKnown = All - SaveSlot.AllUnknown;
+		public const int AllUnknown = SaveSlot.AllUnknown;
+
+		public const double UnknownPercentage = AllUnknown * 100D / All;
+		public const double KnownPercentage = AllKnown * 100D / All;
+
+		#endregion
 
 		/// <summary>Sizes of save slot buffers</summary>
 		public class SaveSlot
@@ -125,10 +135,7 @@ namespace SRAM.SoE.Models
 			                             Chunk21;
 
 			public const int All = AllChunks + LastSavePointName + Checksum;
-			public const int AllKnowns = All - AllUnknown;
-
-			public static readonly double UnknownPercentage = AllUnknown * 100D / All;
-			public static readonly double KnownPercentage = AllKnowns * 100D / All;
+			public const int AllKnown = All - AllUnknown;
 
 			public static readonly bool IsValid = All == 817;
 		}

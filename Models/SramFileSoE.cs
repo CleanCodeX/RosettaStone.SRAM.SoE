@@ -56,7 +56,7 @@ namespace SRAM.SoE.Models
 
 			StructSizeValidator.Validate();
 
-			Requires.Equal(Marshal.SizeOf<SramSoE>(), SramSizes.All, nameof(Size));
+			Requires.Equal(Marshal.SizeOf<SramSoE>(), SramSizes.Size, nameof(Size));
 			Requires.Equal(Marshal.SizeOf<SaveSlotSoE>(), SramSizes.SaveSlot.All, nameof(SegmentSize));
 		}
 
