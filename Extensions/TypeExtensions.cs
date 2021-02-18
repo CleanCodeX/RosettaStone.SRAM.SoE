@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using Common.Shared.Min.Extensions;
+using IO.Extensions;
 using IO.Helpers;
 
 namespace SRAM.SoE.Extensions
@@ -18,7 +19,7 @@ namespace SRAM.SoE.Extensions
 			offset -= (int)Marshal.OffsetOf(type, fieldInfo.Name);
 			type = fieldInfo.FieldType!;
 
-			if (type.IsDefined<HasComplexMembersAttribute>())
+			if (type.IsDefined<HasOffsetMembersAttribute>())
 			{
 				if (type.IsArray)
 				{
@@ -44,6 +45,9 @@ namespace SRAM.SoE.Extensions
 			return fieldInfo.Name;
 		}
 
-		private static FieldInfo? InternalGetFieldNameByOffset(Type type, int offset) => type.GetFields().Reverse().FirstOrDefault(e =>(int) Marshal.OffsetOf(type, e.Name) <= offset);
+		private static FieldInfo? InternalGetFieldNameByOffset(Type type, int offset) => type
+			.GetPublicInstanceFields()
+			.Reverse()
+			.FirstOrDefault(e =>(int) Marshal.OffsetOf(type, e.Name) <= offset);
 	}
 }

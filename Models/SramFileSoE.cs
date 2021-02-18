@@ -3,9 +3,10 @@ using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
 using Common.Shared.Min.Helpers;
+using SoE;
+using SoE.Models.Enums;
 using SRAM.Models;
 using SRAM.SoE.Helpers;
-using SoE.Models.Enums;
 using SRAM.SoE.Models.Structs;
 
 namespace SRAM.SoE.Models
@@ -51,13 +52,13 @@ namespace SRAM.SoE.Models
 
 		private void SizeChecks()
 		{
-			Debug.Assert(SramSizes.IsValid);
-			Debug.Assert(SramSizes.SaveSlot.IsValid);
-
+			Requires.True(SramSizes.SaveSlotIsValid, nameof(Sizes));
+			Requires.True(SramSizes.IsValid, nameof(SramSizes));
+			
 			StructSizeValidator.Validate();
 
 			Requires.Equal(Marshal.SizeOf<SramSoE>(), SramSizes.Size, nameof(Size));
-			Requires.Equal(Marshal.SizeOf<SaveSlotSoE>(), SramSizes.SaveSlot.All, nameof(SegmentSize));
+			Requires.Equal(Marshal.SizeOf<SaveSlotSoE>(), SramSizes.SaveSlot, nameof(SegmentSize));
 		}
 
 		/// <summary>

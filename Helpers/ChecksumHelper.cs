@@ -32,7 +32,7 @@ namespace SRAM.SoE.Helpers
 		{
 			sram.ThrowIfNull(nameof(sram));
 
-			const int gameSize = SramSizes.SaveSlot.All;
+			const int gameSize = SramSizes.SaveSlot;
 			const int sizeChecksum = 2;
 			var checksum = (isUsVersion ? ChecksumInitValue.US : ChecksumInitValue.Europe).ToUInt();
 			var offset = SramOffsets.FirstSaveSlot + slotIndex * gameSize;

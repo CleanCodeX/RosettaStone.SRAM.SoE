@@ -1,3 +1,7 @@
+using System.Collections.Generic;
+using WRAM.Snes9x.SoE.Models;
+using WRAM.Snes9x.SoE.Models.Structs.Chunks;
+
 namespace SRAM.SoE.Models
 {
 	/// <summary>
@@ -7,6 +11,41 @@ namespace SRAM.SoE.Models
 	{
 		public const int FirstSaveSlot = 2;
 		public const int Unknown19 = 3_270; // [xCC6]
+
+		public static readonly Dictionary<int, (int WramOffset, int Size)> WramChunkOffsetMappings = new()
+		{
+			[SaveSlot.Chunk01] = (WramOffsets.Chunk01, Chunk01.Size), // [x26]
+
+			[SaveSlot.Chunk02] = (WramOffsets.Chunk02, Chunk02.Size), // [x6E] (2)
+			[SaveSlot.Chunk03] = (WramOffsets.Chunk03, Chunk03.Size), // [x70] (24)
+			[SaveSlot.Chunk04] = (WramOffsets.Chunk04, Chunk04.Size), // [x88] (6)
+			[SaveSlot.Chunk05] = (WramOffsets.Chunk05, Chunk05.Size), // [x8E] (2)
+			[SaveSlot.Chunk06] = (WramOffsets.Chunk06, Chunk06.Size), // [x90] (13) 
+			[SaveSlot.Chunk07] = (WramOffsets.Chunk07, Chunk07.Size), // [x9D] (4)
+			[SaveSlot.Chunk08] = (WramOffsets.Chunk08, Chunk08.Size), // [xA1] (14)
+
+			[SaveSlot.Chunk09] = (WramOffsets.Chunk09, Chunk09.Size), // [xAF] (2)
+			[SaveSlot.Chunk10] = (WramOffsets.Chunk10, Chunk10.Size), // [xB1] (24)
+			[SaveSlot.Chunk11] = (WramOffsets.Chunk11, Chunk11.Size), // [xC9] (6)
+			[SaveSlot.Chunk12] = (WramOffsets.Chunk12, Chunk12.Size), // [xCF] (2)
+			[SaveSlot.Chunk13] = (WramOffsets.Chunk13, Chunk13.Size), // [xD1] (13)
+			[SaveSlot.Chunk14] = (WramOffsets.Chunk14, Chunk14.Size), // [xDE] (4)
+			[SaveSlot.Chunk15] = (WramOffsets.Chunk15, Chunk15.Size), // [xE2] (14)
+
+			[SaveSlot.Chunk16] = (WramOffsets.Chunk16, Chunk16.Size), // [xF0] (101)
+
+			[SaveSlot.Chunk17] = (WramOffsets.Chunk17, Chunk17.Size), // [x155] (162)
+
+			[SaveSlot.Chunk18] = (WramOffsets.Chunk18, Chunk18.Size), // [x1F7] (146)
+			[SaveSlot.Chunk19] = (WramOffsets.Chunk19, Chunk19.Size), // [x289] (92)
+			[SaveSlot.Chunk20] = (WramOffsets.Chunk20, Chunk20.Size), // [x2E5] (44)
+			[SaveSlot.Chunk21] = (WramOffsets.Chunk21, Chunk21.Size), // [x311] (32)
+		};
+
+		public static readonly Dictionary<int, (int WramOffset, int Size)> WramOffsetMappings = new()
+		{
+			//[0] = (0x7E0B21, 2)
+		};
 
 		public class SaveSlot
 		{

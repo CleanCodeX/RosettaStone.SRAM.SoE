@@ -4,7 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>
     <LangVersion>preview</LangVersion>
-    <Version>0.5.0-b3</Version>
+    <Version>0.5.0-b5</Version>
     <PackageTags>SoE, Secret of Evermore, S-RAM, S-RAM, SNES, Rosetta Stone, Rosetta-Stone, Format, Super Nintendo, Super Famicon</PackageTags>
     <Authors>S. Krauter { CleanCoderX, XETH }</Authors>
     <Description>Collection of SoE's S-RAM models, load (&amp; experimental save) functionality</Description>    
@@ -19,17 +19,19 @@
     <Product>S-RAM.SoE »Rosetta Stone«</Product>
     <Platforms>AnyCPU</Platforms>
     <RepositoryType>Rosetta Stone</RepositoryType>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CCX.SoE" Version="0.5.0-a2" />
-	  <PackageReference Include="CCX.SRAM" Version="1.0.0-a5" />
+    <PackageReference Include="CCX.SRAM" Version="1.0.0-a8" />
+    <PackageReference Include="CCX.WRAM.Snes9x.SoE" Version="0.5.0-b5" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\IO\IO.csproj" />
     <ProjectReference Include="..\SoE\SoE.csproj" />
     <ProjectReference Include="..\SRAM\SRAM.csproj" />
+    <ProjectReference Include="..\WRAM.Snes9x.SoE\WRAM.Snes9x.SoE.csproj" />
   </ItemGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -56,7 +58,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Properties\" />
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>
