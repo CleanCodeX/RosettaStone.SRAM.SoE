@@ -37,7 +37,7 @@
 * byte[16] Unknown12A # [319|x13F] : (16 bytes)
 
 ###### Unknown 12 B
-* UInt16 Unknown12B # 335|x14F] : (2 bytes) Note: contains probably frame-counter, changes at every in-game save
+* UInt16 ScriptedEventTimer # 335|x14F] : (2 bytes) Note: contains probably frame-counter, changes at every in-game save
 
 ###### Unknown 12 C
 * UInt32 Unknown12C # [337|x151] : (4 bytes)
