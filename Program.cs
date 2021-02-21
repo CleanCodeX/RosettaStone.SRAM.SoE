@@ -7,11 +7,11 @@ using System.Text;
 using Common.Shared.Min.Extensions;
 using IO.Extensions;
 using SoE.Models.Enums;
-using SRAM.SoE2.Helpers;
-using SRAM.SoE2.Models.Structs;
+using SRAM.SoE.Helpers;
+using SRAM.SoE.Models.Structs;
 using WRAM.Snes9x.Helpers;
 
-namespace SRAM.SoE2
+namespace SRAM.SoE
 {
 	public static class Program
 	{

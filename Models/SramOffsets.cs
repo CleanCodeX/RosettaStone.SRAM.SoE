@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using WRAM.Snes9x.SoE.Models;
 using WRAM.Snes9x.SoE.Models.Structs.Chunks;
 
-namespace SRAM.SoE2.Models
+namespace SRAM.SoE.Models
 {
 	/// <summary>
 	/// Known offsets of SoE's S-RAM format

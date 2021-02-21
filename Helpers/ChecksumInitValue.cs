@@ -1,6 +1,6 @@
 using System;
 
-namespace SRAM.SoE2.Helpers
+namespace SRAM.SoE.Helpers
 {
 	internal enum ChecksumInitValue: UInt32
 	{

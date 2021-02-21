@@ -2,7 +2,7 @@ using System.Runtime.InteropServices;
 using IO.Extensions;
 using IO.Helpers;
 
-namespace SRAM.SoE2.Models.Structs
+namespace SRAM.SoE.Models.Structs
 {
 	/// <summary>
 	/// The S-RAM structure containing all saveslot data 

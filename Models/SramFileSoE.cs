@@ -6,10 +6,10 @@ using Common.Shared.Min.Helpers;
 using SoE;
 using SoE.Models.Enums;
 using SRAM.Models;
-using SRAM.SoE2.Helpers;
-using SRAM.SoE2.Models.Structs;
+using SRAM.SoE.Helpers;
+using SRAM.SoE.Models.Structs;
 
-namespace SRAM.SoE2.Models
+namespace SRAM.SoE.Models
 {
 	/// <summary>
 	/// SramFile implementation for <see cref="SramSoE"/> and <see cref="SaveSlotSoE"/>

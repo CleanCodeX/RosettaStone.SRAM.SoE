@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace SRAM.SoE2.Extensions
+namespace SRAM.SoE.Extensions
 {
 	internal static class StringExtensions
 	{

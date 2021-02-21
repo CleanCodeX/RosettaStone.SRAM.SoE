@@ -12,9 +12,9 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
       <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <RepositoryUrl>https://github.com/CleanCodeX/SRAM.SoE2</RepositoryUrl>
+    <RepositoryUrl>https://github.com/CleanCodeX/SRAM.SoE</RepositoryUrl>
     <PackageProjectUrl>http://evermore.xeth.de</PackageProjectUrl>
-    <PackageId>CCX.SRAM.SoE2</PackageId>
+    <PackageId>CCX.SRAM.SoE</PackageId>
     <PackageIcon>Icon.png</PackageIcon>
     <Product>S-RAM.SoE »Rosetta Stone«</Product>
     <Platforms>AnyCPU</Platforms>

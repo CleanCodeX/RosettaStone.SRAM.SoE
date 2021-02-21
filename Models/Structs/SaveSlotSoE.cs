@@ -4,12 +4,12 @@ using Common.Shared.Min.Attributes;
 using IO.Extensions;
 using IO.Helpers;
 using SoE.Models.Structs;
-using SRAM.SoE2.Properties;
+using SRAM.SoE.Properties;
 using WRAM.Snes9x.SoE.Models.Structs.Chunks;
 
 // ReSharper disable BuiltInTypeReferenceStyle
 
-namespace SRAM.SoE2.Models.Structs
+namespace SRAM.SoE.Models.Structs
 {
 	/// <summary>
 	/// The saveslot actually consists of a large data chunk and a preceding checksum
