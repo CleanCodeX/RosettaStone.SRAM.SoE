@@ -2,7 +2,7 @@
 using Common.Shared.Min.Helpers;
 using WRAM.Snes9x.SoE.Models.Structs.Chunks;
 
-namespace SRAM.SoE.Helpers
+namespace SRAM.SoE2.Helpers
 {
 	internal static class StructSizeValidator
 	{

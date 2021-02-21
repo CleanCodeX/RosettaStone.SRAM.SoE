@@ -7,7 +7,7 @@ using Common.Shared.Min.Extensions;
 using IO.Extensions;
 using IO.Helpers;
 
-namespace SRAM.SoE.Extensions
+namespace SRAM.SoE2.Extensions
 {
 	public static class TypeExtensions
 	{

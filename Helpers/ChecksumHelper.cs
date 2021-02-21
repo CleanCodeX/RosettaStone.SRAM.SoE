@@ -1,10 +1,10 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using Common.Shared.Min.Extensions;
-using SRAM.SoE.Models;
+using SRAM.SoE2.Models;
 using SoE.Models.Enums;
 
-namespace SRAM.SoE.Helpers
+namespace SRAM.SoE2.Helpers
 {
 	/// <summary>
 	/// Calculates the checksum of given save slot index from buffer

@@ -1,10 +1,10 @@
 ﻿using System.IO;
 using Common.Shared.Min.Extensions;
 using SoE.Models.Enums;
-using SRAM.SoE.Helpers;
+using SRAM.SoE2.Helpers;
 using WRAM.Snes9x.Helpers;
 
-namespace SRAM.SoE.Extensions
+namespace SRAM.SoE2.Extensions
 {
 	public static class StreamExtensions
     {

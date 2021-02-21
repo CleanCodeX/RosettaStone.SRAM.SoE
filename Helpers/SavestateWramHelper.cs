@@ -1,9 +1,9 @@
 ﻿using System;
 using SoE.Models.Enums;
-using SRAM.SoE.Models;
+using SRAM.SoE2.Models;
 using WRAM.Snes9x.Models.Structs;
 
-namespace SRAM.SoE.Helpers
+namespace SRAM.SoE2.Helpers
 {
 	public static class SavestateWramHelper
 	{

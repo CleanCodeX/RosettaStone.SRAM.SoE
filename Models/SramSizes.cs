@@ -4,7 +4,7 @@ using WRAM.Snes9x.SoE.Models;
 // ReSharper disable MemberHidesStaticFromOuterClass
 // ReSharper disable PossibleLossOfFraction
 
-namespace SRAM.SoE.Models
+namespace SRAM.SoE2.Models
 {
 	/// <summary>
 	/// Known sizes of SoE's S-RAM buffer

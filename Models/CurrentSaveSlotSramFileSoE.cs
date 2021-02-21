@@ -1,8 +1,8 @@
 using System.IO;
 using SoE.Models.Enums;
-using SRAM.SoE.Models.Structs;
+using SRAM.SoE2.Models.Structs;
 
-namespace SRAM.SoE.Models
+namespace SRAM.SoE2.Models
 {
 	/// <summary>
 	/// Implementation of SramFileSoE with <see cref="CurrentSaveSlot"/> functionality
