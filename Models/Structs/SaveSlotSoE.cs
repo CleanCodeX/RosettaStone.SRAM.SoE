@@ -39,7 +39,7 @@ namespace SRAM.SoE.Models.Structs
 		// Last save point [2|x02] (36 bytes, null terminated)
 		public FixedLengthString LastSavePointName; 
 
-		//BoyName, dogName [38|x26] (72 bytes)
+		//BoyName, ogName [38|x26] (72 bytes)
 		public Chunk01 BoyNameDogName;
 
 		// BoyCurrentHp [110|x6E] (2 bytes)
@@ -96,8 +96,8 @@ namespace SRAM.SoE.Models.Structs
 		// Ingredients_Items_Armors_Ammo_FlyingMachine [649|x289] (92 bytes)
 		public Chunk19 PossessedStuff;
 
-		// LastLanding_CurrentWeapon [741|x2E5] (44 bytes)
-		public Chunk20 LastLanding_CurrentWeapon;
+		// CurrentWeapon_LastLanding [741|x2E5] (44 bytes)
+		public Chunk20 CurrentWeapon_LastLanding;
 
 		// TradeGoods [785|x311] (32 bytes)
 		public Chunk21 TradeGoods;
