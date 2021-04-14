@@ -22,6 +22,7 @@ namespace SRAM.SoE.Models
 		/// Checksum validation status of every game
 		/// </summary>
 		private readonly bool[] _validSaveSlots = new bool[4];
+		private readonly bool[] _isDirty = new bool[4];
 
 		/// <summary>
 		/// The S-RAM's file region 
@@ -113,7 +114,11 @@ namespace SRAM.SoE.Models
 		/// </summary>
 		/// <param name="index">The target save slot index the game is saved to</param>
 		/// <param name="slot">The game to be saved</param>
-		public override void SetSegment(int index, SaveSlotSoE slot) => Struct.SaveSlots[index] = slot;
+		public override void SetSegment(int index, SaveSlotSoE slot)
+		{
+			Struct.SaveSlots[index] = slot;
+			_isDirty[index] = true;
+		}
 
 		/// <summary>
 		/// Saves the data of S-RAM structure to S-RAM buffer.
@@ -122,7 +127,7 @@ namespace SRAM.SoE.Models
 		public override void Save(Stream stream)
 		{
 			for (var index = 0; index <= 3; ++index)
-				if (IsValid(index))
+				if(_isDirty[index])
 					base.SetSegment(index, Struct.SaveSlots[index]);
 
 			base.Save(stream);
