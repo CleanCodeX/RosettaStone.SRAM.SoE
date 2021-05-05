@@ -7,9 +7,12 @@ namespace SRAM.SoE.Extensions
 {
 	public static class StreamExtensions
     {
+	    public static byte[] ReadSramFromSavestate(this byte[] source, GameRegion region) => ReadSramFromSavestate(new MemoryStream(source), region);
 	    public static byte[] ReadSramFromSavestate(this Stream source, GameRegion region) => SavestateWramHelper.CreateSramFileFromSavestate(SavestateReader.Load(source), region).Buffer;
 
-	    public static byte[] WriteSramToSavestate(this Stream source, GameRegion region, byte[] sram)
+		public static byte[] WriteSramToSavestate(this byte[] source, GameRegion region, byte[] sram) =>
+			WriteSramToSavestate(new MemoryStream(source), region, sram);
+		public static byte[] WriteSramToSavestate(this Stream source, GameRegion region, byte[] sram)
 	    {
 		    var unchangedSavestate = SavestateReader.Load(source, true);
 			var changedSavestate = SavestateWramHelper.CopySramToSavestate(unchangedSavestate, region, sram);
