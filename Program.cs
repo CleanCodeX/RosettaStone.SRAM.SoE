@@ -36,7 +36,7 @@ namespace SRAM.SoE
 				Console.WriteLine();
 
 				var savestateFile = SavestateReader.Load(filePath);
-				var sramFile = SavestateWramHelper.GetSramFileFromSavestate(savestateFile, GameRegion.EnglishNtsc);
+				var sramFile = SavestateWramHelper.CreateSramFileFromSavestate(savestateFile, GameRegion.EnglishNtsc);
 
 				var fileName = Path.GetFileNameWithoutExtension(filePath);
 				var srmFilePath = Path.Join(Path.GetDirectoryName(filePath), fileName + ".srm");

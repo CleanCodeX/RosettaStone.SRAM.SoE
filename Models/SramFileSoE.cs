@@ -16,7 +16,7 @@ namespace SRAM.SoE.Models
 	/// </summary>
 	public class SramFileSoE : SramFile<SramSoE, SaveSlotSoE>
 	{
-		private const int BlankFileChecksum = 0xC10F;
+		public const int EmptySlotChecksum = 0xC10F;
 
 		/// <summary>
 		/// Checksum validation status of every game
@@ -34,14 +34,34 @@ namespace SRAM.SoE.Models
 		/// </summary>
 		/// <param name="buffer"></param>
 		/// <param name="region">The S-RAM's file region</param>
-		public SramFileSoE(byte[] buffer, GameRegion region) : base(buffer, SramOffsets.FirstSaveSlot, 3) => GameRegion = region;
+		public SramFileSoE(byte[] buffer, GameRegion region) : base(SizeCheck(buffer), SramOffsets.FirstSaveSlot, 3) => GameRegion = region;
+
+		private static byte[] SizeCheck(byte[] buffer)
+		{
+			SizeCheck(buffer.Length);
+
+			return buffer;
+		}
 
 		/// <summary>
 		/// Creates an instance of <see cref="SramFileSoE" />
 		/// </summary>
 		/// <param name="stream">The (opened) stream from which the S-RAM buffer and S-RAM structure will be loaded</param>
 		/// <param name="region">The S-RAM's file region</param>
-		public SramFileSoE(Stream stream, GameRegion region) : base(stream, SramOffsets.FirstSaveSlot, 3) => GameRegion = region;
+		public SramFileSoE(Stream stream, GameRegion region) : base(SizeCheck(stream), SramOffsets.FirstSaveSlot, 3) => GameRegion = region;
+
+		private static Stream SizeCheck(Stream stream)
+		{
+			SizeCheck(stream.Length);
+
+			return stream;
+		}
+
+		private static void SizeCheck(long size)
+		{
+			if (size < SramSizes.Size)
+				throw new ArgumentException($"SRAM-size needs to be equal or greater than {SramSizes.Size} bytes, but was {size}.");
+		}
 
 		/// <summary>
 		/// Creates an instance of <see cref="SramFileSoE" />
@@ -80,8 +100,8 @@ namespace SRAM.SoE.Models
 			for (var index = 0; index <= 3; ++index)
 			{
 				var fileChecksum = GetChecksum(index);
-
 				var calculatedChecksum = ChecksumHelper.CalcChecksum(Buffer, index, GameRegion);
+
 				_validSaveSlots[index] = fileChecksum == calculatedChecksum;
 			}
 		}
@@ -97,13 +117,13 @@ namespace SRAM.SoE.Models
 #if DEBUG
 			if (Debugger.IsAttached)
 			{
-#pragma warning disable IDE0059 // Unnötige Zuweisung eines Werts.
+#pragma warning disable IDE0059 
 				// ReSharper disable UnusedVariable
 
 				ref var data = ref saveSlot.Data;
 
 				// ReSharper restore UnusedVariable
-#pragma warning restore IDE0059 // Unnötige Zuweisung eines Werts.
+#pragma warning restore IDE0059 
 			}
 #endif
 			return saveSlot;
@@ -127,16 +147,18 @@ namespace SRAM.SoE.Models
 		public override void Save(Stream stream)
 		{
 			for (var index = 0; index <= 3; ++index)
-				if(_isDirty[index])
+				if (_isDirty[index])
 					base.SetSegment(index, Struct.SaveSlots[index]);
 
 			base.Save(stream);
+
+			Array.Clear(_isDirty, 0 , 4);
 		}
 
 		protected override void OnSaving()
 		{
 			for (var index = 0; index <= 3; ++index)
-				if(Struct.SaveSlots[index].Checksum != BlankFileChecksum)
+				if(Struct.SaveSlots[index].Checksum != EmptySlotChecksum)
 					SetChecksum(index, ChecksumHelper.CalcChecksum(Buffer, index, GameRegion));
 		}
 
@@ -152,6 +174,13 @@ namespace SRAM.SoE.Models
 		}
 
 		/// <summary>
+		/// Gets if a slot is empty
+		/// </summary>
+		/// <param name="index">the save slot index which game's checksum should be checked</param>
+		/// <returns>Whether the slot is empty or not</returns>
+		public bool IsEmptySlot(int index) => GetChecksum(index) == EmptySlotChecksum;
+
+		/// <summary>
 		/// Sets the checksum for the given save slot index
 		/// </summary>
 		/// <param name="index">The save slot index which game's checksum should be set</param>
@@ -160,10 +189,9 @@ namespace SRAM.SoE.Models
 		{
 			var offset = FirstSegmentOffset + index * SegmentSize;
 			var bytes = BitConverter.GetBytes(checksum);
+			bytes.CopyTo(Buffer, offset);
 
 			Struct.SaveSlots[index].Checksum = checksum;
-
-			bytes.CopyTo(Buffer, offset);
 		}
 	}
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using Common.Shared.Min.Extensions;
 using SoE.Models.Enums;
 using SRAM.SoE.Models;
 using WRAM.Snes9x.Models.Structs;
@@ -7,12 +8,15 @@ namespace SRAM.SoE.Helpers
 {
 	public static class SavestateWramHelper
 	{
-		internal static SramFileSoE GetSramFileFromSavestate(SavestateSnex9x savestate, GameRegion region)
+		internal static SramFileSoE CreateSramFileFromSavestate(SavestateSnex9x savestate, GameRegion region)
 		{
-			var sramFile = new SramFileSoE(savestate.SRA.Data, region);
+			savestate.SRA.Data.ThrowIfNull("SRA.Data");
+
+			var sram = savestate.SRA.Data; //.AsSpan(..SramSizes.Size).ToArray();
+			SramFileSoE sramFile = new(sram, region);
 			var saveSlotId = sramFile.Struct.LastSaveslotId / 2;
 
-			var dataW = savestate.RAM.Data;
+			ref var dataW = ref savestate.RAM.Data!;
 			var dataS = sramFile.GetSegmentBytes(saveSlotId);
 
 			foreach (var (sramOffset, (wramOffset, size)) in SramOffsets.WramChunkOffsetMappings)
@@ -21,6 +25,20 @@ namespace SRAM.SoE.Helpers
 			sramFile.SetSegmentBytes(saveSlotId, dataS);
 
 			return sramFile;
+		}
+
+		internal static SavestateSnex9x CopySramToSavestate(SavestateSnex9x savestate, GameRegion region, byte[] sram)
+		{
+			SramFileSoE sramFile = new(sram, region);
+			var saveSlotId = sramFile.Struct.LastSaveslotId / 2;
+
+			ref var dataW = ref savestate.RAM.Data!;
+			var dataS = sramFile.GetSegmentBytes(saveSlotId);
+
+			foreach (var (sramOffset, (wramOffset, size)) in SramOffsets.WramChunkOffsetMappings)
+				Array.Copy(dataS, sramOffset, dataW, wramOffset, size);
+
+			return savestate;
 		}
 	}
 }
